@@ -205,7 +205,7 @@
             contact_us: "Contact Us",
             terms_conditions: "Terms & Conditions",
             privacy_policy: "Privacy Policy",
-            footer_copyright: "PediaCare &copy; 2026. All Rights Reserved.",
+            footer_copyright: "PediaCare © 2026. All Rights Reserved.",
             footer_notice: "Notice: All data and guidelines represented on this platform are for educational support. Always verify claims with local clinics or pediatric providers.",
             rsv_status: "Active Outbreak",
             rsv_disease: "Respiratory Syncytial Virus (RSV)",
@@ -1095,7 +1095,7 @@
             contact_us: "联系我们",
             terms_conditions: "条款与条件",
             privacy_policy: "隐私政策",
-            footer_copyright: "PediaCare &copy; 2026. 版权所有。",
+            footer_copyright: "PediaCare © 2026. 版权所有。",
             footer_notice: "免责声明：本平台上呈现的所有数据和指南仅供教育支持使用。遇到实际病情，请务必向当地诊所或儿科医疗机构进行核实。",
             rsv_status: "活跃爆发",
             rsv_disease: "呼吸道合胞病毒 (RSV)",
@@ -2389,38 +2389,15 @@
             // Decrypted Database References (Sanitized at load time)
             const bodySystems = ref(decryptedDB.bodySystems || []);
             const diseaseCategories = ref(decryptedDB.diseaseCategories || []);
-            const diseases = ref((decryptedDB.diseases || []).map(d => {
-                // Ensure all fields are fully sanitized to protect against persistent XSS
-                const sec = window.PediaCareSecurity;
-                return {
-                    id: sec.sanitize(d.id),
-                    body_system: sec.sanitize(d.body_system),
-                    category: sec.sanitize(d.category),
-                    name: sec.sanitize(d.name),
-                    classification: sec.sanitize(d.classification),
-                    affected_age_group: sec.sanitize(d.affected_age_group),
-                    causes: sec.sanitize(d.causes),
-                    pathophysiology: sec.sanitize(d.pathophysiology),
-                    symptoms_early: sec.sanitize(d.symptoms_early),
-                    symptoms_progressive: sec.sanitize(d.symptoms_progressive),
-                    symptoms_severe: sec.sanitize(d.symptoms_severe),
-                    urgency_level: sec.sanitize(d.urgency_level),
-                    diagnosis_methods: sec.sanitize(d.diagnosis_methods),
-                    treatment_plan: sec.sanitize(d.treatment_plan),
-                    home_care: sec.sanitize(d.home_care),
-                    medicinal_elements: sec.sanitize(d.medicinal_elements),
-                    when_to_see_doctor: sec.sanitize(d.when_to_see_doctor),
-                    prevention: sec.sanitize(d.prevention),
-                    vaccination_info: sec.sanitize(d.vaccination_info),
-                    prognosis: sec.sanitize(d.prognosis),
-                    recovery_timeline: sec.sanitize(d.recovery_timeline),
-                    complications: sec.sanitize(d.complications),
-                    imagePath: sec.sanitize(d.imagePath),
-                    overview: sec.sanitize(d.overview || d.classification || ''),
-                    related_diseases: d.related_diseases ? d.related_diseases.map(r => sec.sanitize(r)) : [],
-                    tags: d.tags ? d.tags.map(t => sec.sanitize(t)) : []
-                };
-            }));
+            // All rendering uses Vue text interpolation ({{ }}), which escapes output
+            // automatically. Entity-encoding the data here would double-escape it,
+            // showing literal &amp;/&#x27; on screen — so the data is used as-is.
+            const diseases = ref((decryptedDB.diseases || []).map(d => ({
+                ...d,
+                overview: d.overview || d.classification || '',
+                related_diseases: d.related_diseases || [],
+                tags: d.tags || []
+            })));
 
             const diseaseSections = [
                 { id: 'overview', label: '1. Summary & Pathophysiology', icon: 'fa-solid fa-file-medical' },
@@ -2524,13 +2501,12 @@
             // Triage calculator computed engine
             const calculatedTriage = computed(() => {
                 let score = 0;
-                
-                // Sanitize input state references
-                const sound = window.PediaCareSecurity.sanitize(triageState.coughSound);
-                const effort = window.PediaCareSecurity.sanitize(triageState.breathingEffort);
-                const alert = window.PediaCareSecurity.sanitize(triageState.alertness);
-                const fever = window.PediaCareSecurity.sanitize(triageState.feverSkin);
-                const hyd = window.PediaCareSecurity.sanitize(triageState.hydration);
+
+                const sound = triageState.coughSound;
+                const effort = triageState.breathingEffort;
+                const alert = triageState.alertness;
+                const fever = triageState.feverSkin;
+                const hyd = triageState.hydration;
 
                 if (sound === 'wheeze') score += 1;
                 if (sound === 'bark_stridor') score += 3;
@@ -2688,16 +2664,17 @@
                 if (dis) selectDisease(dis);
             };
 
-            // GLOBAL MULTI-INDEXED DEEP FILTER SEARCH ENGINE (Fully Sanitized & Null-Safe)
+            // GLOBAL MULTI-INDEXED DEEP FILTER SEARCH ENGINE (Null-Safe)
+            // Query text is only ever compared as a plain string and rendered via
+            // escaped interpolation, so entity-encoding it would break searches
+            // containing characters like ' or &.
             const filteredDiseases = computed(() => {
-                // Sanitize the search query to block XSS payloads from input injection
-                const rawQuery = searchQuery.value || '';
-                const query = window.PediaCareSecurity.sanitize(rawQuery).toLowerCase().trim();
+                const query = (searchQuery.value || '').toLowerCase().trim();
                 let list = diseases.value;
 
                 if (filterUrgency.value !== 'all') {
-                    const cleanUrgency = window.PediaCareSecurity.sanitize(filterUrgency.value);
-                    list = list.filter(d => d.urgency_level && d.urgency_level.toLowerCase() === cleanUrgency.toLowerCase());
+                    const cleanUrgency = filterUrgency.value.toLowerCase();
+                    list = list.filter(d => d.urgency_level && d.urgency_level.toLowerCase() === cleanUrgency);
                 }
 
                 if (!query) return list;
