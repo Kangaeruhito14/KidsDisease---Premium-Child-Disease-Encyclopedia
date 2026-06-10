@@ -1,14 +1,15 @@
 /**
- * Rebuilds data/database.js from the editable plain-JSON source.
+ * Rebuilds legacy/data/database.js from the editable plain-JSON source.
  *
  * Workflow: edit data/database.source.json, then run `node build_db.js`.
- * The site loads only data/database.js (base64-wrapped payload).
+ * The Astro site imports the JSON source directly; only the legacy SPA
+ * loads the base64-wrapped payload.
  */
 const fs = require('fs');
 const path = require('path');
 
 const sourcePath = path.join(__dirname, 'data', 'database.source.json');
-const outputPath = path.join(__dirname, 'data', 'database.js');
+const outputPath = path.join(__dirname, 'legacy', 'data', 'database.js');
 
 const db = JSON.parse(fs.readFileSync(sourcePath, 'utf8'));
 
@@ -24,8 +25,13 @@ for (const d of db.diseases) {
     seenIds.add(d.id);
     if (!systemIds.has(d.body_system)) errors.push(`${d.name}: unknown body_system "${d.body_system}"`);
     if (!categoryIds.has(d.category)) errors.push(`${d.name}: unknown category "${d.category}"`);
-    if (d.imagePath && !fs.existsSync(path.join(__dirname, d.imagePath))) {
-        errors.push(`${d.name}: missing image "${d.imagePath}"`);
+    if (d.imagePath) {
+        // imagePath values are legacy-relative ("assets/illustrations/x.svg");
+        // the canonical files live in public/illustrations/.
+        const file = path.basename(d.imagePath);
+        if (!fs.existsSync(path.join(__dirname, 'public', 'illustrations', file))) {
+            errors.push(`${d.name}: missing image "${d.imagePath}"`);
+        }
     }
 }
 
@@ -48,5 +54,5 @@ const payload = Buffer.from(JSON.stringify(db), 'utf8').toString('base64');
 const banner = '/**\n * PediaCare disease database payload.\n * GENERATED FILE — edit data/database.source.json and run `node build_db.js`.\n */\n';
 fs.writeFileSync(outputPath, `${banner}const PediaCareDB_Encrypted = "${payload}";\n`);
 
-console.log(`OK: ${db.diseases.length} diseases, ${db.bodySystems.length} systems, ${db.diseaseCategories.length} categories -> data/database.js`);
+console.log(`OK: ${db.diseases.length} diseases, ${db.bodySystems.length} systems, ${db.diseaseCategories.length} categories -> legacy/data/database.js`);
 if (unlinked) console.log(`Note: ${unlinked} differential-diagnosis reference(s) have no database entry (rendered as plain text).`);

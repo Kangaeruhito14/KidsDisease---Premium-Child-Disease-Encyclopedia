@@ -1,7 +1,7 @@
 const fs = require('fs');
 const path = require('path');
 
-const filePath = '/home/anup/All_Types_of_Codes/Website related/PediaCare/index.html';
+const filePath = path.join(__dirname, 'index.html');
 const content = fs.readFileSync(filePath, 'utf8');
 
 // A simple stack-based tag matcher for validating major block containers
