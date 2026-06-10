@@ -1,0 +1,17 @@
+# Dependencies
+node_modules/
+
+# Build output
+dist/
+.astro/
+
+# Generated knowledge graph
+graphify-out/
+
+# Local tool settings
+.claude/settings.local.json
+
+# OS / editor noise
+.DS_Store
+Thumbs.db
+*.log
