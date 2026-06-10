@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 150 150" width="150" height="150">
+  <circle cx="75" cy="75" r="65" fill="#E0F2F1" />
+  <g stroke="#00796B">
+    <path d="M 75,55 A 15,15 0 1,1 75,54.9 Z M 50,70 L 100,70 L 85,115 L 65,115 Z" fill="none" stroke-width="5" stroke-linejoin="round" />
+  </g>
+  
+      <!-- Normal Happy Face -->
+      <path d="M 62,65 Q 65,61 68,65 M 82,65 Q 85,61 88,65" fill="none" stroke="#2C3E50" stroke-width="2.5" stroke-linecap="round" />
+      <path d="M 70,78 Q 75,82 80,78" fill="none" stroke="#2C3E50" stroke-width="2" stroke-linecap="round" />
+    
+  
+</svg>

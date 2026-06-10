@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 150 150" width="150" height="150">
+  <circle cx="75" cy="75" r="65" fill="#E8F8F5" />
+  <!-- Joint Structure (Femur & Tibia/Fibula representation, highly simplified, cute) -->
+  <path d="M 75,30 L 75,65 Q 75,70 70,72" fill="none" stroke="#BDC3C7" stroke-width="12" stroke-linecap="round" />
+  <path d="M 75,120 L 75,85 Q 75,80 80,78" fill="none" stroke="#BDC3C7" stroke-width="12" stroke-linecap="round" />
+  <!-- Cartilage / Joint Space (Soft blue capsule) -->
+  <ellipse cx="75" cy="75" rx="14" ry="10" fill="#AED6F1" stroke="#3498DB" stroke-width="2" opacity="0.9" />
+  <!-- Sparkles showing inflammation / activity -->
+  <path d="M 52,65 L 54,68 L 58,68 L 55,70 L 56,74 L 52,72 L 48,74 L 49,70 L 46,68 L 50,68 Z" fill="#F1C40F" />
+  <path d="M 98,75 L 100,78 L 104,78 L 101,80 L 102,84 L 98,82 L 94,84 L 95,80 L 92,78 L 96,78 Z" fill="#F1C40F" />
+  <!-- Cute Face on joint space -->
+  <circle cx="71" cy="73" r="1" fill="#2C3E50" />
+  <circle cx="79" cy="73" r="1" fill="#2C3E50" />
+  <path d="M 74,76 Q 75,77 76,76" fill="none" stroke="#2C3E50" stroke-width="0.8" />
+</svg>

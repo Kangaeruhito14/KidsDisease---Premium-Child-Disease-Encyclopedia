@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 150 150" width="150" height="150">
+  <circle cx="75" cy="75" r="65" fill="#E8F8F5" />
+  <!-- Fluffy Cloud -->
+  <path d="M 50,85 C 40,85 35,75 42,65 C 38,50 50,42 62,48 C 68,38 82,38 88,48 C 100,42 112,50 108,65 C 115,75 110,85 100,85 Z" fill="#FFFFFF" stroke="#A3E4D7" stroke-width="2.5" />
+  <!-- Eyes squinting -->
+  <path d="M 58,62 L 64,66 L 58,70" fill="none" stroke="#2C3E50" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+  <path d="M 92,62 L 86,66 L 92,70" fill="none" stroke="#2C3E50" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+  <!-- Sneezing Mouth (Achoo!) -->
+  <path d="M 70,78 Q 75,72 80,78" fill="none" stroke="#2C3E50" stroke-width="2.5" stroke-linecap="round" />
+  <!-- Pollen dots and flowers -->
+  <circle cx="45" cy="100" r="2.5" fill="#F1C40F" />
+  <circle cx="105" cy="100" r="2" fill="#F1C40F" />
+  <circle cx="75" cy="110" r="3" fill="#F1C40F" />
+  <!-- Small flower -->
+  <circle cx="100" cy="50" r="3" fill="#EC7063" />
+  <circle cx="95" cy="48" r="2" fill="#F9E79F" />
+  <circle cx="105" cy="48" r="2" fill="#F9E79F" />
+  <circle cx="103" cy="54" r="2" fill="#F9E79F" />
+  <circle cx="97" cy="54" r="2" fill="#F9E79F" />
+</svg>

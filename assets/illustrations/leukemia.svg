@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 150 150" width="150" height="150">
+  <circle cx="75" cy="75" r="65" fill="#F5EEF8" />
+  <!-- White Blood Cell (Fluffy round cell) -->
+  <path d="M 75,95 C 60,95 50,88 50,75 C 50,62 60,55 75,55 C 90,55 100,62 100,75 C 100,88 90,95 75,95 Z" fill="#FFFFFF" stroke="#BDC3C7" stroke-width="2.5" />
+  <!-- Bumpy edges on white blood cell -->
+  <path d="M 52,65 C 48,68 48,74 52,78 C 50,84 56,88 64,88 C 70,92 80,92 86,88 C 94,88 100,84 98,78 C 102,74 102,68 98,65 C 100,58 94,54 86,54 C 80,50 70,50 64,54 C 56,54 50,58 52,65 Z" fill="none" stroke="#BDC3C7" stroke-width="2" />
+  <!-- Cute Face -->
+  <circle cx="67" cy="71" r="2" fill="#3D3D3D" />
+  <circle cx="83" cy="71" r="2" fill="#3D3D3D" />
+  <!-- Confident smile -->
+  <path d="M 72,77 Q 75,80 78,77" fill="none" stroke="#3D3D3D" stroke-width="1.8" stroke-linecap="round" />
+  <!-- Tiny protective badge/shield representing helper cell -->
+  <path d="M 102,80 C 102,80 108,76 108,76 C 108,76 114,80 114,80 C 114,90 108,95 108,95 C 108,95 102,90 102,80 Z" fill="#F4D03F" stroke="#F39C12" stroke-width="1" />
+</svg>

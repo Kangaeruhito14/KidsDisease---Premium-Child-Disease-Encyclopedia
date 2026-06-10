@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 150 150" width="150" height="150">
+  <circle cx="75" cy="75" r="65" fill="#FDEDEC" />
+  <!-- Bandage / Band-aid -->
+  <rect x="35" y="60" width="80" height="30" rx="6" fill="#F5CBA7" stroke="#DC7633" stroke-width="2.5" transform="rotate(-20, 75, 75)" />
+  <!-- Center pad -->
+  <rect x="60" y="60" width="30" height="30" fill="#FAD7A0" opacity="0.9" transform="rotate(-20, 75, 75)" />
+  <!-- Pin holes on band-aid -->
+  <circle cx="48" cy="72" r="1" fill="#DC7633" />
+  <circle cx="54" cy="70" r="1" fill="#DC7633" />
+  <circle cx="96" cy="78" r="1" fill="#DC7633" />
+  <circle cx="102" cy="76" r="1" fill="#DC7633" />
+  <!-- Cute Face in center pad -->
+  <circle cx="71" cy="71" r="2" fill="#2C3E50" />
+  <circle cx="83" cy="67" r="2" fill="#2C3E50" />
+  <path d="M 74,75 Q 77,78 80,74" fill="none" stroke="#2C3E50" stroke-width="1.8" stroke-linecap="round" />
+  <!-- Little red droplet next to it -->
+  <path d="M 115,85 C 115,81 119,75 119,75 C 119,75 123,81 123,85 C 123,89 119,91 115,85 Z" fill="#E74C3C" />
+</svg>

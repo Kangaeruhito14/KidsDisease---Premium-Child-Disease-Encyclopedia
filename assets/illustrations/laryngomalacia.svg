@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 150 150" width="150" height="150">
+  <circle cx="75" cy="75" r="65" fill="#EBF5FB" />
+  <g stroke="#2980B9">
+    <path d="M 50,65 C 40,55 30,55 30,70 C 30,90 50,105 50,105 C 50,105 70,90 70,70 C 70,55 60,55 50,65 Z M 100,65 C 90,55 80,55 80,70 C 80,90 100,105 100,105 C 100,105 120,90 120,70 C 120,55 110,55 100,65 Z" fill="none" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" />
+  </g>
+  
+          <!-- Sleepy/Resting Face -->
+          <path d="M 62,65 Q 65,67 68,63 M 82,65 Q 85,67 88,63" fill="none" stroke="#2C3E50" stroke-width="2" stroke-linecap="round" />
+          <path d="M 72,77 Q 75,79 78,77" fill="none" stroke="#2C3E50" stroke-width="1.5" stroke-linecap="round" />
+        
+  <!-- Floppy larynx leaf --><path d="M 70,40 Q 75,30 80,40 T 70,55 Z" fill="#E8F8F5" stroke="#16A085" stroke-width="2" />
+</svg>

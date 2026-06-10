@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 150 150" width="150" height="150">
+  <circle cx="75" cy="75" r="65" fill="#EBF5FB" />
+  <!-- Droplet -->
+  <path d="M 75,35 C 75,35 45,75 45,92 C 45,108 58,118 75,118 C 92,118 105,108 105,92 C 105,75 75,35 75,35 Z" fill="#E8F8F5" stroke="#3498DB" stroke-width="3" />
+  <!-- Water line in droplet (showing half full/dehydrated) -->
+  <path d="M 47,94 C 55,100 95,100 103,94 C 105,108 92,115 75,115 C 58,115 45,108 47,94 Z" fill="#AED6F1" />
+  <!-- Straw (drinking to rehydrate) -->
+  <path d="M 85,75 L 110,50 L 115,53" fill="none" stroke="#E74C3C" stroke-width="4.5" stroke-linecap="round" />
+  <line x1="100" y1="60" x2="108" y2="58" stroke="#E74C3C" stroke-width="4.5" stroke-linecap="round" />
+  <!-- Cute Face -->
+  <!-- Eyes -->
+  <circle cx="63" cy="88" r="2.5" fill="#2C3E50" />
+  <circle cx="87" cy="88" r="2.5" fill="#2C3E50" />
+  <!-- Smile -->
+  <path d="M 72,95 Q 75,98 78,95" fill="none" stroke="#2C3E50" stroke-width="1.8" stroke-linecap="round" />
+</svg>

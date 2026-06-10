@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 150 150" width="150" height="150">
+  <circle cx="75" cy="75" r="65" fill="#E8F8F5" />
+  <!-- Cute Worm/Parasite character -->
+  <path d="M 40,95 Q 50,75 65,85 T 90,80 T 110,95" fill="none" stroke="#D7BDE2" stroke-width="12" stroke-linecap="round" stroke-linejoin="round" />
+  <!-- Worm texture loops -->
+  <path d="M 45,91 L 47,94 M 68,82 L 70,85 M 92,81 L 94,84" fill="none" stroke="#AF7AC5" stroke-width="2" stroke-linecap="round" />
+  <!-- Worm Head / Face (on the right end, 110, 95) -->
+  <circle cx="108" cy="93" r="1.5" fill="#2C3E50" />
+  <circle cx="113" cy="92" r="1.5" fill="#2C3E50" />
+  <path d="M 110,96 Q 111,98 112,96" fill="none" stroke="#2C3E50" stroke-width="1" stroke-linecap="round" />
+  <!-- Magnifying glass looking at the worm -->
+  <circle cx="75" cy="75" r="18" fill="none" stroke="#7F8C8D" stroke-width="3" />
+  <line x1="88" y1="88" x2="102" y2="102" stroke="#7F8C8D" stroke-width="4.5" stroke-linecap="round" />
+  <circle cx="75" cy="75" r="16" fill="#5DADE2" opacity="0.2" />
+</svg>

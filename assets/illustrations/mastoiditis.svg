@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 150 150" width="150" height="150">
+  <circle cx="75" cy="75" r="65" fill="#E0F2F1" />
+  <g stroke="#00695C">
+    <path d="M 60,40 C 40,40 35,65 45,85 C 50,95 45,110 60,110 C 70,110 75,95 70,75 C 65,55 80,40 60,40 Z" fill="none" stroke-width="5" />
+  </g>
+  
+          <!-- Sad/Sick Face -->
+          <path d="M 62,65 Q 65,69 68,65 M 82,65 Q 85,69 88,65" fill="none" stroke="#2C3E50" stroke-width="2.5" stroke-linecap="round" />
+          <path d="M 71,80 Q 75,76 79,80" fill="none" stroke="#2C3E50" stroke-width="2.5" stroke-linecap="round" />
+        
+  <!-- Swelling behind ear --><ellipse cx="40" cy="75" rx="7" ry="12" fill="#E74C3C" opacity="0.6" />
+</svg>

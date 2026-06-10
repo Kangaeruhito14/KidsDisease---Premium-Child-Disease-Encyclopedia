@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 150 150" width="150" height="150">
+  <circle cx="75" cy="75" r="65" fill="#FEF5E7" />
+  <!-- Sugar Cube character -->
+  <rect x="45" y="55" width="45" height="45" rx="5" fill="#FFFFFF" stroke="#BDC3C7" stroke-width="2.5" />
+  <!-- 3D edges of cube (soft pastel) -->
+  <path d="M 45,55 L 55,45 L 100,45 L 90,55 Z" fill="#F2F4F4" stroke="#BDC3C7" stroke-width="2" />
+  <path d="M 90,55 L 100,45 L 100,90 L 90,100 Z" fill="#E5E8E8" stroke="#BDC3C7" stroke-width="2" />
+  <!-- Cute Face -->
+  <circle cx="60" cy="78" r="2.5" fill="#2C3E50" />
+  <circle cx="78" cy="78" r="2.5" fill="#2C3E50" />
+  <path d="M 66,85 Q 69,88 72,85" fill="none" stroke="#2C3E50" stroke-width="2" stroke-linecap="round" />
+  <!-- Little red heart next to the sugar cube -->
+  <path d="M 112,70 C 110,67 107,67 105,69 C 103,71 103,74 106,77 L 112,82 L 118,77 C 121,74 121,71 119,69 C 117,67 114,67 112,70 Z" fill="#E74C3C" />
+</svg>

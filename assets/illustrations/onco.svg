@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
+  <!-- Soft pastel yellow-orange background circle -->
+  <circle cx="100" cy="100" r="90" fill="#FDF3E7" />
+  
+  <!-- Glowing aura -->
+  <circle cx="100" cy="100" r="75" fill="none" stroke="#FCE2CE" stroke-width="4" stroke-dasharray="8 6" />
+
+  <!-- Gold Ribbon shape -->
+  <!-- Left loop leg and right loop leg combined as a continuous smooth path -->
+  <path d="M 85,160 C 85,120 100,80 120,60 C 130,50 145,55 145,70 C 145,85 130,105 100,125 C 70,105 55,85 55,70 C 55,55 70,50 80,60 C 100,80 115,120 115,160" 
+        fill="none" stroke="#FACD59" stroke-width="24" stroke-linecap="round" stroke-linejoin="round" />
+  
+  <!-- Outer highlight for 3D/soft effect -->
+  <path d="M 85,160 C 85,120 100,80 120,60 C 130,50 145,55 145,70 C 145,85 130,105 100,125 C 70,105 55,85 55,70 C 55,55 70,50 80,60 C 100,80 115,120 115,160" 
+        fill="none" stroke="#FFE082" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" opacity="0.6" />
+
+  <!-- Ribbon Face (Childish, cute) -->
+  <!-- Eyes -->
+  <circle cx="87" cy="75" r="3.5" fill="#3D3D3D" />
+  <circle cx="113" cy="75" r="3.5" fill="#3D3D3D" />
+  
+  <!-- Eye highlights -->
+  <circle cx="86" cy="74" r="1.2" fill="#FFFFFF" />
+  <circle cx="112" cy="74" r="1.2" fill="#FFFFFF" />
+  
+  <!-- Blush -->
+  <ellipse cx="80" cy="80" rx="5" ry="3" fill="#FF8A80" opacity="0.7" />
+  <ellipse cx="120" cy="80" rx="5" ry="3" fill="#FF8A80" opacity="0.7" />
+  
+  <!-- Cute smile -->
+  <path d="M 97,80 Q 100,84 103,80" fill="none" stroke="#3D3D3D" stroke-width="2" stroke-linecap="round" />
+  
+  <!-- Hope Flower (held by ribbon) -->
+  <!-- Stem -->
+  <path d="M 100,125 Q 110,135 125,130" fill="none" stroke="#81C784" stroke-width="3" stroke-linecap="round" />
+  <!-- Leaf -->
+  <path d="M 112,129 Q 117,123 118,129 Q 112,133 112,129 Z" fill="#81C784" />
+  <!-- Flower Petals -->
+  <circle cx="125" cy="130" r="6" fill="#F48FB1" />
+  <circle cx="131" cy="125" r="6" fill="#F48FB1" />
+  <circle cx="137" cy="130" r="6" fill="#F48FB1" />
+  <circle cx="131" cy="135" r="6" fill="#F48FB1" />
+  <!-- Center -->
+  <circle cx="131" cy="130" r="3.5" fill="#FFF176" />
+
+  <!-- Floating Hearts and Stars -->
+  <!-- Red Heart -->
+  <path d="M 60,115 C 57,110 52,110 50,113 C 48,116 48,120 53,125 L 60,130 L 67,125 C 72,120 72,116 70,113 C 68,110 63,110 60,115 Z" fill="#E57373" />
+  <!-- Orange Star -->
+  <path d="M 140,95 L 142,98 L 146,98 L 143,100 L 144,104 L 140,102 L 136,104 L 137,100 L 134,98 L 138,98 Z" fill="#FFB74D" />
+  <!-- Blue Star -->
+  <path d="M 70,55 L 71,57 L 74,57 L 72,59 L 73,62 L 70,60 L 67,62 L 68,59 L 66,57 L 69,57 Z" fill="#4FC3F7" />
+  <!-- Sparkles -->
+  <circle cx="150" cy="120" r="2.5" fill="#FFF176" />
+  <circle cx="50" cy="90" r="1.5" fill="#FFF176" />
+</svg>

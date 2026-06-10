@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 150 150" width="150" height="150">
+  <circle cx="75" cy="75" r="65" fill="#FEF9E7" />
+  <!-- Apple character -->
+  <path d="M 75,55 C 65,45 42,50 42,75 C 42,95 62,105 75,98 C 88,105 108,95 108,75 C 108,50 85,45 75,55 Z" fill="#EB5757" stroke="#C0392B" stroke-width="2.5" />
+  <!-- Stem -->
+  <path d="M 75,55 Q 78,45 85,45" fill="none" stroke="#D35400" stroke-width="2.5" stroke-linecap="round" />
+  <!-- Leaf -->
+  <path d="M 78,48 Q 84,43 83,48 Q 78,51 78,48 Z" fill="#27AE60" />
+  <!-- Measurement ribbon wrapped around (malnutrition indicator) -->
+  <path d="M 38,78 C 55,85 95,85 112,78" fill="none" stroke="#F1C40F" stroke-width="5.5" stroke-linecap="round" />
+  <!-- Ruler ticks -->
+  <line x1="50" y1="80" x2="50" y2="83" stroke="#D35400" stroke-width="1.2" />
+  <line x1="65" y1="81" x2="65" y2="84" stroke="#D35400" stroke-width="1.2" />
+  <line x1="80" y1="81" x2="80" y2="84" stroke="#D35400" stroke-width="1.2" />
+  <line x1="95" y1="80" x2="95" y2="83" stroke="#D35400" stroke-width="1.2" />
+  <!-- Eyes & Mouth -->
+  <circle cx="62" cy="68" r="2" fill="#FFFFFF" />
+  <circle cx="88" cy="68" r="2" fill="#FFFFFF" />
+  <path d="M 72,74 Q 75,77 78,74" fill="none" stroke="#FFFFFF" stroke-width="1.5" stroke-linecap="round" />
+</svg>

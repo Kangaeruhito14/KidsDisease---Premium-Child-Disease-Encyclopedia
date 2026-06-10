@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 150 150" width="150" height="150">
+  <circle cx="75" cy="75" r="65" fill="#F3E5F5" />
+  <g stroke="#880E4F">
+    <path d="M 60,110 C 60,110 50,85 60,65 C 70,45 80,45 90,65 C 100,85 90,110 90,110 M 60,65 C 60,65 75,50 90,65" fill="none" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" />
+  </g>
+  
+          <!-- Sad/Sick Face -->
+          <path d="M 62,65 Q 65,69 68,65 M 82,65 Q 85,69 88,65" fill="none" stroke="#2C3E50" stroke-width="2.5" stroke-linecap="round" />
+          <path d="M 71,80 Q 75,76 79,80" fill="none" stroke="#2C3E50" stroke-width="2.5" stroke-linecap="round" />
+        
+  
+</svg>

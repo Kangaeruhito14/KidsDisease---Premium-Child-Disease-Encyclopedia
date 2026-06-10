@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 150 150" width="150" height="150">
+  <circle cx="75" cy="75" r="65" fill="#EEF2F7" />
+  <g stroke="#2C3E50">
+    <path d="M 50,45 Q 65,55 75,45 Q 85,55 100,45 L 95,95 Q 75,105 55,95 Z" fill="none" stroke-width="5" stroke-linejoin="round" />
+  </g>
+  
+          <!-- Sad/Sick Face -->
+          <path d="M 62,65 Q 65,69 68,65 M 82,65 Q 85,69 88,65" fill="none" stroke="#2C3E50" stroke-width="2.5" stroke-linecap="round" />
+          <path d="M 71,80 Q 75,76 79,80" fill="none" stroke="#2C3E50" stroke-width="2.5" stroke-linecap="round" />
+        
+  <!-- Sugar crystals --><polygon points="105,45 110,40 105,35 100,40" fill="#E74C3C" /><polygon points="45,95 50,90 45,85 40,90" fill="#E74C3C" />
+</svg>

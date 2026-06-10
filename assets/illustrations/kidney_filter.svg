@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 150 150" width="150" height="150">
+  <circle cx="75" cy="75" r="65" fill="#EBF5FB" />
+  <!-- Kidney bean shape -->
+  <path d="M 52,50 C 40,65 40,85 52,100 C 65,115 85,110 88,95 C 80,88 80,62 88,55 C 85,40 65,35 52,50 Z" fill="#EBDEF0" stroke="#8E44AD" stroke-width="2.5" transform="rotate(-15, 70, 70)" />
+  <!-- Filter sparkles -->
+  <path d="M 80,72 L 95,72 L 95,78 L 80,78 Z" fill="#5DADE2" opacity="0.6" />
+  <circle cx="102" cy="65" r="2.5" fill="#F1C40F" />
+  <circle cx="108" cy="80" r="1.5" fill="#F1C40F" />
+  <!-- Cute Face -->
+  <circle cx="56" cy="68" r="1.5" fill="#2C3E50" />
+  <circle cx="68" cy="68" r="1.5" fill="#2C3E50" />
+  <path d="M 60,74 Q 62,76 64,74" fill="none" stroke="#2C3E50" stroke-width="1.2" stroke-linecap="round" />
+</svg>

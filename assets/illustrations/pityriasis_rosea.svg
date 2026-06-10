@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 150 150" width="150" height="150">
+  <circle cx="75" cy="75" r="65" fill="#FBEEE6" />
+  <g stroke="#E67E22">
+    <rect x="40" y="45" width="70" height="60" rx="12" fill="none" stroke-width="5" /><line x1="40" y1="75" x2="110" y2="75" stroke-width="4" /><line x1="75" y1="45" x2="75" y2="105" stroke-width="4" />
+  </g>
+  
+      <!-- Normal Happy Face -->
+      <path d="M 62,65 Q 65,61 68,65 M 82,65 Q 85,61 88,65" fill="none" stroke="#2C3E50" stroke-width="2.5" stroke-linecap="round" />
+      <path d="M 70,78 Q 75,82 80,78" fill="none" stroke="#2C3E50" stroke-width="2" stroke-linecap="round" />
+    
+  <!-- Herald patch --><ellipse cx="75" cy="85" rx="14" ry="8" fill="#FDEDEC" stroke="#FF7675" stroke-width="2.5" /><circle cx="50" cy="90" r="3" fill="#FF7675" /><circle cx="100" cy="90" r="3" fill="#FF7675" />
+</svg>

@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 150 150" width="150" height="150">
+  <circle cx="75" cy="75" r="65" fill="#F5EEF8" />
+  <!-- Brain shape -->
+  <path d="M 75,95 C 60,95 40,85 40,65 C 40,45 60,45 75,55 C 90,45 110,45 110,65 C 110,85 90,95 75,95 Z" fill="#EBDEF0" stroke="#AF7AC5" stroke-width="2.5" />
+  <!-- Bandage wrapped around -->
+  <rect x="37" y="58" width="76" height="10" rx="3" fill="#F9E79F" stroke="#F4D03F" stroke-width="1.5" />
+  <!-- Cross bandage lines -->
+  <line x1="72" y1="58" x2="78" y2="68" stroke="#F4D03F" stroke-width="1.5" />
+  <line x1="78" y1="58" x2="72" y2="68" stroke="#F4D03F" stroke-width="1.5" />
+  <!-- Sad/Dizzy Eyes (tiny crosses or curves) -->
+  <path d="M 52,78 L 58,84 M 58,78 L 52,84" fill="none" stroke="#2C3E50" stroke-width="2" stroke-linecap="round" />
+  <path d="M 92,78 L 98,84 M 98,78 L 92,84" fill="none" stroke="#2C3E50" stroke-width="2" stroke-linecap="round" />
+  <!-- Sad mouth curve -->
+  <path d="M 71,88 Q 75,85 79,88" fill="none" stroke="#2C3E50" stroke-width="2" stroke-linecap="round" />
+</svg>

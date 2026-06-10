@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 150 150" width="150" height="150">
+  <circle cx="75" cy="75" r="65" fill="#F5EEF8" />
+  <!-- Brain shape (simplified cartoon brain) -->
+  <!-- Left hemisphere -->
+  <path d="M 75,95 C 60,95 40,85 40,65 C 40,45 60,45 75,55" fill="#EBDEF0" stroke="#AF7AC5" stroke-width="2.5" stroke-linejoin="round" />
+  <!-- Right hemisphere -->
+  <path d="M 75,95 C 90,95 110,85 110,65 C 110,45 90,45 75,55" fill="#EBDEF0" stroke="#AF7AC5" stroke-width="2.5" stroke-linejoin="round" />
+  <!-- Cerebellum loops (cute) -->
+  <path d="M 50,65 C 45,65 42,75 52,78 C 50,85 62,88 68,82 C 72,88 85,85 88,78" fill="none" stroke="#AF7AC5" stroke-width="2" />
+  <!-- Electric sparks / stars around -->
+  <path d="M 33,48 L 38,48 L 35,43 L 42,50 L 37,50 L 40,55 Z" fill="#F1C40F" />
+  <path d="M 117,48 L 112,48 L 115,43 L 108,50 L 113,50 L 110,55 Z" fill="#F1C40F" />
+  <path d="M 75,32 L 77,36 L 81,36 L 78,38 L 79,42 L 75,40 L 71,42 L 72,38 L 69,36 L 73,36 Z" fill="#F1C40F" />
+  <!-- Eyes & Mouth -->
+  <!-- Closed squiggly eyes -->
+  <path d="M 55,62 Q 58,65 61,62" fill="none" stroke="#2C3E50" stroke-width="2" stroke-linecap="round" />
+  <path d="M 89,62 Q 92,65 95,62" fill="none" stroke="#2C3E50" stroke-width="2" stroke-linecap="round" />
+  <!-- Round mouth -->
+  <circle cx="75" cy="70" r="3.5" fill="#2C3E50" />
+</svg>

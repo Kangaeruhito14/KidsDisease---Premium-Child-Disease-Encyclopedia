@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 150 150" width="150" height="150">
+  <circle cx="75" cy="75" r="65" fill="#FDEDEC" />
+  <!-- Cute Face -->
+  <circle cx="75" cy="75" r="45" fill="#FCE4D6" stroke="#E59866" stroke-width="2.5" />
+  <!-- Hair (Simple curves) -->
+  <path d="M 38,55 C 45,45 60,40 75,45 C 90,40 105,45 112,55 C 105,52 90,52 75,55 C 60,52 45,52 38,55 Z" fill="#D35400" />
+  <!-- Eyes -->
+  <circle cx="62" cy="75" r="3" fill="#2C3E50" />
+  <circle cx="88" cy="75" r="3" fill="#2C3E50" />
+  <!-- Smile -->
+  <path d="M 71,83 Q 75,87 79,83" fill="none" stroke="#2C3E50" stroke-width="2" stroke-linecap="round" />
+  <!-- Rosy cheeks -->
+  <circle cx="56" cy="80" r="4" fill="#FADBD8" opacity="0.8" />
+  <circle cx="94" cy="80" r="4" fill="#FADBD8" opacity="0.8" />
+  <!-- Rash spots (Cute pink dots) -->
+  <circle cx="48" cy="65" r="2.5" fill="#EC7063" />
+  <circle cx="102" cy="68" r="2" fill="#EC7063" />
+  <circle cx="60" cy="92" r="2" fill="#EC7063" />
+  <circle cx="88" cy="91" r="2.5" fill="#EC7063" />
+  <circle cx="75" cy="58" r="2" fill="#EC7063" />
+  <circle cx="38" cy="76" r="1.8" fill="#EC7063" />
+  <circle cx="110" cy="78" r="2" fill="#EC7063" />
+</svg>

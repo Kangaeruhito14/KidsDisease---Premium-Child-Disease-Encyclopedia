@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 150 150" width="150" height="150">
+  <circle cx="75" cy="75" r="65" fill="#E8F8F5" />
+  <!-- Cute Sleeping Baby -->
+  <circle cx="75" cy="80" r="22" fill="#FAD7A0" stroke="#E67E22" stroke-width="2" />
+  <!-- Closed sleeping eyes -->
+  <path d="M 64,78 Q 67,82 70,78" fill="none" stroke="#2C3E50" stroke-width="1.8" stroke-linecap="round" />
+  <path d="M 80,78 Q 83,82 86,78" fill="none" stroke="#2C3E50" stroke-width="1.8" stroke-linecap="round" />
+  <!-- Smiling mouth -->
+  <path d="M 73,86 Q 75,88 77,86" fill="none" stroke="#2C3E50" stroke-width="1.5" stroke-linecap="round" />
+  <!-- Baby cap -->
+  <path d="M 54,74 C 54,60 96,60 96,74 Z" fill="#FADBD8" stroke="#E67E22" stroke-width="1.8" />
+  <!-- Cozy dome representing incubator / care -->
+  <path d="M 38,98 C 38,55 112,55 112,98 Z" fill="none" stroke="#3498DB" stroke-width="2.5" stroke-dasharray="6 4" stroke-linecap="round" />
+</svg>

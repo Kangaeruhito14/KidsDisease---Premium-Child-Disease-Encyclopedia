@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 150 150" width="150" height="150">
+  <circle cx="75" cy="75" r="65" fill="#FEF9E7" />
+  <!-- Tummy shape -->
+  <path d="M 50,60 C 40,75 40,95 60,105 C 70,110 80,110 90,105 C 110,95 110,75 100,60 C 90,45 60,45 50,60 Z" fill="#FAD7A0" stroke="#E67E22" stroke-width="2.5" />
+  <!-- Belly Button -->
+  <circle cx="75" cy="88" r="2.5" fill="#D35400" />
+  <!-- Band-aid on stomach -->
+  <rect x="58" y="65" width="22" height="8" rx="2" fill="#F5CBA7" stroke="#DC7633" stroke-width="1.5" transform="rotate(-15, 69, 69)" />
+  <circle cx="69" cy="69" r="1" fill="#DC7633" />
+  <!-- Cute face -->
+  <!-- Sad eyes -->
+  <path d="M 62,75 Q 65,77 68,75" fill="none" stroke="#2C3E50" stroke-width="2" stroke-linecap="round" />
+  <path d="M 82,75 Q 85,77 88,75" fill="none" stroke="#2C3E50" stroke-width="2" stroke-linecap="round" />
+  <!-- Mild wavy frown mouth -->
+  <path d="M 72,82 Q 75,80 78,82" fill="none" stroke="#2C3E50" stroke-width="2" stroke-linecap="round" />
+</svg>

@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 150 150" width="150" height="150">
+  <circle cx="75" cy="75" r="65" fill="#FEF5E7" />
+  <!-- Thermometer Body -->
+  <rect x="70" y="35" width="10" height="55" rx="5" fill="#FFFFFF" stroke="#BDC3C7" stroke-width="2.5" />
+  <circle cx="75" cy="95" r="14" fill="#FFFFFF" stroke="#BDC3C7" stroke-width="2.5" />
+  <!-- Mercury (Red fluid) -->
+  <circle cx="75" cy="95" r="9" fill="#E74C3C" />
+  <rect x="73" y="60" width="4" height="30" fill="#E74C3C" />
+  <!-- Ice Pack on top -->
+  <path d="M 65,37 Q 75,25 85,37 Z" fill="#AED6F1" stroke="#5DADE2" stroke-width="2" />
+  <rect x="71" y="27" width="8" height="4" fill="#F4D03F" rx="1" />
+  <!-- Face on the bulb -->
+  <!-- Eyes -->
+  <circle cx="71" cy="93" r="1" fill="#34495E" />
+  <circle cx="79" cy="93" r="1" fill="#34495E" />
+  <!-- Smile -->
+  <path d="M 74,96 Q 75,98 76,96" fill="none" stroke="#34495E" stroke-width="1" stroke-linecap="round" />
+  <!-- Blush -->
+  <circle cx="68" cy="95" r="1.5" fill="#FADBD8" />
+  <circle cx="82" cy="95" r="1.5" fill="#FADBD8" />
+  <!-- Sparkles -->
+  <path d="M 100,50 L 102,54 L 106,54 L 103,56 L 104,60 L 100,58 L 96,60 L 97,56 L 94,54 L 98,54 Z" fill="#F1C40F" />
+</svg>

@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 150 150" width="150" height="150">
+  <circle cx="75" cy="75" r="65" fill="#EBF5FB" />
+  <!-- DNA double helix strands (simplified, cute) -->
+  <path d="M 45,55 Q 60,85 75,55 T 105,55" fill="none" stroke="#5DADE2" stroke-width="4.5" stroke-linecap="round" />
+  <path d="M 45,95 Q 60,65 75,95 T 105,95" fill="none" stroke="#EC7063" stroke-width="4.5" stroke-linecap="round" />
+  <!-- Rungs / Bridges -->
+  <line x1="56" y1="67" x2="56" y2="83" stroke="#BDC3C7" stroke-width="2.5" />
+  <line x1="75" y1="58" x2="75" y2="92" stroke="#BDC3C7" stroke-width="2.5" />
+  <line x1="94" y1="67" x2="94" y2="83" stroke="#BDC3C7" stroke-width="2.5" />
+  <!-- Cute Heart in the center -->
+  <path d="M 75,70 C 74,68 72,68 71,70 C 70,71 70,73 72,75 L 75,78 L 78,75 C 80,73 80,71 79,70 C 78,68 76,68 75,70 Z" fill="#F4D03F" />
+  <!-- Face on the blue node -->
+  <circle cx="44" cy="54" r="1.5" fill="#2C3E50" />
+  <circle cx="106" cy="94" r="1.5" fill="#2C3E50" />
+</svg>

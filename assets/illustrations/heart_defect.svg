@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 150 150" width="150" height="150">
+  <circle cx="75" cy="75" r="65" fill="#FDEDEC" />
+  <!-- Heart shape -->
+  <path d="M 75,115 C 70,110 30,75 30,55 C 30,38 45,28 60,35 C 68,39 72,48 75,52 C 78,48 82,39 90,35 C 105,28 120,38 120,55 C 120,75 80,110 75,115 Z" fill="#EC7063" stroke="#C0392B" stroke-width="3" />
+  <!-- A small dashed line representing a patch / shunt repair (VSD) -->
+  <path d="M 68,65 L 82,65" fill="none" stroke="#FFFFFF" stroke-width="2.5" stroke-dasharray="3 2" stroke-linecap="round" />
+  <!-- Cute face -->
+  <circle cx="62" cy="55" r="2.5" fill="#FFFFFF" />
+  <circle cx="88" cy="55" r="2.5" fill="#FFFFFF" />
+  <path d="M 72,60 Q 75,63 78,60" fill="none" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" />
+</svg>
