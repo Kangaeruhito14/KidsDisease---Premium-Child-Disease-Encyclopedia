@@ -1,7 +1,18 @@
 /**
- * PediaCare Security Hardening & Protection Module
- * Exposes core anti-XSS, anti-scraping, clickjacking protection,
- * and encrypted-database loader utilities.
+ * PediaCare Security Module
+ *
+ * Real protections kept: HTML entity encoder (for any future raw-HTML sink),
+ * database payload decoder, and frame-busting against clickjacking.
+ *
+ * Deliberately removed (they harmed users without adding security):
+ *  - Copy/right-click blocking: parents must be able to copy medical advice
+ *    to share with doctors and caregivers; it also broke screen readers.
+ *  - Interaction-rate "scraper" lockout: it wiped the page after 6 events in
+ *    1.5s, which normal typing in the search box triggered. On a medical
+ *    reference site, locking out a worried parent is the worst failure mode.
+ *    The database is plain base64 in a public file, so the lockout protected
+ *    nothing — actual XSS safety comes from Vue's escaped interpolation and
+ *    the Content-Security-Policy header in index.html.
  */
 
 (function (window) {
@@ -9,7 +20,10 @@
 
     const PediaCareSecurity = {
         /**
-         * Strict HTML entity encoding to prevent Cross-Site Scripting (XSS)
+         * Strict HTML entity encoding. Only needed if a value is ever placed
+         * into a raw-HTML sink (v-html, innerHTML). Vue's {{ }} interpolation
+         * escapes automatically — do NOT pre-encode data rendered that way,
+         * or it will display double-escaped.
          */
         sanitize(input) {
             if (input === null || input === undefined) return '';
@@ -28,138 +42,33 @@
         },
 
         /**
-         * Decodes the Base64 database string back into a JSON object
+         * Decodes the base64 database payload back into a JSON object.
          */
         decryptDatabase(base64Str) {
             try {
-                const decodedStr = atob(base64Str);
-                return JSON.parse(decodedStr);
+                // atob yields a byte string; decode as UTF-8 so non-ASCII
+                // characters (™, é, …) survive the round trip.
+                const bytes = Uint8Array.from(atob(base64Str), c => c.charCodeAt(0));
+                return JSON.parse(new TextDecoder('utf-8').decode(bytes));
             } catch (err) {
-                console.error("Security System: Database decryption failed.", err);
+                console.error("Security System: Database decoding failed.", err);
                 return null;
             }
         },
 
         /**
-         * Frame-busting clickjacking protection
+         * Frame-busting clickjacking protection (backs up the CSP
+         * frame-ancestors directive for very old browsers).
          */
         preventClickjacking() {
             if (window.self !== window.top) {
-                // If loaded inside an iframe, break out immediately
                 window.top.location = window.self.location;
             }
-        },
-
-        /**
-         * Disables copy events and right-clicks on clinical content elements
-         */
-        initUiProtections() {
-            document.addEventListener('contextmenu', function (e) {
-                // Block context menu on sensitive content elements
-                if (e.target.closest('.secure-content') || e.target.closest('#app')) {
-                    e.preventDefault();
-                    PediaCareSecurity.showToast("Notice: Right-click context menus are disabled to protect content integrity.");
-                }
-            });
-
-            document.addEventListener('copy', function (e) {
-                if (e.target.closest('.secure-content') || e.target.closest('#app')) {
-                    e.preventDefault();
-                    PediaCareSecurity.showToast("Notice: Clipboard copy actions are disabled to prevent automated scraping.");
-                }
-            });
-        },
-
-        /**
-         * Tracks user interaction rate to detect and lock out robotic scraping activity
-         */
-        initScraperDetector() {
-            let transitionCount = 0;
-            let lastResetTime = Date.now();
-            const thresholdLimit = 6; // max transitions allowed in 1.5 seconds
-            const timeFrame = 1500;
-
-            const checkRate = function () {
-                const now = Date.now();
-                if (now - lastResetTime > timeFrame) {
-                    transitionCount = 0;
-                    lastResetTime = now;
-                }
-                transitionCount++;
-                if (transitionCount > thresholdLimit) {
-                    PediaCareSecurity.triggerSoftLock();
-                }
-            };
-
-            // Hook onto global clicks and keyups
-            document.addEventListener('click', checkRate, true);
-            document.addEventListener('keyup', checkRate, true);
-        },
-
-        /**
-         * Locks out the interface if bot-like rapid request speed is triggered
-         */
-        triggerSoftLock() {
-            const body = document.querySelector('body');
-            if (body) {
-                body.innerHTML = `
-                    <div style="font-family: sans-serif; display: flex; flex-direction: column; align-items: center; justify-content: center; height: 100vh; background-color: #FFF8F0; color: #7F8C8D; text-align: center; padding: 20px;">
-                        <div style="background-color: #FF7F6E; color: white; width: 80px; height: 80px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 40px; margin-bottom: 20px;">⚠️</div>
-                        <h1 style="color: #2C3E50; margin-bottom: 10px; font-size: 24px;">Security Protection Triggered</h1>
-                        <p style="max-w: 500px; line-height: 1.6; margin-bottom: 20px; font-size: 14px;">Automated scraping pattern or excessive interaction rate was detected. Access has been soft-locked to protect database contents.</p>
-                        <button onclick="window.location.reload()" style="background-color: #2ABFBF; color: white; border: none; padding: 12px 24px; border-radius: 12px; font-weight: bold; cursor: pointer; font-size: 14px; box-shadow: 0 4px 10px rgba(42,191,191,0.2);">Verify & Reload Page</button>
-                    </div>
-                `;
-            }
-        },
-
-        /**
-         * Displays a temporary secure toast notification
-         */
-        showToast(msg) {
-            let toast = document.getElementById('security-toast');
-            if (!toast) {
-                toast = document.createElement('div');
-                toast.id = 'security-toast';
-                toast.style.cssText = `
-                    position: fixed;
-                    bottom: 20px;
-                    left: 50%;
-                    transform: translateX(-50%);
-                    background-color: #2C3E50;
-                    color: #FFFFFF;
-                    font-size: 11px;
-                    font-weight: bold;
-                    padding: 10px 20px;
-                    border-radius: 30px;
-                    box-shadow: 0 10px 30px rgba(0,0,0,0.15);
-                    z-index: 10000;
-                    opacity: 0;
-                    transition: opacity 0.3s ease;
-                    pointer-events: none;
-                    text-align: center;
-                    max-width: 90%;
-                `;
-                document.body.appendChild(toast);
-            }
-            toast.textContent = msg;
-            toast.style.opacity = '1';
-            setTimeout(() => {
-                toast.style.opacity = '0';
-            }, 3000);
         }
     };
 
-    // Apply immediate frame-busting on load
     PediaCareSecurity.preventClickjacking();
 
-    // Hook onto global windows
     window.PediaCareSecurity = PediaCareSecurity;
-
-    // Apply UI protections and scraper filters when DOM content is ready
-    document.addEventListener('DOMContentLoaded', function () {
-        PediaCareSecurity.initUiProtections();
-        PediaCareSecurity.initScraperDetector();
-    });
 
 })(window);
