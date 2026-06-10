@@ -1,0 +1,619 @@
+/* Custom Styling, Transitions, and Animations for PediaCare */
+
+body {
+    background-color: #FFF8F0;
+    scroll-behavior: smooth;
+}
+
+[v-cloak] {
+    display: none !important;
+}
+
+/* Custom Scrollbar configuration */
+.custom-scrollbar::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+    background: #FFF8F0;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+    background-color: #2ABFBF;
+    border-radius: 20px;
+    border: 2px solid #FFF8F0;
+}
+
+/* Micro-interaction lift effect */
+.bounce-hover {
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.bounce-hover:hover {
+    transform: translateY(-4px);
+}
+
+/* Critical emergency breathing alert animation */
+@keyframes emergency-pulse {
+    0%, 100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+    50% {
+        opacity: 0.85;
+        transform: scale(1.02);
+    }
+}
+
+.animate-emergency {
+    animation: emergency-pulse 2.5s infinite ease-in-out;
+}
+
+/* Mobile viewport bottom-bar safe padding */
+.pb-safe {
+    padding-bottom: calc(1rem + env(safe-area-inset-bottom));
+}
+
+/* Smooth transition for dynamic view injection */
+.fade-in {
+    animation: fadeIn 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(6px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Soft watermark display for cards */
+.watermark-bg {
+    mask-image: linear-gradient(to left, rgba(0,0,0,1) 30%, rgba(0,0,0,0) 100%);
+    -webkit-mask-image: linear-gradient(to left, rgba(0,0,0,1) 30%, rgba(0,0,0,0) 100%);
+}
+
+/* Explicit fallback overrides for brand colors to ensure perfect contrast and rendering */
+.bg-brandTeal {
+    background-color: #2ABFBF !important;
+}
+.text-brandTeal {
+    color: #2ABFBF !important;
+}
+.border-brandTeal {
+    border-color: #2ABFBF !important;
+}
+
+.bg-brandCoral {
+    background-color: #FF7F6E !important;
+}
+.text-brandCoral {
+    color: #FF7F6E !important;
+}
+.border-brandCoral {
+    border-color: #FF7F6E !important;
+}
+
+/* Google Translate Custom Integration Overrides */
+.goog-te-banner-frame.skiptranslate,
+.goog-te-banner-frame,
+#goog-gt-tt,
+.goog-te-balloon-frame {
+    display: none !important;
+}
+body {
+    top: 0 !important;
+}
+.goog-text-highlight {
+    background-color: transparent !important;
+    box-shadow: none !important;
+    box-sizing: border-box !important;
+}
+#google_translate_element {
+    display: none !important;
+}
+
+/* --- CHILD-FRIENDLY SOFT DARK MODE SYSTEM --- */
+.dark-mode {
+    background-color: #232038 !important;
+    color: #F1EDFF !important;
+}
+
+/* Base Body and App Background Override */
+body.dark-mode {
+    background-color: #232038 !important;
+}
+
+/* Footer Dark Theme Override */
+.dark-mode footer {
+    background-color: #181628 !important;
+    border-color: #3A365D !important;
+}
+
+/* Header & Mobile Navbar Container Overrides */
+.dark-mode header,
+.dark-mode nav.md\:hidden {
+    background-color: rgba(44, 41, 72, 0.96) !important;
+    border-color: #3A365D !important;
+    box-shadow: 0 4px 20px -2px rgba(10, 8, 20, 0.5) !important;
+}
+
+/* Breadcrumbs bar background & border */
+.dark-mode .bg-white.border-b.border-orange-100\/50,
+.dark-mode div.bg-white.border-b.border-orange-100\/50 {
+    background-color: #2C2948 !important;
+    border-color: #3A365D !important;
+}
+
+/* Cards & Containers Background Override */
+.dark-mode .bg-white,
+.dark-mode .bg-gradient-to-br.from-white {
+    background-color: #2C2948 !important;
+    background-image: none !important; /* Remove gradient overlay for cleaner rendering */
+    border-color: #3A365D !important;
+}
+
+/* Layered Nested Backgrounds & Inner Containers in Dark Mode */
+.dark-mode .bg-orange-50,
+.dark-mode .bg-orange-50\/80,
+.dark-mode .bg-orange-50\/20,
+.dark-mode .bg-orange-50\/10,
+.dark-mode .bg-orange-50\/15,
+.dark-mode .bg-orange-100\/35,
+.dark-mode .bg-orange-100\/50,
+.dark-mode .bg-red-50\/20,
+.dark-mode .bg-teal-50\/20,
+.dark-mode .bg-teal-100\/60,
+.dark-mode .bg-teal-50,
+.dark-mode .bg-teal-50\/50,
+.dark-mode .bg-white .bg-white,
+.dark-mode .bg-white .bg-orange-50\/15 {
+    background-color: #3A365D !important;
+    background-image: none !important;
+    border-color: #4A4675 !important;
+}
+
+/* Translucent semantic backgrounds override for dark mode to ensure perfect contrast and premium style */
+.dark-mode .bg-teal-50\/30,
+.dark-mode .bg-teal-50\/35 {
+    background-color: rgba(42, 191, 191, 0.15) !important;
+    border-color: rgba(42, 191, 191, 0.35) !important;
+}
+
+.dark-mode .bg-amber-50\/30 {
+    background-color: rgba(255, 127, 110, 0.15) !important;
+    border-color: rgba(255, 127, 110, 0.35) !important;
+}
+
+.dark-mode .bg-red-50\/20,
+.dark-mode .bg-red-50\/30,
+.dark-mode .bg-red-50\/40,
+.dark-mode .bg-red-50\/80,
+.dark-mode .doctor-warning-box,
+.dark-mode .complications-box {
+    background-color: rgba(220, 53, 69, 0.18) !important;
+    border-color: rgba(220, 53, 69, 0.45) !important;
+}
+
+.dark-mode .text-red-950,
+.dark-mode .doctor-warning-box,
+.dark-mode .complications-box {
+    color: #FFB3A8 !important; /* Soft coral red text for high-contrast warnings in dark mode */
+}
+
+.dark-mode span.text-white,
+.dark-mode .text-white {
+    color: #FFFFFF !important; /* Force badge/label text inside dark mode to remain white for perfect contrast */
+}
+
+/* Fallback overrides for dynamic triage status badges to ensure they render perfectly in all themes */
+.bg-badgeMild {
+    background-color: #28A745 !important;
+}
+.bg-badgeModerate {
+    background-color: #FFC107 !important;
+}
+.bg-badgeSevere {
+    background-color: #FD7E14 !important;
+}
+.bg-badgeEmergency {
+    background-color: #DC3545 !important;
+}
+
+/* Hover Overrides for Cards/Buttons */
+.dark-mode .hover\:bg-teal-50\/50:hover,
+.dark-mode .hover\:bg-teal-50\/15:hover,
+.dark-mode .hover\:bg-slate-50:hover,
+.dark-mode .hover\:bg-white:hover {
+    background-color: #4A4675 !important;
+    border-color: #5BD3CB !important;
+}
+
+/* Active navigation buttons and timeline selectors */
+.dark-mode button.bg-teal-50.text-brandTeal {
+    background-color: #3A365D !important;
+    color: #5BD3CB !important;
+}
+
+
+/* Text color overrides */
+.dark-mode h1,
+.dark-mode h2,
+.dark-mode h3,
+.dark-mode h4,
+.dark-mode h5,
+.dark-mode h6,
+.dark-mode strong,
+.dark-mode .text-slate-800,
+.dark-mode .text-slate-900,
+.dark-mode .text-orange-950,
+.dark-mode .text-slate-750 {
+    color: #F1EDFF !important;
+}
+
+.dark-mode p,
+.dark-mode span,
+.dark-mode .text-slate-700,
+.dark-mode .text-slate-650 {
+    color: #D8D2F5 !important;
+}
+
+.dark-mode label,
+.dark-mode .text-slate-600,
+.dark-mode .text-slate-500,
+.dark-mode .text-slate-400 {
+    color: #B1A9DE !important;
+}
+
+/* Form controls (Inputs, Select Dropdowns, Buttons) */
+.dark-mode input,
+.dark-mode select,
+.dark-mode textarea,
+.dark-mode .dark-mode-toggle-btn {
+    background-color: #3A365D !important;
+    border-color: #4A4675 !important;
+    color: #F1EDFF !important;
+}
+
+
+.dark-mode input:focus,
+.dark-mode select:focus,
+.dark-mode textarea:focus {
+    border-color: #2ABFBF !important;
+    box-shadow: 0 0 0 2px rgba(42, 191, 191, 0.2) !important;
+}
+
+/* Google-like Autocomplete Dropdown suggestions list */
+.dark-mode .absolute.left-0.right-0.mt-2.bg-white {
+    background-color: #2C2948 !important;
+    border-color: #3A365D !important;
+    box-shadow: 0 10px 25px -5px rgba(10, 8, 20, 0.6) !important;
+}
+
+.dark-mode .border-b.border-orange-50 {
+    border-color: #3A365D !important;
+}
+
+/* Medical Disclaimer Warning Box styling overrides */
+.dark-mode .bg-orange-50.text-orange-950.border-orange-200\/60,
+.dark-mode .disclaimer-box-inside {
+    background-color: rgba(255, 127, 110, 0.1) !important; /* Soft tint of brandCoral */
+    border-color: rgba(255, 127, 110, 0.25) !important;
+    color: #FFB3A8 !important;
+}
+
+/* Triage radio inputs */
+.dark-mode input[type="radio"] {
+    accent-color: #2ABFBF !important;
+}
+
+/* Triage custom background labels */
+.dark-mode label.bg-orange-50\/10 {
+    background-color: #3A365D !important;
+    border-color: #4A4675 !important;
+}
+
+.dark-mode label.bg-orange-50\/10:hover {
+    border-color: #2ABFBF !important;
+    background-color: #4A4675 !important;
+}
+
+/* Customize custom scrollbars for dark mode */
+.dark-mode .custom-scrollbar::-webkit-scrollbar-track {
+    background: #232038 !important;
+}
+.dark-mode .custom-scrollbar::-webkit-scrollbar-thumb {
+    background-color: #3A365D !important;
+    border-color: #232038 !important;
+}
+
+/* Smooth rotational micro-animation for the sun icon */
+@keyframes spin-slow {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+.animate-spin-slow {
+    animation: spin-slow 8s linear infinite;
+}
+
+/* --- EXPLICIT LOGO STYLING OVERRIDES (Vibrant and visible in all themes) --- */
+.logo-icon-container {
+    background: linear-gradient(135deg, #2ABFBF 0%, #1FA3A3 100%) !important;
+    box-shadow: 0 4px 12px rgba(42, 191, 191, 0.3) !important;
+}
+
+.dark-mode .logo-icon-container {
+    background: linear-gradient(135deg, #3A365D 0%, #2ABFBF 100%) !important;
+    box-shadow: 0 4px 12px rgba(42, 191, 191, 0.2) !important;
+}
+
+.logo-title {
+    color: #1E293B !important;
+}
+
+.dark-mode .logo-title {
+    color: #F1EDFF !important;
+}
+
+/* --- TAG PILLS OVERRIDES --- */
+.search-tag-pill {
+    background-color: #FFF2E6 !important;
+    border-color: #FFE0CC !important;
+    color: #C2410C !important;
+}
+
+.dark-mode .search-tag-pill {
+    background-color: #3A365D !important;
+    border-color: #4A4675 !important;
+    color: #F1EDFF !important;
+}
+
+.disease-tag-pill {
+    background-color: #FFF2E6 !important;
+    border-color: #FFD6C2 !important;
+    color: #E04F3F !important;
+}
+
+.dark-mode .disease-tag-pill {
+    background-color: #3A365D !important;
+    border-color: #4A4675 !important;
+    color: #FFB3A8 !important;
+}
+
+/* --- VACCINE PAGE AGE Milestone SELECTORS --- */
+.vaccine-age-tab-btn.active-tab {
+    background-color: #2ABFBF !important;
+    color: #FFFFFF !important;
+    border-color: #2ABFBF !important;
+}
+
+.vaccine-age-tab-btn.inactive-tab {
+    background-color: #FFFFFF !important;
+    color: #334155 !important;
+    border-color: #E2E8F0 !important;
+}
+
+.vaccine-age-tab-btn.inactive-tab:hover {
+    border-color: #2ABFBF !important;
+}
+
+.dark-mode .vaccine-age-tab-btn.active-tab {
+    background-color: #2ABFBF !important;
+    color: #FFFFFF !important;
+    border-color: #2ABFBF !important;
+}
+
+.dark-mode .vaccine-age-tab-btn.inactive-tab {
+    background-color: #2C2948 !important;
+    color: #B1A9DE !important;
+    border-color: #3A365D !important;
+}
+
+.dark-mode .vaccine-age-tab-btn.inactive-tab:hover {
+    background-color: #3A365D !important;
+    border-color: #5BD3CB !important;
+}
+
+/* --- VACCINE CARDS --- */
+.vaccine-card {
+    background-color: #FFFBF7 !important;
+    border-color: #FFEADA !important;
+}
+
+.vaccine-card:hover {
+    border-color: #2ABFBF !important;
+    background-color: #FFFFFF !important;
+}
+
+.dark-mode .vaccine-card {
+    background-color: #2C2948 !important;
+    border-color: #3A365D !important;
+}
+
+.dark-mode .vaccine-card:hover {
+    background-color: #3A365D !important;
+    border-color: #5BD3CB !important;
+}
+
+/* --- TRIAGE MODERATE YELLOW BADGE TEXT CONTRAST ENHANCEMENT --- */
+.dark-mode .bg-badgeModerate,
+.dark-mode .bg-badgeModerate * {
+    color: #1E293B !important;
+}
+
+/* --- DARK MODE BORDERS & OUTLINES ENHANCEMENT --- */
+.dark-mode .border,
+.dark-mode .border-t,
+.dark-mode .border-b,
+.dark-mode .border-r,
+.dark-mode .border-l,
+.dark-mode .border-orange-100,
+.dark-mode .border-orange-200\/60,
+.dark-mode .border-orange-200\/50,
+.dark-mode .border-orange-100\/50,
+.dark-mode .border-orange-100\/40,
+.dark-mode .border-orange-150 {
+    border-color: #3A365D !important;
+}
+
+/* --- HEADER NAVIGATION BUTTONS OVERRIDES --- */
+.dark-mode header nav button,
+.dark-mode nav.md\:hidden button {
+    color: #B1A9DE !important;
+}
+
+.dark-mode header nav button:hover,
+.dark-mode nav.md\:hidden button:hover {
+    background-color: #3A365D !important;
+    color: #F1EDFF !important;
+}
+
+.dark-mode header nav button.bg-teal-50.text-brandTeal,
+.dark-mode nav.md\:hidden button.text-brandTeal {
+    background-color: #3A365D !important;
+    color: #5BD3CB !important;
+}
+
+/* Custom Outbreak Map Coordinates Grid Background */
+.bg-map-grid {
+    background-color: #EDF4F4 !important; /* Premium light clinical minty/teal background */
+    background-image: 
+        linear-gradient(to right, rgba(42, 191, 191, 0.08) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(42, 191, 191, 0.08) 1px, transparent 1px);
+    background-size: 30px 30px;
+    transition: background-color 0.3s ease, background-image 0.3s ease;
+}
+
+.dark-mode .bg-map-grid {
+    background-color: #1A162B !important; /* Rich deep midnight-purple background matching footer */
+    background-image: 
+        linear-gradient(to right, rgba(91, 211, 203, 0.06) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(91, 211, 203, 0.06) 1px, transparent 1px) !important;
+}
+
+/* World Map SVG Silhouette Styling */
+.world-map-container svg {
+    width: 100% !important;
+    height: 100% !important;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.world-map-container svg path,
+.world-map-container svg g path,
+.world-map-container svg g {
+    fill: #BCE3E2 !important; /* High-contrast soft mint/teal silhouette for light mode */
+    stroke: #FFFFFF !important; /* Crisp white country outlines */
+    stroke-width: 0.75px !important;
+    transition: fill 0.3s ease, stroke 0.3s ease, filter 0.3s ease;
+}
+.dark-mode .world-map-container svg path,
+.dark-mode .world-map-container svg g path,
+.dark-mode .world-map-container svg g {
+    fill: #3A365D !important; /* Highly distinct soft midnight-purple silhouette for dark mode */
+    stroke: #1A162B !important; /* Matches midnight-purple grid background for crisp cutout */
+    stroke-width: 0.75px !important;
+}
+
+/* Hover effects for world map paths */
+.world-map-container svg path:hover,
+.world-map-container svg g:hover path,
+.world-map-container svg g:hover {
+    fill: #EAE3D9 !important; /* Lighter sand accent */
+    stroke: #2ABFBF !important; /* Teal stroke outline */
+    filter: drop-shadow(0 0 4px rgba(42, 191, 191, 0.2));
+    cursor: pointer;
+}
+
+.dark-mode .world-map-container svg path:hover,
+.dark-mode .world-map-container svg g:hover path,
+.dark-mode .world-map-container svg g:hover {
+    fill: #554F84 !important; /* Lighter midnight accent */
+    stroke: #5BD3CB !important; /* Glowing light teal stroke */
+    filter: drop-shadow(0 0 6px rgba(91, 211, 203, 0.3));
+    cursor: pointer;
+}
+
+/* Radar Sweep Scanline Overlay */
+.bg-map-grid {
+    position: relative;
+    overflow: hidden;
+}
+
+.bg-map-grid::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        to bottom,
+        rgba(42, 191, 191, 0) 0%,
+        rgba(42, 191, 191, 0.05) 50%,
+        rgba(42, 191, 191, 0) 100%
+    );
+    pointer-events: none;
+    animation: radar-sweep 8s infinite linear;
+    z-index: 5;
+}
+
+.dark-mode .bg-map-grid::after {
+    background: linear-gradient(
+        to bottom,
+        rgba(91, 211, 203, 0) 0%,
+        rgba(91, 211, 203, 0.04) 50%,
+        rgba(91, 211, 203, 0) 100%
+    );
+}
+
+@keyframes radar-sweep {
+    0% {
+        transform: translateY(-100%);
+    }
+    100% {
+        transform: translateY(100%);
+    }
+}
+
+/* Custom higher z-index for Modals backdrop overlay */
+.z-100 {
+    z-index: 100 !important;
+}
+
+/* Slide Up Micro-interaction animation */
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(12px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+.animate-slide-up {
+    animation: slideUp 0.3s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+/* Custom slow pulse for monitor nodes */
+@keyframes pulse-slow {
+    0%, 100% {
+        opacity: 0.6;
+        transform: scale(1);
+    }
+    50% {
+        opacity: 0.2;
+        transform: scale(0.9);
+    }
+}
+.animate-pulse-slow {
+    animation: pulse-slow 3s infinite ease-in-out;
+}
+
+
+
