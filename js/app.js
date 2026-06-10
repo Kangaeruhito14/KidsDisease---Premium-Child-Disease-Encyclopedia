@@ -2659,10 +2659,20 @@
                 if (dis) selectDisease(dis);
             };
 
+            const findDiseaseByName = (name) => {
+                if (!name) return undefined;
+                const target = name.toLowerCase().trim();
+                return diseases.value.find(d => d.name.toLowerCase().trim() === target);
+            };
+
             const selectDiseaseByName = (name) => {
-                const dis = diseases.value.find(d => d.name.toLowerCase().trim() === name.toLowerCase().trim());
+                const dis = findDiseaseByName(name);
                 if (dis) selectDisease(dis);
             };
+
+            // Differential diagnoses without a database entry render as plain
+            // informational text instead of dead links.
+            const isLinkableDisease = (name) => !!findDiseaseByName(name);
 
             // GLOBAL MULTI-INDEXED DEEP FILTER SEARCH ENGINE (Null-Safe)
             // Query text is only ever compared as a plain string and rendered via
@@ -2936,7 +2946,8 @@
                 selectCategoryById,
                 selectDisease,
                 selectDiseaseById,
-                selectDiseaseByName
+                selectDiseaseByName,
+                isLinkableDisease
             };
         }
     }).mount('#app');

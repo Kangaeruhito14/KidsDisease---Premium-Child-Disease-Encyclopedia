@@ -448,9 +448,9 @@
       "recovery_timeline": "Acute phase lasts 3 to 5 days; total airway clearance and wheeze resolution may take up to 14 to 21 days.",
       "complications": "Severe dehydration, respiratory failure requiring mechanical ventilation, and secondary bacterial pneumonia.",
       "related_diseases": [
-        "Infantile Asthma",
+        "Pediatric Asthma",
         "Gastroesophageal Reflux Disease aspiration",
-        "Cystic Fibrosis exacerbation"
+        "Cystic Fibrosis (CF)"
       ],
       "tags": [
         "rsv",
@@ -486,10 +486,10 @@
       "recovery_timeline": "Acute flares resolve within hours to days with appropriate rescue therapy; long-term control is a continuous daily process.",
       "complications": "Status asthmaticus (refractory severe asthma), barotrauma (pneumothorax), hypoxemic respiratory failure, and school absenteeism.",
       "related_diseases": [
-        "Acute Bronchiolitis",
+        "Acute Viral Bronchiolitis",
         "Foreign Body Aspiration",
         "Gastroesophageal Reflux Disease",
-        "Cystic Fibrosis"
+        "Cystic Fibrosis (CF)"
       ],
       "tags": [
         "asthma",
@@ -527,7 +527,7 @@
       "related_diseases": [
         "Atrial Septal Defect (ASD)",
         "Patent Ductus Arteriosus (PDA)",
-        "Tetralogy of Fallot"
+        "Tetralogy of Fallot (TOF)"
       ],
       "tags": [
         "vsd",
@@ -565,7 +565,7 @@
       "related_diseases": [
         "Transposition of the Great Arteries",
         "Tricuspid Atresia",
-        "Ventricular Septal Defect"
+        "Ventricular Septal Defect (VSD)"
       ],
       "tags": [
         "tetralogy-of-fallot",
@@ -601,10 +601,10 @@
       "recovery_timeline": "Acute hospital phase lasts 3 to 7 days; full convalescent tissue repair takes 6 to 8 weeks.",
       "complications": "Coronary artery aneurysms, myocardial infarction, pericarditis, and sudden cardiac death.",
       "related_diseases": [
-        "Scarlet Fever",
+        "Scarlet Fever (Scarlatina)",
         "Toxic Shock Syndrome",
-        "Juvenile Idiopathic Arthritis",
-        "Measles"
+        "Juvenile Idiopathic Arthritis (JIA)",
+        "Measles (Rubeola)"
       ],
       "tags": [
         "kawasaki",
@@ -641,7 +641,7 @@
       "complications": "Chronic Rheumatic Heart Disease, mitral valve stenosis, aortic valve regurgitation, infective endocarditis, and heart failure.",
       "related_diseases": [
         "Post-Streptococcal Reactive Arthritis",
-        "Juvenile Idiopathic Arthritis",
+        "Juvenile Idiopathic Arthritis (JIA)",
         "Infective Endocarditis",
         "PANDAS"
       ],
@@ -681,7 +681,7 @@
       "related_diseases": [
         "Norovirus Gastroenteritis",
         "Salmonella Enteritis",
-        "Celiac Disease onset"
+        "Celiac Disease (Gluten-Sensitive Enteropathy)"
       ],
       "tags": [
         "rotavirus",
@@ -718,7 +718,7 @@
       "complications": "Appendiceal rupture, localized pelvic abscess, generalized peritonitis, sepsis, and bowel obstruction.",
       "related_diseases": [
         "Mesenteric Lymphadenitis",
-        "Gastroenteritis",
+        "Rotavirus Gastroenteritis",
         "Ovarian Torsion",
         "Meckel's Diverticulitis"
       ],
@@ -756,7 +756,7 @@
       "recovery_timeline": "Clinical improvement is often seen within weeks; full histological normalization of the intestinal villi takes 6 to 12 months.",
       "complications": "Refractory growth failure, osteopenia, iron-deficiency anemia, dermatitis herpetiformis, and an increased long-term risk of intestinal lymphoma if dietary non-compliance persists.",
       "related_diseases": [
-        "Type 1 Diabetes Mellitus",
+        "Type 1 Diabetes Mellitus (Pediatric)",
         "Autoimmune Thyroiditis",
         "Irritable Bowel Syndrome"
       ],
@@ -946,7 +946,7 @@
       "recovery_timeline": "Acute hospital treatment spans 10 to 21 days; neurological rehabilitation and recovery can take months to years.",
       "complications": "Persistent epilepsy, cognitive impairment, motor deficits, speech disorders, and hypothalamic-pituitary dysfunction.",
       "related_diseases": [
-        "Bacterial Meningitis",
+        "Acute Bacterial Meningitis",
         "Autoimmune Encephalitis",
         "Brain Abscess",
         "Reye Syndrome"
@@ -1061,7 +1061,7 @@
       "recovery_timeline": "JIA is a chronic condition; flares and remissions occur over years, requiring continuous long-term management.",
       "complications": "Joint destruction, growth restrictions, chronic anterior uveitis (which can cause blindness if untreated), and macrophage activation syndrome (a life-threatening systemic JIA complication).",
       "related_diseases": [
-        "Rheumatic Fever",
+        "Acute Rheumatic Fever (ARF)",
         "Systemic Lupus Erythematosus",
         "Septic Arthritis",
         "Lyme Disease"
@@ -1369,7 +1369,7 @@
       "recovery_timeline": "Spontaneous resolution typically occurs within 2 to 8 weeks; chronic ITP persists beyond 12 months in a minority of cases.",
       "complications": "Severe bleeding (menorrhagia in adolescent girls, gastrointestinal hemorrhage), and intracranial hemorrhage.",
       "related_diseases": [
-        "Acute Lymphoblastic Leukemia",
+        "Acute Lymphoblastic Leukemia (ALL)",
         "Aplastic Anemia",
         "Von Willebrand Disease"
       ],
@@ -1597,7 +1597,7 @@
       "recovery_timeline": "Proteinuria typically resolves within 7 to 14 days of starting steroids; the full initial course of steroid therapy spans 8 to 12 weeks.",
       "complications": "Severe bacterial infections (such as spontaneous bacterial peritonitis from Streptococcus pneumoniae due to immunoglobulin loss), thromboembolism, and hypervolemic shock.",
       "related_diseases": [
-        "Acute Post-Streptococcal Glomerulonephritis",
+        "Acute Post-Streptococcal Glomerulonephritis (APSGN)",
         "Focal Segmental Glomerulosclerosis",
         "Lupus Nephritis"
       ],
@@ -1637,7 +1637,7 @@
       "related_diseases": [
         "IgA Nephropathy",
         "Henoch-Schönlein Purpura Nephritis",
-        "Minimal Change Disease"
+        "Minimal Change Disease (Pediatric Nephrotic Syndrome)"
       ],
       "tags": [
         "glomerulonephritis",
@@ -1673,7 +1673,7 @@
       "recovery_timeline": "Fever and dysuria typically improve within 24 to 48 hours of starting antibiotics; the total treatment course ranges from 7 to 10 days.",
       "complications": "Renal abscess, renal scarring, hypertension, chronic kidney disease, and urosepsis.",
       "related_diseases": [
-        "Vesicoureteral Reflux",
+        "Vesicoureteral Reflux (VUR)",
         "Posterior Urethral Valves",
         "Vulvovaginitis",
         "Cystitis"
@@ -1714,7 +1714,7 @@
       "related_diseases": [
         "Posterior Urethral Valves",
         "Neurogenic Bladder",
-        "Urinary Tract Infection"
+        "Urinary Tract Infection (UTI)"
       ],
       "tags": [
         "vur",
@@ -1750,7 +1750,7 @@
       "recovery_timeline": "Resolution is typically seen within 5 to 7 days of starting appropriate systemic antibiotic therapy.",
       "complications": "Corneal ulceration, corneal perforation, permanent blindness, systemic sepsis, and chlamydial pneumonia.",
       "related_diseases": [
-        "Dacryocystitis",
+        "Pediatric Dacryocystitis",
         "Chemical Conjunctivitis (from silver nitrate)",
         "Adenoviral Conjunctivitis"
       ],
@@ -1904,8 +1904,8 @@
       "complications": "Spontaneous tympanic membrane perforation, mastoiditis (bacterial infection of the mastoid air cells), labyrinthitis, and persistent conductive hearing loss.",
       "related_diseases": [
         "Otitis Media with Effusion (OME)",
-        "Otitis Externa",
-        "Pharyngitis"
+        "Otitis Externa (Swimmer's Ear)",
+        "Acute Tonsillopharyngitis"
       ],
       "tags": [
         "ear-infection",
@@ -1941,8 +1941,8 @@
       "recovery_timeline": "Fluid typically resolves spontaneously within 8 to 12 weeks; ear tubes remain in place for 6 to 18 months before shedding naturally.",
       "complications": "Conductive hearing loss, speech delay, tympanosclerosis, retraction pockets, and cholesteatoma.",
       "related_diseases": [
-        "Acute Otitis Media",
-        "Allergic Rhinitis",
+        "Acute Otitis Media (AOM)",
+        "Allergic Rhinitis (Hay Fever)",
         "Adenoid Hypertrophy"
       ],
       "tags": [
@@ -2018,7 +2018,7 @@
       "complications": "Obstructive sleep apnea, pulmonary hypertension (rare, severe), recurrent otitis media, facial skeletal changes, and chronic sinusitis.",
       "related_diseases": [
         "Tonsillar Hypertrophy",
-        "Allergic Rhinitis",
+        "Allergic Rhinitis (Hay Fever)",
         "Chronic Sinusitis"
       ],
       "tags": [
@@ -2097,7 +2097,7 @@
         "Non-Allergic Rhinitis",
         "Sinusitis",
         "Vasomotor Rhinitis",
-        "Asthma"
+        "Pediatric Asthma"
       ],
       "tags": [
         "hay-fever",
@@ -2172,7 +2172,7 @@
       "complications": "Autoimmune diseases (Celiac, JIA), chronic lung disease from recurrent infections, and anaphylaxis to blood transfusions.",
       "related_diseases": [
         "Common Variable Immunodeficiency",
-        "Celiac Disease",
+        "Celiac Disease (Gluten-Sensitive Enteropathy)",
         "IgG Subclass Deficiency"
       ],
       "tags": [
@@ -2210,8 +2210,8 @@
       "complications": "Otitis media, bronchopneumonia (most common cause of death), acute encephalitis, and Subacute Sclerosing Panencephalitis (SSPE - a fatal degenerative brain disease presenting years later).",
       "related_diseases": [
         "Rubella (German Measles)",
-        "Roseola Infantum",
-        "Scarlet Fever",
+        "Roseola Infantum (Sixth Disease)",
+        "Scarlet Fever (Scarlatina)",
         "Kawasaki Disease"
       ],
       "tags": [
@@ -2249,8 +2249,8 @@
       "complications": "Secondary bacterial skin infections (Staphylococcus aureus or Group A Streptococcus cellulitis), cerebellar ataxia, varicella pneumonia, and Reye syndrome.",
       "related_diseases": [
         "Herpes Simplex Virus infection",
-        "Impetigo",
-        "Hand, Foot, and Mouth Disease"
+        "Impetigo Contagiosa",
+        "Hand, Foot, and Mouth Disease (HFMD)"
       ],
       "tags": [
         "chickenpox",
@@ -2287,7 +2287,7 @@
       "complications": "Pneumonia (most common), hypoxic encephalopathy, seizures, subconjunctival hemorrhages, rib fractures, and death in young infants.",
       "related_diseases": [
         "Croup",
-        "Acute Bronchiolitis",
+        "Acute Viral Bronchiolitis",
         "Mycoplasma Pneumonia",
         "Foreign Body Aspiration"
       ],
@@ -2365,7 +2365,7 @@
       "related_diseases": [
         "Trisomy 18 (Edwards Syndrome)",
         "Trisomy 13 (Patau Syndrome)",
-        "Fragile X Syndrome"
+        "Fragile X Syndrome (FXS)"
       ],
       "tags": [
         "down-syndrome",
@@ -2403,7 +2403,7 @@
       "related_diseases": [
         "Noonan Syndrome",
         "Klinefelter Syndrome (47,XXY)",
-        "Congenital Adrenal Hyperplasia"
+        "Congenital Adrenal Hyperplasia (CAH)"
       ],
       "tags": [
         "turner-syndrome",
@@ -2439,8 +2439,8 @@
       "recovery_timeline": "This is a lifelong genetic multi-system disorder requiring daily complex treatment.",
       "complications": "Chronic respiratory failure, bronchiectasis, pneumothorax, hemoptysis, distal intestinal obstruction syndrome, CF-related diabetes, and liver failure.",
       "related_diseases": [
-        "Celiac Disease",
-        "Asthma",
+        "Celiac Disease (Gluten-Sensitive Enteropathy)",
+        "Pediatric Asthma",
         "Primary Ciliary Dyskinesia",
         "Bronchiectasis"
       ],
@@ -2478,7 +2478,7 @@
       "recovery_timeline": "This is a lifelong genetic microdeletion syndrome requiring ongoing medical and developmental support.",
       "complications": "Supravalvular aortic stenosis, severe hypertension, chronic hypercalcemia, joint contractures, and severe anxiety.",
       "related_diseases": [
-        "Down Syndrome",
+        "Down Syndrome (Trisomy 21)",
         "Angelman Syndrome",
         "Noonan Syndrome"
       ],
@@ -2555,9 +2555,9 @@
       "complications": "Severe anemia, pathological fractures, subperiosteal hematomas, and secondary bacterial infections.",
       "related_diseases": [
         "Osteomyelitis",
-        "Leukemia",
-        "Juvenile Idiopathic Arthritis",
-        "Rickets"
+        "Acute Lymphoblastic Leukemia (ALL)",
+        "Juvenile Idiopathic Arthritis (JIA)",
+        "Nutritional Rickets"
       ],
       "tags": [
         "scurvy",
@@ -2595,7 +2595,7 @@
       "related_diseases": [
         "Marasmus",
         "Nephrotic Syndrome",
-        "Celiac Disease",
+        "Celiac Disease (Gluten-Sensitive Enteropathy)",
         "Protein-Losing Enteropathy"
       ],
       "tags": [
@@ -2635,7 +2635,7 @@
         "Kwashiorkor",
         "Failure to Thrive",
         "Tuberculosis",
-        "Celiac Disease"
+        "Celiac Disease (Gluten-Sensitive Enteropathy)"
       ],
       "tags": [
         "marasmus",
@@ -2672,7 +2672,7 @@
       "complications": "Language impairment, learning difficulties, anxiety, depression, sensory overload, and social challenges.",
       "related_diseases": [
         "ADHD",
-        "Sensory Processing Disorder",
+        "Sensory Processing Disorder (SPD)",
         "Intellectual Disability",
         "Social Communication Disorder"
       ],
@@ -2710,9 +2710,9 @@
       "recovery_timeline": "This is a chronic neurodevelopmental condition; management is ongoing throughout childhood and adolescence.",
       "complications": "Academic failure, oppositional defiant disorder, anxiety, depression, low self-esteem, and increased risk of accidents.",
       "related_diseases": [
-        "Oppositional Defiant Disorder",
+        "Oppositional Defiant Disorder (ODD)",
         "Learning Disabilities (Dyslexia)",
-        "Autism Spectrum Disorder"
+        "Autism Spectrum Disorder (ASD)"
       ],
       "tags": [
         "adhd",
@@ -2749,8 +2749,8 @@
       "complications": "Joint contractures, hip subluxation, scoliosis, chronic pain, malnutrition (from dysphagia), aspiration pneumonia, and dental issues.",
       "related_diseases": [
         "Spinal Muscular Atrophy",
-        "Developmental Coordination Disorder",
-        "Muscular Dystrophy"
+        "Developmental Coordination Disorder (DCD)",
+        "Duchenne Muscular Dystrophy (DMD)"
       ],
       "tags": [
         "cerebral-palsy",
@@ -2786,9 +2786,9 @@
       "recovery_timeline": "This is a lifelong neurodevelopmental configuration; therapy focuses on functional adaptation and skill acquisition.",
       "complications": "Low self-esteem, anxiety, depression, school failure, and obesity due to avoidance of physical activity.",
       "related_diseases": [
-        "Cerebral Palsy",
+        "Cerebral Palsy (CP)",
         "ADHD",
-        "Sensory Processing Disorder",
+        "Sensory Processing Disorder (SPD)",
         "Dysgraphia"
       ],
       "tags": [
@@ -2828,7 +2828,7 @@
         "Acute Myelogenous Leukemia (AML)",
         "Infectious Mononucleosis",
         "Aplastic Anemia",
-        "Juvenile Idiopathic Arthritis"
+        "Juvenile Idiopathic Arthritis (JIA)"
       ],
       "tags": [
         "leukemia",
@@ -3057,7 +3057,7 @@
       "related_diseases": [
         "Neonatal Appendicitis",
         "Spontaneous Intestinal Perforation",
-        "Hirschsprung Disease enterocolitis"
+        "Hirschsprung Disease (Congenital Megacolon)"
       ],
       "tags": [
         "nec",
@@ -3131,8 +3131,8 @@
       "recovery_timeline": "Therapy typically spans 12 to 24 weeks; long-term progress requires ongoing cognitive reinforcement.",
       "complications": "Depression, social isolation, academic failure, and substance abuse in adolescence.",
       "related_diseases": [
-        "Pediatric Major Depressive Disorder",
-        "Sensory Processing Disorder",
+        "Pediatric Major Depressive Disorder (MDD)",
+        "Sensory Processing Disorder (SPD)",
         "Panic Disorder"
       ],
       "tags": [
@@ -3169,7 +3169,7 @@
       "recovery_timeline": "Response to medication takes 4 to 6 weeks; therapy continues for at least 6 to 12 months post-remission.",
       "complications": "Suicide, self-injurious behaviors, academic drop-out, and social functional impairment.",
       "related_diseases": [
-        "Pediatric Generalized Anxiety Disorder",
+        "Pediatric Generalized Anxiety Disorder (GAD)",
         "ADHD",
         "Bipolar Disorder"
       ],
@@ -3207,9 +3207,9 @@
       "recovery_timeline": "OT therapy is tailored individually, typically showing functional progress over 3 to 6 months of weekly sessions.",
       "complications": "Severe behavioral issues, feeding disorders, motor delays, and social isolation.",
       "related_diseases": [
-        "Autism Spectrum Disorder",
+        "Autism Spectrum Disorder (ASD)",
         "ADHD",
-        "Developmental Coordination Disorder"
+        "Developmental Coordination Disorder (DCD)"
       ],
       "tags": [
         "sensory-processing",
@@ -3247,7 +3247,7 @@
       "related_diseases": [
         "ADHD",
         "Conduct Disorder",
-        "Pediatric Generalized Anxiety Disorder"
+        "Pediatric Generalized Anxiety Disorder (GAD)"
       ],
       "tags": [
         "oppositional-defiant",
@@ -3284,7 +3284,7 @@
       "complications": "Morbid obesity, type 2 diabetes, sleep apnea, cor pulmonale, scoliosis, and severe behavioral problems.",
       "related_diseases": [
         "Angelman Syndrome",
-        "Hypothyroidism",
+        "Congenital Hypothyroidism",
         "Beckwith-Wiedemann Syndrome"
       ],
       "tags": [
@@ -3321,9 +3321,9 @@
       "recovery_timeline": "This is a lifelong genetic X-linked condition; support strategies evolve as the child transitions to adulthood.",
       "complications": "Severe intellectual disability, autism spectrum symptoms, mitral valve prolapse, and chronic anxiety.",
       "related_diseases": [
-        "Autism Spectrum Disorder",
+        "Autism Spectrum Disorder (ASD)",
         "ADHD",
-        "Down Syndrome"
+        "Down Syndrome (Trisomy 21)"
       ],
       "tags": [
         "fragile-x",
@@ -3360,8 +3360,8 @@
       "complications": "Seizures, severe scoliosis, prolonged QT interval (sudden cardiac death risk), dysphagia, and aspiration pneumonia.",
       "related_diseases": [
         "Angelman Syndrome",
-        "Autism Spectrum Disorder",
-        "Cerebral Palsy"
+        "Autism Spectrum Disorder (ASD)",
+        "Cerebral Palsy (CP)"
       ],
       "tags": [
         "rett-syndrome",
@@ -3435,7 +3435,7 @@
       "recovery_timeline": "Acute stabilization takes 3 to 7 days in the NICU; full lung recovery can take weeks.",
       "complications": "Chronic lung disease, sensorineural hearing loss, neurological delay, and cardiac dysfunction.",
       "related_diseases": [
-        "Respiratory Distress Syndrome",
+        "Neonatal Respiratory Distress Syndrome (RDS)",
         "Meconium Aspiration Syndrome",
         "Transposition of the Great Arteries"
       ],
@@ -3511,7 +3511,7 @@
       "recovery_timeline": "Resolves fully in 1 to 3 days.",
       "complications": "Aspiration pneumonia (if fed while breathing rapidly) and pneumothorax (rare, if aggressive CPAP is applied).",
       "related_diseases": [
-        "Neonatal Respiratory Distress Syndrome",
+        "Neonatal Respiratory Distress Syndrome (RDS)",
         "Meconium Aspiration Syndrome",
         "Neonatal Pneumonia"
       ],
@@ -3549,7 +3549,7 @@
       "recovery_timeline": "This is a lifelong primary endocrine deficiency; continuous daily hormone replacement is required.",
       "complications": "Adrenal crisis, severe hypoglycemia, electrolyte shock, and developmental growth delays.",
       "related_diseases": [
-        "Congenital Adrenal Hyperplasia",
+        "Congenital Adrenal Hyperplasia (CAH)",
         "Autoimmune Polyglandular Syndrome",
         "Hypopituitarism"
       ],
@@ -3587,7 +3587,7 @@
       "recovery_timeline": "This is a lifelong autosomal recessive metabolic disorder requiring continuous daily hormone management.",
       "complications": "Adrenal crisis, shock, severe electrolyte imbalances, short adult stature (due to advanced bone age), and virilization.",
       "related_diseases": [
-        "Addison's Disease",
+        "Addison's Disease (Adrenal Insufficiency)",
         "Androgen Insensitivity Syndrome",
         "Congenital Hypothyroidism"
       ],
@@ -3625,7 +3625,7 @@
       "recovery_timeline": "This is a lifelong genetic metabolic disorder requiring continuous daily dietary restriction.",
       "complications": "Cerebral edema, seizures, metabolic encephalopathy, cognitive impairment, and coma.",
       "related_diseases": [
-        "Phenylketonuria",
+        "Phenylketonuria (PKU)",
         "Isovaleric Acidemia",
         "Methylmalonic Acidemia"
       ],
@@ -3701,9 +3701,9 @@
       "recovery_timeline": "5 to 7 days total.",
       "complications": "Febrile seizures, encephalitis (extremely rare).",
       "related_diseases": [
-        "Measles",
+        "Measles (Rubeola)",
         "Rubella",
-        "Scarlet Fever",
+        "Scarlet Fever (Scarlatina)",
         "Erythema Infectiosum (Fifth Disease)"
       ],
       "tags": [
@@ -3740,10 +3740,10 @@
       "recovery_timeline": "7 to 21 days.",
       "complications": "Transient aplastic crisis, arthropathy, fetal hydrops (risk to pregnant contacts).",
       "related_diseases": [
-        "Roseola Infantum",
+        "Roseola Infantum (Sixth Disease)",
         "Rubella",
-        "Scarlet Fever",
-        "Measles"
+        "Scarlet Fever (Scarlatina)",
+        "Measles (Rubeola)"
       ],
       "tags": [
         "fifth-disease",
@@ -3778,9 +3778,9 @@
       "recovery_timeline": "1 to 3 days after non-surgical reduction; 5 to 7 days if surgery is required.",
       "complications": "Bowel necrosis, bowel perforation, peritonitis, sepsis, and hypovolemic shock.",
       "related_diseases": [
-        "Appendicitis",
+        "Pediatric Appendicitis",
         "Volvulus",
-        "Gastroenteritis",
+        "Rotavirus Gastroenteritis",
         "Meckel's Diverticulum"
       ],
       "tags": [
@@ -3818,7 +3818,7 @@
       "complications": "Severe dehydration, metabolic alkalosis, aspiration pneumonia, and failure to thrive.",
       "related_diseases": [
         "Gastroesophageal Reflux",
-        "Gastroenteritis",
+        "Rotavirus Gastroenteritis",
         "Duodenal Atresia",
         "Malrotation with Volvulus"
       ],
@@ -3857,9 +3857,9 @@
       "complications": "Acute rheumatic fever, post-streptococcal glomerulonephritis, peritonsillar abscess, and otitis media.",
       "related_diseases": [
         "Kawasaki Disease",
-        "Measles",
+        "Measles (Rubeola)",
         "Toxic Shock Syndrome",
-        "Acute Rheumatic Fever"
+        "Acute Rheumatic Fever (ARF)"
       ],
       "tags": [
         "scarlet-fever",
@@ -3972,7 +3972,7 @@
       "complications": "Recurrent synovitis (occurs in ~5-10% of cases); coxae magna (temporary femoral head enlargement, benign).",
       "related_diseases": [
         "Septic Arthritis",
-        "Osteomyelitis of the Femur",
+        "Osteomyelitis",
         "Legg-Calve-Perthes Disease",
         "Slipped Capital Femoral Epiphysis"
       ],
@@ -4163,7 +4163,7 @@
         "Septic Arthritis",
         "Ewing Sarcoma",
         "Cellulitis",
-        "Transient Synovitis"
+        "Transient Synovitis of the Hip"
       ],
       "tags": [
         "bone-infection",
@@ -4237,7 +4237,7 @@
       "related_diseases": [
         "Congenital Cystic Adenomatoid Malformation (CCAM)",
         "Esophageal Atresia",
-        "Persistent Pulmonary Hypertension (PPHN)"
+        "Persistent Pulmonary Hypertension of the Newborn (PPHN)"
       ],
       "tags": [
         "diaphragm-defect",
@@ -4311,7 +4311,7 @@
       "complications": "Secondary bacterial perianal skin infection (impetigo), vulvovaginitis (in young girls due to worm migration).",
       "related_diseases": [
         "Perianal Streptococcal Dermatitis",
-        "Atopic Dermatitis of the groin",
+        "Atopic Dermatitis (Infantile Eczema)",
         "Fungal Intertrigo"
       ],
       "tags": [
@@ -4347,8 +4347,8 @@
       "recovery_timeline": "2 to 3 weeks total recovery and antibiotic duration.",
       "complications": "Subperiosteal abscess, facial nerve palsy, labyrinthitis (inner ear infection), meningitis, epidural abscess, sigmoid sinus thrombosis.",
       "related_diseases": [
-        "Acute Otitis Media",
-        "Otitis Externa",
+        "Acute Otitis Media (AOM)",
+        "Otitis Externa (Swimmer's Ear)",
         "Postauricular Lymphadenitis",
         "Parotitis"
       ],
@@ -4387,7 +4387,7 @@
       "related_diseases": [
         "Rotavirus Gastroenteritis",
         "Pediatric Appendicitis",
-        "Celiac Disease"
+        "Celiac Disease (Gluten-Sensitive Enteropathy)"
       ],
       "tags": [
         "dehydration",
@@ -4427,7 +4427,7 @@
         "Persistent deformity if untreated"
       ],
       "related_diseases": [
-        "Developmental Dysplasia of the Hip",
+        "Developmental Dysplasia of the Hip (DDH)",
         "Congenital Talipes Equinovarus (Clubfoot)",
         "Pediatric Scoliosis"
       ],
@@ -4466,7 +4466,7 @@
       "complications": "Cognitive and developmental delays, behavioral issues, motor dysfunction, and high-output heart failure.",
       "related_diseases": [
         "Sickle Cell Anemia",
-        "Beta-Thalassemia Major",
+        "Beta-Thalassemia Major (Cooley's Anemia)",
         "G6PD Deficiency"
       ],
       "tags": [
@@ -4541,7 +4541,7 @@
       "recovery_timeline": "7 to 10 days for complete resolution.",
       "complications": "Malignant otitis externa (rare in children), spreading cellulitis, and temporary hearing loss due to canal occlusion.",
       "related_diseases": [
-        "Acute Otitis Media",
+        "Acute Otitis Media (AOM)",
         "Otitis Media with Effusion (OME)",
         "Mastoiditis"
       ],
@@ -4579,7 +4579,7 @@
       "recovery_timeline": "7 to 14 days.",
       "complications": "Epidemic keratoconjunctivitis (corneal infiltrates), secondary bacterial infection, and localized transmission.",
       "related_diseases": [
-        "Ophthalmia Neonatorum",
+        "Ophthalmia Neonatorum (Neonatal Conjunctivitis)",
         "Pediatric Dacryocystitis",
         "Retinopathy of Prematurity (ROP)"
       ],
@@ -4657,7 +4657,7 @@
       "complications": "Failure to thrive, severe anemia, anaphylaxis, and increased risk of other food allergies.",
       "related_diseases": [
         "Anaphylaxis (Pediatric)",
-        "Atopic Dermatitis",
+        "Atopic Dermatitis (Infantile Eczema)",
         "Rotavirus Gastroenteritis"
       ],
       "tags": [
