@@ -1,0 +1,76 @@
+---
+import Base from '../layouts/Base.astro';
+import DiseaseCard from '../components/DiseaseCard.astro';
+import { getDisease } from '../lib/db';
+
+// Replaces Astro's default error page with a branded, useful one.
+const popular = ['asthma', 'croup', 'fever', 'dehydration', 'otitis_media', 'measles']
+    .map(id => getDisease(id))
+    .filter((d): d is NonNullable<typeof d> => Boolean(d))
+    .slice(0, 3);
+---
+
+<Base
+    title="Page Not Found (404) | PediaCare"
+    description="That page doesn't exist. Search the child disease index or jump to a popular profile."
+>
+    <div class="max-w-4xl mx-auto px-4 md:px-8 py-16 text-center space-y-8">
+        <div class="space-y-4">
+            <p class="text-7xl md:text-8xl font-black text-brand-teal/20 dark:text-brand-teal-soft/20 select-none" aria-hidden="true">404</p>
+            <h1 class="text-2xl md:text-3xl font-black text-slate-800 dark:text-[#F1EDFF] tracking-tight">
+                This page isn't in our records
+            </h1>
+            <p class="text-sm text-slate-600 dark:text-[#B1A9DE] font-bold max-w-md mx-auto">
+                The address may be mistyped, or the page may have moved. Try a search — the
+                index covers every condition we document.
+            </p>
+        </div>
+
+        <form action="/search/" method="get" role="search" class="max-w-md mx-auto relative">
+            <label for="nf-search" class="sr-only">Search childhood diseases</label>
+            <input
+                id="nf-search"
+                name="q"
+                type="search"
+                placeholder="Search conditions, symptoms…"
+                class="w-full rounded-2xl border border-orange-200/70 dark:border-night-line bg-white dark:bg-night-card px-5 py-3.5 pr-24 text-sm font-bold text-slate-800 dark:text-[#F1EDFF] placeholder:text-slate-400 focus:border-brand-teal focus:outline-none shadow-premium"
+            />
+            <button
+                type="submit"
+                class="absolute right-2 top-1/2 -translate-y-1/2 bg-brand-teal hover:bg-brand-teal-soft text-white text-xs font-black px-4 py-2 rounded-xl transition-colors cursor-pointer"
+            >
+                Search
+            </button>
+        </form>
+
+        <nav aria-label="Helpful destinations" class="flex flex-wrap justify-center gap-2">
+            <a href="/" class="text-xs font-black text-slate-700 dark:text-[#D8D2F5] bg-white dark:bg-night-card border border-orange-100 dark:border-night-line rounded-xl px-4 py-2.5 hover:border-brand-teal/50 hover:text-brand-teal transition-colors">
+                <i class="fa-solid fa-house mr-1.5" aria-hidden="true"></i>Home
+            </a>
+            <a href="/diseases/" class="text-xs font-black text-slate-700 dark:text-[#D8D2F5] bg-white dark:bg-night-card border border-orange-100 dark:border-night-line rounded-xl px-4 py-2.5 hover:border-brand-teal/50 hover:text-brand-teal transition-colors">
+                <i class="fa-solid fa-book-medical mr-1.5" aria-hidden="true"></i>Diseases A–Z
+            </a>
+            <a href="/triage/" class="text-xs font-black text-slate-700 dark:text-[#D8D2F5] bg-white dark:bg-night-card border border-orange-100 dark:border-night-line rounded-xl px-4 py-2.5 hover:border-brand-teal/50 hover:text-brand-teal transition-colors">
+                <i class="fa-solid fa-heart-circle-exclamation mr-1.5" aria-hidden="true"></i>Triage Checker
+            </a>
+            <a href="/faq/" class="text-xs font-black text-slate-700 dark:text-[#D8D2F5] bg-white dark:bg-night-card border border-orange-100 dark:border-night-line rounded-xl px-4 py-2.5 hover:border-brand-teal/50 hover:text-brand-teal transition-colors">
+                <i class="fa-solid fa-circle-question mr-1.5" aria-hidden="true"></i>Parents' FAQ
+            </a>
+        </nav>
+
+        {
+            popular.length > 0 && (
+                <section class="space-y-4 text-left" aria-labelledby="popular-heading">
+                    <h2 id="popular-heading" class="text-xs font-black uppercase tracking-wider text-slate-500 dark:text-[#8B84B8] text-center">
+                        Most consulted profiles
+                    </h2>
+                    <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                        {popular.map(d => (
+                            <DiseaseCard disease={d} />
+                        ))}
+                    </div>
+                </section>
+            )
+        }
+    </div>
+</Base>
