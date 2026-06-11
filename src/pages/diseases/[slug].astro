@@ -1,0 +1,319 @@
+---
+import Base from '../../layouts/Base.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import UrgencyBadge from '../../components/UrgencyBadge.astro';
+import DiseaseCard from '../../components/DiseaseCard.astro';
+import Disclaimer from '../../components/Disclaimer.astro';
+import {
+    diseases,
+    diseaseSlug,
+    diseaseUrl,
+    findDiseaseByName,
+    getCategory,
+    getDiseasesByCategory,
+    getSystem,
+    illustrationUrl,
+    metaDescription,
+    overviewOf,
+    systemUrl
+} from '../../lib/db';
+
+export function getStaticPaths() {
+    return diseases.map(d => ({
+        params: { slug: diseaseSlug(d.id) },
+        props: { disease: d }
+    }));
+}
+
+const { disease: d } = Astro.props;
+
+const system = getSystem(d.body_system);
+const category = getCategory(d.category);
+const sameCategory = getDiseasesByCategory(d.category)
+    .filter(x => x.id !== d.id)
+    .slice(0, 3);
+
+const elements = d.medicinal_elements
+    .split(/;\s*/)
+    .map(s => s.trim())
+    .filter(Boolean);
+
+const title = `${d.name} in Children: Symptoms, Treatment & When to Worry`;
+
+// Structured data limited to facts visibly present on this page.
+const jsonLd = [
+    {
+        '@context': 'https://schema.org',
+        '@type': 'MedicalWebPage',
+        about: {
+            '@type': 'MedicalCondition',
+            name: d.name,
+            description: overviewOf(d),
+            signOrSymptom: [d.symptoms_early, d.symptoms_progressive, d.symptoms_severe].map(s => ({
+                '@type': 'MedicalSignOrSymptom',
+                name: s
+            })),
+            typicalTest: d.diagnosis_methods,
+            possibleTreatment: { '@type': 'MedicalTherapy', name: d.treatment_plan },
+            riskFactor: { '@type': 'MedicalRiskFactor', name: `Typical age group: ${d.affected_age_group}` },
+            ...(system ? { associatedAnatomy: { '@type': 'AnatomicalSystem', name: system.name } } : {})
+        },
+        audience: { '@type': 'Audience', audienceType: 'Parents and caregivers' },
+        lastReviewed: '2026-06-11'
+    }
+];
+
+const sections = [
+    { id: 'overview', label: 'Summary & Pathophysiology', icon: 'fa-file-medical' },
+    { id: 'symptoms', label: 'Symptom Continuum', icon: 'fa-bacteria' },
+    { id: 'diagnosis', label: 'Clinical Verification', icon: 'fa-microscope' },
+    { id: 'treatment', label: 'Care & Elements Plan', icon: 'fa-kit-medical' },
+    { id: 'warnings', label: 'Doctor Critical Lines', icon: 'fa-user-doctor' },
+    { id: 'prevention', label: 'Vaccine & Prevention', icon: 'fa-shield-virus' },
+    { id: 'prognosis', label: 'Timelines & Outlook', icon: 'fa-chart-line' },
+    { id: 'related', label: 'Diagnostic Links', icon: 'fa-diagram-project' }
+];
+---
+
+<Base {title} description={metaDescription(d)} ogType="article" image={illustrationUrl(d.imagePath)} {jsonLd}>
+    <Breadcrumbs
+        items={[
+            { name: 'Home', href: '/' },
+            ...(system ? [{ name: system.name, href: systemUrl(system) }] : []),
+            { name: d.name }
+        ]}
+    />
+
+    <article class="max-w-5xl mx-auto px-4 md:px-8 py-8 space-y-6">
+        <!-- Profile header -->
+        <header class="bg-white dark:bg-night-card rounded-3xl border border-orange-100 dark:border-night-line shadow-premium p-6 md:p-8 flex flex-col md:flex-row gap-6 items-start fade-in-up">
+            <img
+                src={illustrationUrl(d.imagePath)}
+                alt={`Illustration representing ${d.name}`}
+                width="112"
+                height="112"
+                class="w-24 h-24 md:w-28 md:h-28 rounded-3xl bg-orange-50 dark:bg-night-line p-3 object-contain animate-float"
+            />
+            <div class="space-y-3 flex-1">
+                <div class="flex flex-wrap items-center gap-2">
+                    <UrgencyBadge level={d.urgency_level} size="md" />
+                    {category && (
+                        <span class="text-[10px] font-black uppercase tracking-wider text-slate-500 dark:text-[#8B84B8] bg-orange-50 dark:bg-night-line px-2.5 py-1 rounded-full border border-orange-100 dark:border-night-raised">
+                            {category.name}
+                        </span>
+                    )}
+                </div>
+                <h1 class="text-2xl md:text-4xl font-black text-slate-800 dark:text-[#F1EDFF] tracking-tight leading-tight">
+                    {d.name}
+                </h1>
+                <p class="text-sm text-slate-600 dark:text-[#B1A9DE] font-medium leading-relaxed">{d.classification}</p>
+                <p class="text-xs font-black uppercase tracking-wider text-brand-coral flex items-center gap-1.5">
+                    <i class="fa-solid fa-child" aria-hidden="true"></i> Primary risk age: {d.affected_age_group}
+                </p>
+            </div>
+        </header>
+
+        <!-- Section quick-nav -->
+        <nav aria-label="Profile sections" class="flex gap-2 overflow-x-auto pb-1 custom-scrollbar">
+            {
+                sections.map((s, i) => (
+                    <a
+                        href={`#${s.id}`}
+                        class="shrink-0 text-[10px] font-black uppercase tracking-wide text-slate-600 dark:text-[#B1A9DE] bg-white dark:bg-night-card border border-orange-100 dark:border-night-line rounded-xl px-3 py-2 hover:border-brand-teal/50 hover:text-brand-teal transition-colors flex items-center gap-1.5"
+                    >
+                        <i class={`fa-solid ${s.icon} text-brand-teal`} aria-hidden="true" /> {i + 1}. {s.label}
+                    </a>
+                ))
+            }
+        </nav>
+
+        <!-- 1. Summary & Pathophysiology -->
+        <section id="overview" class="bg-white dark:bg-night-card rounded-3xl p-6 md:p-8 border border-orange-100 dark:border-night-line shadow-premium space-y-5 scroll-mt-24">
+            <h2 class="text-base md:text-lg font-black text-slate-800 dark:text-[#F1EDFF] flex items-center gap-2 border-b border-orange-100/50 dark:border-night-line pb-3">
+                <i class="fa-solid fa-file-medical text-brand-teal" aria-hidden="true"></i> 1. Summary & Pathophysiology
+            </h2>
+            <p class="text-sm text-slate-700 dark:text-[#D8D2F5] leading-relaxed font-medium">{overviewOf(d)}</p>
+            <div class="grid md:grid-cols-2 gap-4">
+                <div class="rounded-2xl bg-teal-50/40 dark:bg-brand-teal/10 border border-teal-100/60 dark:border-brand-teal/25 p-5 space-y-2">
+                    <h3 class="text-xs font-black uppercase tracking-wider text-slate-600 dark:text-brand-teal-soft">Pathophysiology (Development Path)</h3>
+                    <p class="text-xs text-slate-700 dark:text-[#D8D2F5] leading-relaxed font-medium">{d.pathophysiology}</p>
+                </div>
+                <div class="rounded-2xl bg-orange-50/60 dark:bg-night-line p-5 border border-orange-100/60 dark:border-night-raised space-y-2">
+                    <h3 class="text-xs font-black uppercase tracking-wider text-slate-600 dark:text-[#B1A9DE]">Primary Causes & Etiology</h3>
+                    <p class="text-xs text-slate-700 dark:text-[#D8D2F5] leading-relaxed font-medium">{d.causes}</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 2. Symptom Continuum -->
+        <section id="symptoms" class="bg-white dark:bg-night-card rounded-3xl p-6 md:p-8 border border-orange-100 dark:border-night-line shadow-premium space-y-4 scroll-mt-24">
+            <h2 class="text-base md:text-lg font-black text-slate-800 dark:text-[#F1EDFF] flex items-center gap-2 border-b border-orange-100/50 dark:border-night-line pb-3">
+                <i class="fa-solid fa-bacteria text-brand-coral" aria-hidden="true"></i> 2. Symptom Continuum
+            </h2>
+            <ol class="space-y-3">
+                <li class="rounded-2xl border border-teal-100/70 dark:border-brand-teal/25 bg-teal-50/40 dark:bg-brand-teal/10 p-5 space-y-2">
+                    <span class="inline-block text-[9px] font-black uppercase tracking-widest text-white bg-brand-teal px-2.5 py-1 rounded-full">Early Onset Signs</span>
+                    <p class="text-xs md:text-sm text-slate-700 dark:text-[#D8D2F5] leading-relaxed font-medium">{d.symptoms_early}</p>
+                </li>
+                <li class="rounded-2xl border border-amber-200/60 dark:border-amber-400/25 bg-amber-50/50 dark:bg-amber-400/10 p-5 space-y-2">
+                    <span class="inline-block text-[9px] font-black uppercase tracking-widest text-white bg-badge-moderate px-2.5 py-1 rounded-full">Progressive Phase</span>
+                    <p class="text-xs md:text-sm text-slate-700 dark:text-[#D8D2F5] leading-relaxed font-medium">{d.symptoms_progressive}</p>
+                </li>
+                <li class="rounded-2xl border border-red-200/60 dark:border-red-400/25 bg-red-50/50 dark:bg-red-400/10 p-5 space-y-2">
+                    <span class="inline-block text-[9px] font-black uppercase tracking-widest text-white bg-badge-emergency px-2.5 py-1 rounded-full">Severe Indicators</span>
+                    <p class="text-xs md:text-sm text-slate-700 dark:text-[#D8D2F5] leading-relaxed font-medium">{d.symptoms_severe}</p>
+                </li>
+            </ol>
+        </section>
+
+        <!-- 3. Clinical Verification -->
+        <section id="diagnosis" class="bg-white dark:bg-night-card rounded-3xl p-6 md:p-8 border border-orange-100 dark:border-night-line shadow-premium space-y-4 scroll-mt-24">
+            <h2 class="text-base md:text-lg font-black text-slate-800 dark:text-[#F1EDFF] flex items-center gap-2 border-b border-orange-100/50 dark:border-night-line pb-3">
+                <i class="fa-solid fa-microscope text-indigo-400" aria-hidden="true"></i> 3. Clinical Verification
+            </h2>
+            <p class="text-xs md:text-sm text-slate-700 dark:text-[#D8D2F5] leading-relaxed font-medium">{d.diagnosis_methods}</p>
+        </section>
+
+        <!-- 4. Care & Elements Plan -->
+        <section id="treatment" class="bg-white dark:bg-night-card rounded-3xl p-6 md:p-8 border border-orange-100 dark:border-night-line shadow-premium space-y-5 scroll-mt-24">
+            <h2 class="text-base md:text-lg font-black text-slate-800 dark:text-[#F1EDFF] flex items-center gap-2 border-b border-orange-100/50 dark:border-night-line pb-3">
+                <i class="fa-solid fa-kit-medical text-brand-teal" aria-hidden="true"></i> 4. Care & Elements Plan
+            </h2>
+            <div class="space-y-2">
+                <h3 class="text-xs font-black uppercase tracking-wider text-slate-600 dark:text-[#B1A9DE]">Primary Care Treatment Plan</h3>
+                <p class="text-xs md:text-sm text-slate-700 dark:text-[#D8D2F5] leading-relaxed font-medium">{d.treatment_plan}</p>
+            </div>
+            <div class="space-y-2">
+                <h3 class="text-xs font-black uppercase tracking-wider text-slate-600 dark:text-[#B1A9DE]">Home Support Elements</h3>
+                <p class="text-xs md:text-sm text-slate-700 dark:text-[#D8D2F5] leading-relaxed font-medium">{d.home_care}</p>
+            </div>
+            <div class="rounded-2xl bg-teal-50/40 dark:bg-brand-teal/10 border border-teal-100/70 dark:border-brand-teal/25 p-5 space-y-3">
+                <h3 class="text-xs font-black uppercase tracking-wider text-slate-600 dark:text-brand-teal-soft">Generic Active Ingredients (No Brands)</h3>
+                <ul class="space-y-2 list-none">
+                    {
+                        elements.map(el => (
+                            <li class="text-xs text-slate-700 dark:text-[#D8D2F5] leading-relaxed font-medium flex gap-2">
+                                <i class="fa-solid fa-flask text-brand-teal mt-0.5 shrink-0" aria-hidden="true" />
+                                <span>{el}</span>
+                            </li>
+                        ))
+                    }
+                </ul>
+                <p class="text-[10px] font-black text-orange-700 dark:text-[#FFB3A8] uppercase tracking-wide">
+                    <i class="fa-solid fa-triangle-exclamation mr-1" aria-hidden="true"></i>
+                    Lists active elements only. Never administer self-designed therapies.
+                </p>
+            </div>
+        </section>
+
+        <!-- 5. Doctor Critical Lines -->
+        <section id="warnings" class="rounded-3xl p-6 md:p-8 border border-red-200/70 dark:border-red-400/30 bg-red-50/60 dark:bg-red-500/10 shadow-premium space-y-3 scroll-mt-24">
+            <h2 class="text-base md:text-lg font-black text-red-900 dark:text-[#FFB3A8] flex items-center gap-2 border-b border-red-200/50 dark:border-red-400/20 pb-3">
+                <i class="fa-solid fa-user-doctor" aria-hidden="true"></i> 5. Doctor Critical Lines
+            </h2>
+            <h3 class="text-xs font-black uppercase tracking-wider text-red-800 dark:text-[#FFB3A8]">Critical Thresholds: When to See a Doctor</h3>
+            <p class="text-xs md:text-sm text-red-950 dark:text-[#FFD9D2] leading-relaxed font-bold">{d.when_to_see_doctor}</p>
+        </section>
+
+        <!-- 6. Vaccine & Prevention -->
+        <section id="prevention" class="bg-white dark:bg-night-card rounded-3xl p-6 md:p-8 border border-orange-100 dark:border-night-line shadow-premium space-y-5 scroll-mt-24">
+            <h2 class="text-base md:text-lg font-black text-slate-800 dark:text-[#F1EDFF] flex items-center gap-2 border-b border-orange-100/50 dark:border-night-line pb-3">
+                <i class="fa-solid fa-shield-virus text-emerald-500" aria-hidden="true"></i> 6. Vaccine & Prevention
+            </h2>
+            <div class="space-y-2">
+                <h3 class="text-xs font-black uppercase tracking-wider text-slate-600 dark:text-[#B1A9DE]">Routine Prophylaxis (Prevention)</h3>
+                <p class="text-xs md:text-sm text-slate-700 dark:text-[#D8D2F5] leading-relaxed font-medium">{d.prevention}</p>
+            </div>
+            <div class="rounded-2xl bg-emerald-50/60 dark:bg-emerald-400/10 border border-emerald-100/70 dark:border-emerald-400/25 p-5 space-y-2">
+                <h3 class="text-xs font-black uppercase tracking-wider text-slate-600 dark:text-emerald-300">Immunization Context</h3>
+                <p class="text-xs md:text-sm text-slate-700 dark:text-[#D8D2F5] leading-relaxed font-medium">{d.vaccination_info}</p>
+            </div>
+        </section>
+
+        <!-- 7. Timelines & Outlook -->
+        <section id="prognosis" class="bg-white dark:bg-night-card rounded-3xl p-6 md:p-8 border border-orange-100 dark:border-night-line shadow-premium space-y-5 scroll-mt-24">
+            <h2 class="text-base md:text-lg font-black text-slate-800 dark:text-[#F1EDFF] flex items-center gap-2 border-b border-orange-100/50 dark:border-night-line pb-3">
+                <i class="fa-solid fa-chart-line text-sky-500" aria-hidden="true"></i> 7. Timelines & Outlook
+            </h2>
+            <div class="grid md:grid-cols-2 gap-4">
+                <div class="rounded-2xl bg-sky-50/60 dark:bg-sky-400/10 border border-sky-100/70 dark:border-sky-400/25 p-5 space-y-2">
+                    <h3 class="text-xs font-black uppercase tracking-wider text-slate-600 dark:text-sky-300">Active Timeline</h3>
+                    <p class="text-xs text-slate-700 dark:text-[#D8D2F5] leading-relaxed font-medium">{d.recovery_timeline}</p>
+                </div>
+                <div class="rounded-2xl bg-teal-50/40 dark:bg-brand-teal/10 border border-teal-100/70 dark:border-brand-teal/25 p-5 space-y-2">
+                    <h3 class="text-xs font-black uppercase tracking-wider text-slate-600 dark:text-brand-teal-soft">Expected Prognosis</h3>
+                    <p class="text-xs text-slate-700 dark:text-[#D8D2F5] leading-relaxed font-medium">{d.prognosis}</p>
+                </div>
+            </div>
+            <div class="rounded-2xl border border-red-200/60 dark:border-red-400/25 bg-red-50/50 dark:bg-red-500/10 p-5 space-y-2">
+                <h3 class="text-xs font-black uppercase tracking-wider text-red-800 dark:text-[#FFB3A8]">Potential Untreated Complications</h3>
+                <p class="text-xs text-red-950 dark:text-[#FFD9D2] leading-relaxed font-bold">{d.complications}</p>
+            </div>
+        </section>
+
+        <!-- 8. Diagnostic Links -->
+        <section id="related" class="bg-white dark:bg-night-card rounded-3xl p-6 md:p-8 border border-orange-100 dark:border-night-line shadow-premium space-y-5 scroll-mt-24">
+            <h2 class="text-base md:text-lg font-black text-slate-800 dark:text-[#F1EDFF] flex items-center gap-2 border-b border-orange-100/50 dark:border-night-line pb-3">
+                <i class="fa-solid fa-diagram-project text-purple-400" aria-hidden="true"></i> 8. Diagnostic Links
+            </h2>
+            <div class="space-y-3">
+                <h3 class="text-xs font-black uppercase text-slate-600 dark:text-[#B1A9DE] tracking-wider">Differentiating Diagnoses</h3>
+                <ul class="flex flex-wrap gap-2 list-none">
+                    {
+                        d.related_diseases.map(rel => {
+                            const target = findDiseaseByName(rel);
+                            return target ? (
+                                <li>
+                                    <a
+                                        href={diseaseUrl(target)}
+                                        class="inline-flex items-center gap-1.5 bg-orange-50/40 hover:bg-orange-50 dark:bg-night-line dark:hover:bg-night-raised border border-orange-100/80 dark:border-night-raised hover:border-brand-teal/40 px-3.5 py-2 rounded-xl text-xs font-black text-slate-700 dark:text-[#D8D2F5] transition-colors"
+                                    >
+                                        <i class="fa-solid fa-link text-[10px] text-brand-teal" aria-hidden="true" /> {rel}
+                                    </a>
+                                </li>
+                            ) : (
+                                <li
+                                    class="inline-flex items-center gap-1.5 bg-slate-50/60 dark:bg-night-line/50 border border-slate-200/60 dark:border-night-line px-3.5 py-2 rounded-xl text-xs font-bold text-slate-500 dark:text-[#8B84B8]"
+                                    title="Differential diagnosis (no profile page yet)"
+                                >
+                                    <i class="fa-solid fa-circle-info text-[10px] text-slate-400" aria-hidden="true" /> {rel}
+                                </li>
+                            );
+                        })
+                    }
+                </ul>
+            </div>
+            {
+                d.tags.length > 0 && (
+                    <div class="space-y-2">
+                        <h3 class="text-xs font-black uppercase text-slate-600 dark:text-[#B1A9DE] tracking-wider">Clinical Tags</h3>
+                        <ul class="flex flex-wrap gap-1.5 list-none">
+                            {d.tags.map(tag => (
+                                <li class="text-[10px] bg-orange-100/40 dark:bg-night-line text-brand-coral dark:text-[#FFB3A8] font-black px-2.5 py-1 rounded-md uppercase tracking-wider border border-orange-200/60 dark:border-night-raised">
+                                    #{tag}
+                                </li>
+                            ))}
+                        </ul>
+                    </div>
+                )
+            }
+        </section>
+
+        {
+            sameCategory.length > 0 && (
+                <section class="space-y-4" aria-labelledby="related-category-heading">
+                    <h2 id="related-category-heading" class="text-sm font-black uppercase tracking-wider text-slate-600 dark:text-[#B1A9DE]">
+                        More in {category?.name ?? 'this category'}
+                    </h2>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+                        {sameCategory.map(x => (
+                            <DiseaseCard disease={x} />
+                        ))}
+                    </div>
+                </section>
+            )
+        }
+
+        <Disclaimer />
+    </article>
+</Base>
