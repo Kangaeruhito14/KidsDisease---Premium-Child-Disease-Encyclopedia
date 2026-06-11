@@ -1,0 +1,170 @@
+---
+import Base from '../layouts/Base.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+import Disclaimer from '../components/Disclaimer.astro';
+
+// CDC/AAP-aligned routine schedule, generic vaccine names only.
+const timeline = [
+    {
+        slug: 'birth',
+        age: 'Birth',
+        title: 'Newborn Defense',
+        vaccines: [
+            { name: 'HepB', prevents: 'Hepatitis B', details: 'Protects the liver from virus infection. Given within 24 hours of birth.' }
+        ]
+    },
+    {
+        slug: '2-months',
+        age: '2 Months',
+        title: 'Infant Shield',
+        vaccines: [
+            { name: 'HepB', prevents: 'Hepatitis B', details: 'Second dose to reinforce liver protection.' },
+            { name: 'DTaP', prevents: 'Diphtheria, Tetanus, Pertussis', details: 'Protects against throat blockages, locking muscles (lockjaw), and severe whooping cough.' },
+            { name: 'Hib', prevents: 'Haemophilus influenzae type b', details: 'Prevents severe brain infection (meningitis) and airway swelling (epiglottitis).' },
+            { name: 'IPV', prevents: 'Polio', details: 'Shields against a virus that causes muscle weakness and paralysis.' },
+            { name: 'PCV', prevents: 'Pneumococcal Disease', details: 'Protects against bacterial lung infections, ear infections, and blood poisoning.' },
+            { name: 'RV', prevents: 'Rotavirus', details: 'Oral vaccine that prevents severe watery diarrhea and dehydration in infants.' }
+        ]
+    },
+    {
+        slug: '4-months',
+        age: '4 Months',
+        title: 'Growth Protection',
+        vaccines: [
+            { name: 'DTaP', prevents: 'Diphtheria, Tetanus, Pertussis', details: 'Second dose for ongoing immunity against whooping cough.' },
+            { name: 'Hib', prevents: 'Haemophilus influenzae type b', details: 'Second dose to protect against meningitis.' },
+            { name: 'IPV', prevents: 'Polio', details: 'Second dose for polio prevention.' },
+            { name: 'PCV', prevents: 'Pneumococcal Disease', details: 'Second dose for pneumococcal protection.' },
+            { name: 'RV', prevents: 'Rotavirus', details: 'Second dose of the oral rotavirus series.' }
+        ]
+    },
+    {
+        slug: '6-months',
+        age: '6 Months',
+        title: 'Strengthening Immunity',
+        vaccines: [
+            { name: 'HepB', prevents: 'Hepatitis B', details: 'Third dose to complete the hepatitis B series.' },
+            { name: 'DTaP', prevents: 'Diphtheria, Tetanus, Pertussis', details: 'Third dose for whooping cough protection.' },
+            { name: 'Hib', prevents: 'Haemophilus influenzae type b', details: 'Third dose (if required by vaccine brand) for meningitis.' },
+            { name: 'IPV', prevents: 'Polio', details: 'Third dose for polio prevention.' },
+            { name: 'PCV', prevents: 'Pneumococcal Disease', details: 'Third dose for pneumococcal protection.' },
+            { name: 'RV', prevents: 'Rotavirus', details: 'Third dose (if required) for rotavirus protection.' },
+            { name: 'Influenza', prevents: 'Flu (Annual)', details: 'Recommended annually for all children starting at 6 months of age.' }
+        ]
+    },
+    {
+        slug: '12-15-months',
+        age: '12–15 Months',
+        title: 'Toddler Milestones',
+        vaccines: [
+            { name: 'MMR', prevents: 'Measles, Mumps, Rubella', details: 'Protects against severe red rashes, swollen glands, and birth defects from rubella.' },
+            { name: 'Varicella', prevents: 'Chickenpox', details: 'Protects against itchy red fluid blisters and skin infections.' },
+            { name: 'Hib', prevents: 'Haemophilus influenzae type b', details: 'Booster dose to complete meningitis protection.' },
+            { name: 'PCV', prevents: 'Pneumococcal Disease', details: 'Booster dose to complete pneumococcal protection.' },
+            { name: 'HepA', prevents: 'Hepatitis A', details: 'Protects the liver from food/water-borne virus infection (2 doses total).' }
+        ]
+    },
+    {
+        slug: '4-6-years',
+        age: '4–6 Years',
+        title: 'School Readiness',
+        vaccines: [
+            { name: 'DTaP', prevents: 'Diphtheria, Tetanus, Pertussis', details: 'Fourth booster dose to maintain school-age defense.' },
+            { name: 'IPV', prevents: 'Polio', details: 'Fourth booster dose to maintain polio defense.' },
+            { name: 'MMR', prevents: 'Measles, Mumps, Rubella', details: 'Second dose for long-term measles and rubella protection.' },
+            { name: 'Varicella', prevents: 'Chickenpox', details: 'Second dose to complete chickenpox immunity.' }
+        ]
+    },
+    {
+        slug: '11-12-years',
+        age: '11–12 Years',
+        title: 'Adolescent Boosters',
+        vaccines: [
+            { name: 'Tdap', prevents: 'Tetanus, Diphtheria, Pertussis', details: 'Adolescent booster dose of tetanus and pertussis.' },
+            { name: 'HPV', prevents: 'Human Papillomavirus', details: 'Protects against future virus-linked cancers (2 doses).' },
+            { name: 'MenACWY', prevents: 'Meningitis (ACWY)', details: 'Protects against highly dangerous bacterial blood and brain infections.' }
+        ]
+    }
+];
+---
+
+<Base
+    title="Child Vaccination Schedule by Age: Birth to 12 Years | PediaCare"
+    description="Interactive child immunization schedule from birth to 12 years — which vaccines are due at each age milestone, what each one prevents, and why the timing matters."
+>
+    <Breadcrumbs items={[{ name: 'Home', href: '/' }, { name: 'Vaccine Schedule' }]} />
+
+    <div class="max-w-5xl mx-auto px-4 md:px-8 py-8 space-y-8">
+        <header class="text-center space-y-2">
+            <h1 class="text-2xl md:text-4xl font-black text-slate-800 dark:text-[#F1EDFF] tracking-tight">
+                Pediatric Immunization Guide
+            </h1>
+            <p class="text-xs md:text-sm text-slate-600 dark:text-[#B1A9DE] font-bold max-w-xl mx-auto">
+                Clinical calendar tracking routine pediatric vaccines from birth through 12 years.
+                Aligned with the CDC/AAP routine schedule — always confirm your country's national
+                program with your pediatrician.
+            </p>
+        </header>
+
+        <!-- Age milestone quick-nav -->
+        <nav aria-label="Age milestones" class="flex gap-2 overflow-x-auto pb-1 custom-scrollbar md:justify-center">
+            {
+                timeline.map(m => (
+                    <a
+                        href={`#${m.slug}`}
+                        class="shrink-0 text-[10px] font-black uppercase tracking-wide text-slate-600 dark:text-[#B1A9DE] bg-white dark:bg-night-card border border-orange-100 dark:border-night-line rounded-xl px-3.5 py-2 hover:border-brand-teal/50 hover:text-brand-teal transition-colors"
+                    >
+                        {m.age}
+                    </a>
+                ))
+            }
+        </nav>
+
+        <ol class="space-y-6 list-none">
+            {
+                timeline.map((m, i) => (
+                    <li
+                        id={m.slug}
+                        class="bg-white dark:bg-night-card rounded-3xl border border-orange-100 dark:border-night-line shadow-premium p-6 md:p-8 space-y-4 scroll-mt-24"
+                    >
+                        <header class="flex items-center gap-4">
+                            <span class="w-12 h-12 rounded-2xl bg-gradient-to-br from-brand-teal to-brand-teal-soft text-white flex items-center justify-center font-black">
+                                {String(i + 1).padStart(2, '0')}
+                            </span>
+                            <div>
+                                <h2 class="text-base md:text-lg font-black text-slate-800 dark:text-[#F1EDFF]">{m.title}</h2>
+                                <p class="text-[10px] font-black uppercase tracking-wider text-brand-coral">Age milestone: {m.age}</p>
+                            </div>
+                        </header>
+                        <ul class="grid md:grid-cols-2 gap-3 list-none">
+                            {m.vaccines.map(v => (
+                                <li class="rounded-2xl bg-[#FFFBF7] dark:bg-night-line border border-[#FFEADA] dark:border-night-raised p-4 space-y-1.5 hover:border-brand-teal/50 transition-colors">
+                                    <p class="flex items-center justify-between gap-2">
+                                        <span class="text-xs font-black text-slate-800 dark:text-[#F1EDFF]">
+                                            <i class="fa-solid fa-syringe text-brand-teal mr-1.5" aria-hidden="true" />
+                                            {v.name}
+                                        </span>
+                                        <span class="text-[9px] font-black uppercase tracking-wider text-emerald-700 dark:text-emerald-300 bg-emerald-50 dark:bg-emerald-400/10 px-2 py-0.5 rounded-full">
+                                            Recommended
+                                        </span>
+                                    </p>
+                                    <p class="text-[10px] font-black uppercase tracking-wide text-slate-500 dark:text-[#8B84B8]">Protects: {v.prevents}</p>
+                                    <p class="text-xs text-slate-600 dark:text-[#B1A9DE] font-medium leading-relaxed">{v.details}</p>
+                                </li>
+                            ))}
+                        </ul>
+                    </li>
+                ))
+            }
+        </ol>
+
+        <p class="text-xs text-slate-600 dark:text-[#B1A9DE] font-bold text-center">
+            Source guidance:
+            <a href="https://www.cdc.gov/vaccines/hcp/imz-schedules/child-adolescent-age.html" rel="noopener" target="_blank" class="text-brand-teal hover:underline">CDC child & adolescent immunization schedule</a>
+            ·
+            <a href="https://www.healthychildren.org/English/safety-prevention/immunizations/Pages/Recommended-Immunization-Schedules.aspx" rel="noopener" target="_blank" class="text-brand-teal hover:underline">AAP / HealthyChildren.org</a>
+        </p>
+
+        <Disclaimer />
+    </div>
+</Base>

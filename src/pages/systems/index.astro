@@ -1,0 +1,62 @@
+---
+import Base from '../../layouts/Base.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import Disclaimer from '../../components/Disclaimer.astro';
+import {
+    bodySystems,
+    getCategoriesBySystem,
+    getDiseasesBySystem,
+    illustrationUrl,
+    systemUrl
+} from '../../lib/db';
+---
+
+<Base
+    title="Pediatric Body Systems Index — Browse Illnesses by Organ System | PediaCare"
+    description={`Browse childhood illnesses across ${bodySystems.length} physiological systems: respiratory, cardiovascular, neurological, dermatological, neonatal and more.`}
+>
+    <Breadcrumbs items={[{ name: 'Home', href: '/' }, { name: 'Body Systems' }]} />
+
+    <div class="max-w-7xl mx-auto px-4 md:px-8 py-8 space-y-8">
+        <header class="text-center space-y-2">
+            <h1 class="text-2xl md:text-4xl font-black text-slate-800 dark:text-[#F1EDFF] tracking-tight">
+                Physiological Systems Index
+            </h1>
+            <p class="text-xs md:text-sm text-slate-600 dark:text-[#B1A9DE] font-bold max-w-xl mx-auto">
+                Browse illnesses categorized by the body system they affect.
+            </p>
+        </header>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+            {
+                bodySystems.map(s => (
+                    <a
+                        href={systemUrl(s)}
+                        class="bounce-hover bg-white dark:bg-night-card rounded-3xl border border-orange-100 dark:border-night-line shadow-premium hover:border-brand-teal/40 hover:shadow-card-hover p-6 space-y-3"
+                    >
+                        <div class="flex items-center justify-between">
+                            <img
+                                src={illustrationUrl(s.imagePath)}
+                                alt=""
+                                width="48"
+                                height="48"
+                                loading="lazy"
+                                class="w-12 h-12 object-contain"
+                            />
+                            <span class="text-[10px] font-black uppercase tracking-wider text-brand-teal bg-teal-50 dark:bg-night-line px-2.5 py-1 rounded-full">
+                                {getDiseasesBySystem(s.id).length} illnesses
+                            </span>
+                        </div>
+                        <h2 class="text-sm font-black text-slate-800 dark:text-[#F1EDFF]">{s.name}</h2>
+                        <p class="text-xs text-slate-600 dark:text-[#B1A9DE] font-medium leading-relaxed line-clamp-2">{s.description}</p>
+                        <p class="text-[10px] font-black uppercase tracking-wider text-slate-500 dark:text-[#8B84B8]">
+                            {getCategoriesBySystem(s.id).length} subcategories
+                        </p>
+                    </a>
+                ))
+            }
+        </div>
+
+        <Disclaimer />
+    </div>
+</Base>

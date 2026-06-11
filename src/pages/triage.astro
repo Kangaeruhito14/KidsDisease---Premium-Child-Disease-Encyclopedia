@@ -1,0 +1,222 @@
+---
+import Base from '../layouts/Base.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+import Disclaimer from '../components/Disclaimer.astro';
+
+interface Option {
+    value: string;
+    title: string;
+    desc: string;
+    score: number;
+    emergency?: boolean;
+}
+
+interface Question {
+    id: string;
+    label: string;
+    options: Option[];
+}
+
+const questions: Question[] = [
+    {
+        id: 'cough',
+        label: '1. Airway & Cough Sound',
+        options: [
+            { value: 'normal', title: 'Normal', desc: 'Regular breathing or standard quiet chest sounds.', score: 0 },
+            { value: 'wheeze', title: 'Wheezing', desc: 'Whistling or squeaking sound when breathing out.', score: 1 },
+            { value: 'stridor', title: 'Barking Cough or Stridor', desc: 'Harsh seal-like barking cough or high-pitched whistle when breathing in.', score: 3 }
+        ]
+    },
+    {
+        id: 'effort',
+        label: '2. Breathing Effort (Accessory Muscles)',
+        options: [
+            { value: 'comfortable', title: 'Comfortable', desc: 'No extra chest movements; standard respiratory rate.', score: 0 },
+            { value: 'retractions', title: 'Moderate: Sucking in under ribs / Fast rate', desc: 'Skin tugging under ribs or between bones; fast chest motion.', score: 2 },
+            { value: 'severe', title: 'Severe: Deep throat pulling / Grunting', desc: 'Deep retraction at the throat (sternal notch), nostril flaring, or grunting.', score: 5, emergency: true }
+        ]
+    },
+    {
+        id: 'alertness',
+        label: '3. Alertness & Interaction',
+        options: [
+            { value: 'active', title: 'Active & Alert', desc: 'Smiling, responding normally, playing, or easily comforted.', score: 0 },
+            { value: 'irritable', title: 'Irritable / Whiny', desc: 'Fussy but responds to being held and can be calmed down temporarily.', score: 1 },
+            { value: 'lethargic', title: 'Lethargic / Weak / Unresponsive', desc: 'Limp, unresponsive, difficult to wake up, or does not make eye contact.', score: 4, emergency: true }
+        ]
+    },
+    {
+        id: 'fever',
+        label: '4. Fever & Skin Spots',
+        options: [
+            { value: 'none', title: 'No Fever', desc: 'Normal skin temperature and normal color.', score: 0 },
+            { value: 'mild', title: 'Mild Fever (Warm)', desc: 'Low-grade fever, but skin color is healthy and flush.', score: 1 },
+            { value: 'high', title: 'High Fever, Pale/Mottled Skin, or Dark Red Spots', desc: 'Skin pale, gray or mottled, high fever, or dark red spots/purpura that do not fade under pressure.', score: 4, emergency: true }
+        ]
+    },
+    {
+        id: 'hydration',
+        label: '5. Fluid Intake & Hydration',
+        options: [
+            { value: 'well', title: 'Drinking Well', desc: 'Plenty of fluids, wet diapers or urinating normally.', score: 0 },
+            { value: 'reduced', title: 'Moderate: Reduced intake / Dry mouth', desc: 'Reduced fluid intake, dry lips, reduced urine output.', score: 2 },
+            { value: 'severe', title: 'Severe: No urine for 8+ hours / No tears', desc: 'No wet diapers/urine output in 8+ hours, or crying with absolutely no tears.', score: 3 }
+        ]
+    }
+];
+
+// Serializable scoring matrix for the client-side script
+const scoring = Object.fromEntries(
+    questions.map(q => [
+        q.id,
+        Object.fromEntries(q.options.map(o => [o.value, { score: o.score, emergency: !!o.emergency }]))
+    ])
+);
+---
+
+<Base
+    title="Child Symptom Triage Checker: How Urgent Is It? | PediaCare"
+    description="Answer 5 questions about your child's breathing, alertness, fever, and hydration to gauge urgency from Mild to Emergency. Educational guidance only — not a diagnosis."
+>
+    <Breadcrumbs items={[{ name: 'Home', href: '/' }, { name: 'Triage Checker' }]} />
+
+    <div class="max-w-4xl mx-auto px-4 md:px-8 py-8 space-y-8">
+        <header class="text-center space-y-2">
+            <h1 class="text-2xl md:text-4xl font-black text-slate-800 dark:text-[#F1EDFF] tracking-tight">
+                Symptom Triage Checker
+            </h1>
+            <p class="text-xs md:text-sm text-slate-600 dark:text-[#B1A9DE] font-bold max-w-xl mx-auto">
+                Select what you observe. The calculated badge is a guideline severity level —
+                <strong>it is not a diagnosis</strong>. When in doubt, always call your
+                pediatrician or emergency services.
+            </p>
+        </header>
+
+        <form id="triage-form" class="space-y-6">
+            {
+                questions.map(q => (
+                    <fieldset class="bg-white dark:bg-night-card rounded-3xl border border-orange-100 dark:border-night-line shadow-premium p-6 space-y-3">
+                        <legend class="text-sm font-black text-slate-800 dark:text-[#F1EDFF] px-1">{q.label}</legend>
+                        {q.options.map((o, i) => (
+                            <label class="flex items-start gap-3 rounded-2xl border border-orange-100/80 dark:border-night-raised bg-orange-50/30 dark:bg-night-line p-4 cursor-pointer hover:border-brand-teal/50 transition-colors has-checked:border-brand-teal has-checked:bg-teal-50/50 dark:has-checked:bg-brand-teal/10">
+                                <input
+                                    type="radio"
+                                    name={q.id}
+                                    value={o.value}
+                                    checked={i === 0}
+                                    class="mt-0.5 accent-(--color-brand-teal)"
+                                />
+                                <span>
+                                    <span class="block text-xs font-black text-slate-800 dark:text-[#F1EDFF]">{o.title}</span>
+                                    <span class="block text-[11px] text-slate-600 dark:text-[#B1A9DE] font-medium leading-relaxed mt-0.5">{o.desc}</span>
+                                </span>
+                            </label>
+                        ))}
+                    </fieldset>
+                ))
+            }
+
+            <div class="flex justify-center">
+                <button
+                    type="reset"
+                    class="text-xs font-black text-slate-600 dark:text-[#B1A9DE] bg-white dark:bg-night-card border border-orange-100 dark:border-night-line rounded-xl px-5 py-2.5 hover:border-brand-coral/50 hover:text-brand-coral transition-colors cursor-pointer"
+                >
+                    <i class="fa-solid fa-rotate-left mr-1" aria-hidden="true"></i> Reset Questions
+                </button>
+            </div>
+        </form>
+
+        <!-- Live result -->
+        <section
+            aria-live="polite"
+            aria-label="Calculated triage status"
+            class="bg-white dark:bg-night-card rounded-3xl border border-orange-100 dark:border-night-line shadow-premium p-6 md:p-8 text-center space-y-4"
+        >
+            <h2 class="text-xs font-black uppercase tracking-wider text-slate-500 dark:text-[#8B84B8]">Calculated Urgency Status</h2>
+            <p>
+                <span
+                    id="triage-badge"
+                    class="inline-flex items-center gap-2 rounded-full px-6 py-3 text-sm font-black uppercase tracking-wider text-white bg-badge-mild"
+                >
+                    <i id="triage-icon" class="fa-solid fa-circle-check" aria-hidden="true"></i>
+                    <span id="triage-level">Mild</span>
+                </span>
+            </p>
+            <p id="triage-advice" class="text-xs md:text-sm text-slate-700 dark:text-[#D8D2F5] font-bold leading-relaxed max-w-xl mx-auto">
+                Keep monitoring your child at home. Maintain hydration with oral rehydration
+                solution (ORS) or breast milk. Check their temperature and breathing regularly.
+            </p>
+            <p class="text-[10px] font-black uppercase tracking-wide text-slate-500 dark:text-[#8B84B8]">
+                Triage score: <span id="triage-score">0</span> point(s). Use strictly as guidance.
+            </p>
+        </section>
+
+        <Disclaimer />
+    </div>
+
+    <script is:inline define:vars={{ scoring }}>
+        const form = document.getElementById('triage-form');
+        const badge = document.getElementById('triage-badge');
+        const icon = document.getElementById('triage-icon');
+        const levelEl = document.getElementById('triage-level');
+        const adviceEl = document.getElementById('triage-advice');
+        const scoreEl = document.getElementById('triage-score');
+
+        const LEVELS = {
+            Mild: {
+                badge: 'bg-badge-mild',
+                icon: 'fa-solid fa-circle-check',
+                advice:
+                    'Keep monitoring your child at home. Maintain hydration with oral rehydration solution (ORS) or breast milk. Check their temperature and breathing regularly.'
+            },
+            Moderate: {
+                badge: 'bg-badge-moderate',
+                icon: 'fa-solid fa-circle-exclamation',
+                advice:
+                    'CLINIC MONITORING: Contact your pediatrician. Monitor symptoms closely and seek earlier care if breathing becomes faster or fluid intake drops.'
+            },
+            Severe: {
+                badge: 'bg-badge-severe',
+                icon: 'fa-solid fa-triangle-exclamation',
+                advice:
+                    'URGENT ASSESSMENT: Seek professional medical assessment today. Contact your pediatrician or visit an urgent care clinic immediately.'
+            },
+            Emergency: {
+                badge: 'bg-badge-emergency animate-emergency',
+                icon: 'fa-solid fa-truck-medical',
+                advice:
+                    'CRITICAL ALERT: Seek immediate emergency medical care. Call your local emergency number or proceed immediately to the nearest Emergency Room. Do not delay.'
+            }
+        };
+
+        function recalc() {
+            if (!form) return;
+            const data = new FormData(form);
+            let score = 0;
+            let emergencyTrigger = false;
+            for (const [q, v] of data.entries()) {
+                const cell = scoring[q] && scoring[q][v];
+                if (!cell) continue;
+                score += cell.score;
+                if (cell.emergency) emergencyTrigger = true;
+            }
+            let level = 'Mild';
+            if (score >= 8 || emergencyTrigger) level = 'Emergency';
+            else if (score >= 5) level = 'Severe';
+            else if (score >= 2) level = 'Moderate';
+
+            const cfg = LEVELS[level];
+            badge.className =
+                'inline-flex items-center gap-2 rounded-full px-6 py-3 text-sm font-black uppercase tracking-wider text-white ' +
+                cfg.badge;
+            icon.className = cfg.icon;
+            levelEl.textContent = level;
+            adviceEl.textContent = cfg.advice;
+            scoreEl.textContent = String(score);
+        }
+
+        form?.addEventListener('change', recalc);
+        form?.addEventListener('reset', () => setTimeout(recalc, 0));
+        recalc();
+    </script>
+</Base>

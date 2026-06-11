@@ -1,0 +1,133 @@
+---
+import Base from '../layouts/Base.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+import Disclaimer from '../components/Disclaimer.astro';
+import { diseases, diseaseSlug, illustrationUrl, overviewOf, getSystem } from '../lib/db';
+
+// Compact client-side index: enough fields for useful matching without
+// shipping the entire database to the browser.
+const index = diseases.map(d => ({
+    slug: diseaseSlug(d.id),
+    name: d.name,
+    system: getSystem(d.body_system)?.name ?? '',
+    summary: overviewOf(d),
+    age: d.affected_age_group,
+    urgency: d.urgency_level,
+    img: illustrationUrl(d.imagePath),
+    haystack: [d.name, d.classification, d.causes, d.symptoms_early, d.symptoms_progressive, d.symptoms_severe, d.medicinal_elements, ...d.tags]
+        .join(' ')
+        .toLowerCase()
+}));
+
+const URGENCIES = ['all', 'mild', 'moderate', 'severe', 'emergency'];
+---
+
+<Base
+    title="Search the Child Disease Index | PediaCare"
+    description="Search 115 childhood illnesses by name, symptom, cause, or active ingredient. Filter results by urgency from mild to emergency."
+>
+    <Breadcrumbs items={[{ name: 'Home', href: '/' }, { name: 'Search Index' }]} />
+
+    <div class="max-w-5xl mx-auto px-4 md:px-8 py-8 space-y-6">
+        <header class="text-center space-y-2">
+            <h1 class="text-2xl md:text-4xl font-black text-slate-800 dark:text-[#F1EDFF] tracking-tight">
+                Global Search Registry
+            </h1>
+            <p class="text-xs md:text-sm text-slate-600 dark:text-[#B1A9DE] font-bold max-w-xl mx-auto">
+                Cross-references names, symptoms, causes, active ingredients, and clinical tags.
+            </p>
+        </header>
+
+        <div class="flex flex-col sm:flex-row gap-3">
+            <div class="relative flex-1">
+                <label for="search-input" class="sr-only">Search diseases</label>
+                <i class="fa-solid fa-magnifying-glass absolute left-4 top-1/2 -translate-y-1/2 text-slate-400" aria-hidden="true"></i>
+                <input
+                    id="search-input"
+                    type="search"
+                    placeholder="Search symptoms, conditions, ingredients…"
+                    autocomplete="off"
+                    class="w-full rounded-2xl border border-orange-200/70 dark:border-night-line bg-white dark:bg-night-card pl-11 pr-4 py-3.5 text-sm font-bold text-slate-800 dark:text-[#F1EDFF] placeholder:text-slate-400 focus:border-brand-teal focus:outline-none shadow-premium"
+                />
+            </div>
+            <label class="sr-only" for="urgency-filter">Filter by urgency</label>
+            <select
+                id="urgency-filter"
+                class="rounded-2xl border border-orange-200/70 dark:border-night-line bg-white dark:bg-night-card px-4 py-3.5 text-xs font-black text-slate-700 dark:text-[#F1EDFF] focus:border-brand-teal focus:outline-none shadow-premium cursor-pointer"
+            >
+                {URGENCIES.map(u => <option value={u}>{u === 'all' ? 'All Urgency States' : `${u[0]!.toUpperCase()}${u.slice(1)} Only`}</option>)}
+            </select>
+        </div>
+
+        <p id="search-count" class="text-[10px] font-black uppercase tracking-wider text-slate-500 dark:text-[#8B84B8]" aria-live="polite"></p>
+
+        <ul id="search-results" class="grid grid-cols-1 md:grid-cols-2 gap-4 list-none"></ul>
+
+        <div id="search-empty" class="hidden text-center py-14 space-y-3">
+            <i class="fa-solid fa-folder-open text-4xl text-slate-300 dark:text-night-raised" aria-hidden="true"></i>
+            <h2 class="text-sm font-black text-slate-700 dark:text-[#D8D2F5]">No Medical Records Match Criteria</h2>
+            <p class="text-xs text-slate-500 dark:text-[#8B84B8] font-bold max-w-md mx-auto">
+                Verify spelling or parameters. Information relies on elemental (generic) names —
+                brand formulas are not indexed.
+            </p>
+        </div>
+
+        <Disclaimer />
+    </div>
+
+    <script is:inline define:vars={{ index }}>
+        const input = document.getElementById('search-input');
+        const filter = document.getElementById('urgency-filter');
+        const list = document.getElementById('search-results');
+        const empty = document.getElementById('search-empty');
+        const count = document.getElementById('search-count');
+
+        const BADGES = {
+            mild: 'background-color:#1E7E34',
+            moderate: 'background-color:#B58500',
+            severe: 'background-color:#C35A00',
+            emergency: 'background-color:#C82333'
+        };
+
+        const esc = s =>
+            s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+
+        function render() {
+            const q = input.value.toLowerCase().trim();
+            const urgency = filter.value;
+            const hits = index.filter(
+                d => (urgency === 'all' || d.urgency === urgency) && (!q || d.haystack.includes(q))
+            );
+
+            count.textContent = `${hits.length} of ${index.length} reference files`;
+            empty.classList.toggle('hidden', hits.length > 0);
+            list.innerHTML = hits
+                .slice(0, 60)
+                .map(
+                    d => `
+                <li>
+                  <a href="/diseases/${d.slug}/" class="flex gap-4 bg-white dark:bg-night-card rounded-2xl border border-orange-100 dark:border-night-line p-4 hover:border-brand-teal/40 hover:shadow-card-hover transition-all h-full">
+                    <img src="${d.img}" alt="" width="48" height="48" loading="lazy" class="w-12 h-12 rounded-xl bg-orange-50 dark:bg-night-line p-1.5 object-contain shrink-0" />
+                    <span class="min-w-0 flex-1">
+                      <span class="flex items-center justify-between gap-2">
+                        <span class="text-xs font-black text-slate-800 dark:text-[#F1EDFF] truncate">${esc(d.name)}</span>
+                        <span class="text-[8px] font-black uppercase tracking-wider text-white px-2 py-0.5 rounded-full shrink-0" style="${BADGES[d.urgency] || ''}">${esc(d.urgency)}</span>
+                      </span>
+                      <span class="block text-[10px] font-bold text-slate-500 dark:text-[#8B84B8] mt-0.5">${esc(d.system)} • ${esc(d.age)}</span>
+                      <span class="block text-[11px] text-slate-600 dark:text-[#B1A9DE] font-medium leading-relaxed mt-1 line-clamp-2">${esc(d.summary)}</span>
+                    </span>
+                  </a>
+                </li>`
+                )
+                .join('');
+        }
+
+        // Support /search/?q=… deep links (home page search box submits here)
+        const params = new URLSearchParams(location.search);
+        if (params.get('q')) input.value = params.get('q');
+
+        input.addEventListener('input', render);
+        filter.addEventListener('change', render);
+        render();
+    </script>
+</Base>
