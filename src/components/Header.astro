@@ -1,0 +1,100 @@
+---
+const links = [
+    { href: '/', label: 'Home', icon: 'fa-house' },
+    { href: '/systems/', label: 'Body Systems', icon: 'fa-cubes' },
+    { href: '/diseases/', label: 'Diseases A–Z', icon: 'fa-book-medical' },
+    { href: '/vaccines/', label: 'Vaccines', icon: 'fa-syringe' },
+    { href: '/triage/', label: 'Triage', icon: 'fa-heart-circle-exclamation' },
+    { href: '/search/', label: 'Search', icon: 'fa-magnifying-glass' }
+];
+
+const path = Astro.url.pathname;
+const isActive = (href: string) =>
+    href === '/' ? path === '/' : path.startsWith(href);
+---
+
+<header
+    class="sticky top-0 z-50 bg-white/95 dark:bg-night-card/95 border-b border-orange-200/50 dark:border-night-line shadow-premium backdrop-blur-md"
+>
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+        <a href="/" class="flex items-center gap-3 select-none" aria-label="PediaCare home">
+            <span
+                class="w-10 h-10 rounded-2xl bg-gradient-to-br from-brand-teal to-brand-teal-soft flex items-center justify-center text-white shadow-md"
+            >
+                <i class="fa-solid fa-stethoscope text-lg" aria-hidden="true"></i>
+            </span>
+            <span>
+                <span class="block font-black text-xl text-slate-800 dark:text-[#F1EDFF] tracking-tight leading-none">PediaCare</span>
+                <span class="block text-[9px] font-black text-slate-600 dark:text-[#B1A9DE] uppercase tracking-wider mt-0.5">
+                    Child Disease Encyclopedia
+                </span>
+            </span>
+        </a>
+
+        <nav class="hidden md:flex items-center gap-1" aria-label="Primary">
+            {
+                links.map(l => (
+                    <a
+                        href={l.href}
+                        aria-current={isActive(l.href) ? 'page' : undefined}
+                        class:list={[
+                            'px-3 py-2 rounded-xl text-xs font-black transition-colors flex items-center gap-1.5',
+                            isActive(l.href)
+                                ? 'bg-teal-50 text-brand-teal dark:bg-night-line dark:text-brand-teal-soft'
+                                : 'text-slate-700 hover:bg-slate-50 dark:text-[#B1A9DE] dark:hover:bg-night-line dark:hover:text-[#F1EDFF]'
+                        ]}
+                    >
+                        <i class={`fa-solid ${l.icon}`} aria-hidden="true" /> {l.label}
+                    </a>
+                ))
+            }
+        </nav>
+
+        <button
+            id="theme-toggle"
+            type="button"
+            class="w-9 h-9 flex items-center justify-center rounded-xl bg-orange-50 dark:bg-night-line border border-orange-100 dark:border-night-raised text-slate-700 dark:text-amber-300 hover:border-brand-teal/40 cursor-pointer transition-colors"
+            aria-label="Toggle dark mode"
+        >
+            <i class="fa-solid fa-moon text-sm dark:hidden" aria-hidden="true"></i>
+            <i class="fa-solid fa-sun text-sm hidden dark:inline" aria-hidden="true"></i>
+        </button>
+    </div>
+</header>
+
+<!-- Mobile bottom navigation -->
+<nav
+    class="md:hidden fixed bottom-0 left-0 right-0 z-50 bg-white/95 dark:bg-night-card/95 border-t border-orange-200/50 dark:border-night-line shadow-lg flex items-center justify-around h-16 backdrop-blur-md"
+    aria-label="Primary mobile"
+    style="padding-bottom: env(safe-area-inset-bottom);"
+>
+    {
+        links.map(l => (
+            <a
+                href={l.href}
+                aria-current={isActive(l.href) ? 'page' : undefined}
+                class:list={[
+                    'flex flex-col items-center gap-1 justify-center w-14 h-full text-[9px] font-black transition-colors',
+                    isActive(l.href)
+                        ? 'text-brand-teal'
+                        : 'text-slate-500 dark:text-[#B1A9DE]'
+                ]}
+            >
+                <i class={`fa-solid ${l.icon} text-base`} aria-hidden="true" />
+                <span>{l.label.replace('Body ', '').replace(' A–Z', '')}</span>
+            </a>
+        ))
+    }
+</nav>
+
+<script>
+    const toggle = document.getElementById('theme-toggle');
+    toggle?.addEventListener('click', () => {
+        const dark = document.documentElement.classList.toggle('dark');
+        try {
+            localStorage.setItem('pediacare-theme', dark ? 'dark' : 'light');
+        } catch {
+            /* storage unavailable */
+        }
+    });
+</script>

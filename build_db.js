@@ -5,8 +5,11 @@
  * The Astro site imports the JSON source directly; only the legacy SPA
  * loads the base64-wrapped payload.
  */
-const fs = require('fs');
-const path = require('path');
+import fs from 'node:fs';
+import path from 'node:path';
+import { fileURLToPath } from 'node:url';
+
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
 const sourcePath = path.join(__dirname, 'data', 'database.source.json');
 const outputPath = path.join(__dirname, 'legacy', 'data', 'database.js');

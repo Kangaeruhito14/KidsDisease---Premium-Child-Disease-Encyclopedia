@@ -1,0 +1,232 @@
+---
+import Base from '../layouts/Base.astro';
+import DiseaseCard from '../components/DiseaseCard.astro';
+import Disclaimer from '../components/Disclaimer.astro';
+import {
+    bodySystems,
+    diseases,
+    diseaseCategories,
+    getDisease,
+    getDiseasesBySystem,
+    systemUrl,
+    illustrationUrl,
+    diseaseUrl,
+    diseaseSlug
+} from '../lib/db';
+
+const featured = ['asthma', 'croup', 'otitis_media', 'atopic_derm', 'meningitis', 'dehydration']
+    .map(id => getDisease(id))
+    .filter((d): d is NonNullable<typeof d> => Boolean(d));
+
+// Tiny search index for the autocomplete (name + slug only, keeps page light)
+const searchIndex = diseases.map(d => ({ n: d.name, s: diseaseSlug(d.id) }));
+
+const milestones = [
+    {
+        n: '01',
+        age: '0 — 6 Months',
+        title: 'Passive Shielding',
+        desc: "Maternal antibodies transfer via the placenta and breastmilk, providing immediate protection while the baby's own immune response begins to mature."
+    },
+    {
+        n: '02',
+        age: '6 — 18 Months',
+        title: 'Vaccine Priming',
+        desc: 'Vaccination series introduce harmless targets, safely training immature B and T lymphocytes to generate highly specific antibodies and memory clones.'
+    },
+    {
+        n: '03',
+        age: '18 Months — 5 Years',
+        title: 'Cellular Expansion',
+        desc: 'Exposure to daycare and common childhood viruses builds an expansive immunological library, continuously training cellular memory networks.'
+    },
+    {
+        n: '04',
+        age: '5 Years & Above',
+        title: 'Mature Profile',
+        desc: "Lymphoid tissue structure and antibody distribution reaches standard mature efficacy. The child's immune system now mirrors adult capability."
+    }
+];
+---
+
+<Base
+    title="PediaCare — Child Disease Encyclopedia for Parents"
+    description={`Plain-language profiles of ${diseases.length} childhood illnesses: staged symptoms, home care, prevention, and when to see a doctor. Educational reference for parents and caregivers.`}
+>
+    <!-- Hero -->
+    <section class="max-w-7xl mx-auto px-4 md:px-8 pt-12 md:pt-20 pb-10 text-center space-y-6">
+        <p class="inline-flex items-center gap-1.5 text-[11px] font-black text-slate-600 dark:text-[#B1A9DE] bg-orange-50 dark:bg-night-line px-3 py-1.5 rounded-xl border border-orange-100 dark:border-night-raised">
+            <i class="fa-solid fa-shield-halved text-brand-coral" aria-hidden="true"></i>
+            Generic active ingredients only — no brand formulas
+        </p>
+        <h1 class="text-3xl md:text-5xl font-black text-slate-800 dark:text-[#F1EDFF] tracking-tight leading-tight">
+            Children's Medical<br class="hidden md:block" /> Resource Guide
+        </h1>
+        <p class="max-w-2xl mx-auto text-sm md:text-base text-slate-600 dark:text-[#B1A9DE] font-medium leading-relaxed">
+            Explore {diseases.length} plain-language profiles of childhood illnesses — staged
+            symptoms, home care, prevention, and exactly when to call a doctor.
+        </p>
+
+        <!-- Search -->
+        <form action="/search/" method="get" role="search" class="max-w-xl mx-auto relative">
+            <label for="home-search" class="sr-only">Search childhood diseases</label>
+            <input
+                id="home-search"
+                name="q"
+                type="search"
+                placeholder="Quick search (e.g. fever, rash, asthma)…"
+                autocomplete="off"
+                class="w-full rounded-2xl border border-orange-200/70 dark:border-night-line bg-white dark:bg-night-card px-5 py-4 pr-28 text-sm font-bold text-slate-800 dark:text-[#F1EDFF] placeholder:text-slate-400 focus:border-brand-teal focus:outline-none shadow-premium"
+            />
+            <button
+                type="submit"
+                class="absolute right-2 top-1/2 -translate-y-1/2 bg-brand-teal hover:bg-brand-teal-soft text-white text-xs font-black px-5 py-2.5 rounded-xl transition-colors cursor-pointer"
+            >
+                <i class="fa-solid fa-magnifying-glass mr-1" aria-hidden="true"></i> Search
+            </button>
+            <ul
+                id="home-suggestions"
+                class="absolute left-0 right-0 mt-2 bg-white dark:bg-night-card border border-orange-100 dark:border-night-line rounded-2xl shadow-card-hover overflow-hidden text-left hidden z-30"
+                role="listbox"
+                aria-label="Disease suggestions"
+            >
+            </ul>
+        </form>
+
+        <!-- Live stats from the database -->
+        <dl class="flex items-center justify-center gap-8 md:gap-14 pt-4">
+            <div>
+                <dt class="text-[10px] font-black uppercase tracking-wider text-slate-500 dark:text-[#8B84B8]">Disease Profiles</dt>
+                <dd class="text-2xl md:text-3xl font-black text-brand-teal">{diseases.length}</dd>
+            </div>
+            <div>
+                <dt class="text-[10px] font-black uppercase tracking-wider text-slate-500 dark:text-[#8B84B8]">Body Systems</dt>
+                <dd class="text-2xl md:text-3xl font-black text-brand-coral">{bodySystems.length}</dd>
+            </div>
+            <div>
+                <dt class="text-[10px] font-black uppercase tracking-wider text-slate-500 dark:text-[#8B84B8]">Categories</dt>
+                <dd class="text-2xl md:text-3xl font-black text-slate-700 dark:text-[#D8D2F5]">{diseaseCategories.length}</dd>
+            </div>
+        </dl>
+    </section>
+
+    <!-- Featured profiles -->
+    <section class="max-w-7xl mx-auto px-4 md:px-8 py-10 space-y-6" aria-labelledby="featured-heading">
+        <div class="text-center space-y-1">
+            <h2 id="featured-heading" class="text-xl md:text-2xl font-black text-slate-800 dark:text-[#F1EDFF]">Featured Pediatric Profiles</h2>
+            <p class="text-xs md:text-sm text-slate-600 dark:text-[#B1A9DE] font-bold">Quick links to the most consulted clinical references</p>
+        </div>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+            {featured.map(d => <DiseaseCard disease={d} />)}
+        </div>
+    </section>
+
+    <!-- Body systems -->
+    <section class="max-w-7xl mx-auto px-4 md:px-8 py-10 space-y-6" aria-labelledby="systems-heading">
+        <div class="text-center space-y-1">
+            <h2 id="systems-heading" class="text-xl md:text-2xl font-black text-slate-800 dark:text-[#F1EDFF]">Explore Body Systems</h2>
+            <p class="text-xs md:text-sm text-slate-600 dark:text-[#B1A9DE] font-bold">Browse illnesses by the organ system they affect</p>
+        </div>
+        <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3">
+            {
+                bodySystems.map(s => (
+                    <a
+                        href={systemUrl(s)}
+                        class="bounce-hover bg-white dark:bg-night-card rounded-2xl border border-orange-100 dark:border-night-line p-4 text-center space-y-2 hover:border-brand-teal/40 shadow-premium"
+                    >
+                        <img
+                            src={illustrationUrl(s.imagePath)}
+                            alt=""
+                            width="40"
+                            height="40"
+                            loading="lazy"
+                            class="w-10 h-10 mx-auto object-contain"
+                        />
+                        <span class="block text-[11px] font-black text-slate-700 dark:text-[#D8D2F5] leading-tight">{s.name}</span>
+                        <span class="block text-[9px] font-bold text-slate-500 dark:text-[#8B84B8] uppercase tracking-wide">
+                            {getDiseasesBySystem(s.id).length} illnesses
+                        </span>
+                    </a>
+                ))
+            }
+        </div>
+    </section>
+
+    <!-- Immunology milestones -->
+    <section class="max-w-5xl mx-auto px-4 md:px-8 py-10 space-y-6" aria-labelledby="timeline-heading">
+        <div class="text-center space-y-1">
+            <h2 id="timeline-heading" class="text-xl md:text-2xl font-black text-slate-800 dark:text-[#F1EDFF]">Childhood Immunology Milestones</h2>
+            <p class="text-xs md:text-sm text-slate-600 dark:text-[#B1A9DE] font-bold">How the immune system develops and why vaccine timing matters</p>
+        </div>
+        <ol class="grid grid-cols-1 md:grid-cols-2 gap-4">
+            {
+                milestones.map(m => (
+                    <li class="bg-white dark:bg-night-card rounded-3xl border border-orange-100 dark:border-night-line p-6 shadow-premium space-y-2">
+                        <div class="flex items-center gap-3">
+                            <span class="text-2xl font-black text-brand-teal/30 dark:text-brand-teal-soft/40">{m.n}</span>
+                            <div>
+                                <h3 class="text-sm font-black text-slate-800 dark:text-[#F1EDFF]">{m.title}</h3>
+                                <p class="text-[10px] font-black uppercase tracking-wider text-brand-coral">{m.age}</p>
+                            </div>
+                        </div>
+                        <p class="text-xs text-slate-600 dark:text-[#B1A9DE] font-medium leading-relaxed">{m.desc}</p>
+                    </li>
+                ))
+            }
+        </ol>
+        <p class="text-center">
+            <a href="/vaccines/" class="inline-flex items-center gap-2 bg-brand-teal hover:bg-brand-teal-soft text-white text-xs font-black px-6 py-3 rounded-2xl transition-colors">
+                <i class="fa-solid fa-syringe" aria-hidden="true"></i> View the Full Vaccine Calendar
+            </a>
+        </p>
+    </section>
+
+    <!-- FAQ teaser + disclaimer -->
+    <section class="max-w-5xl mx-auto px-4 md:px-8 py-10 space-y-6">
+        <div class="bg-white dark:bg-night-card rounded-3xl border border-orange-100 dark:border-night-line p-6 md:p-8 shadow-premium flex flex-col md:flex-row items-center gap-6">
+            <div class="flex-1 space-y-2 text-center md:text-left">
+                <h2 class="text-lg md:text-xl font-black text-slate-800 dark:text-[#F1EDFF]">When should you actually worry?</h2>
+                <p class="text-xs md:text-sm text-slate-600 dark:text-[#B1A9DE] font-medium leading-relaxed">
+                    Fever thresholds by age, ER-versus-pediatrician decisions, dehydration warning
+                    signs, vaccine safety — answered with sources from the AAP, CDC, and NHS.
+                </p>
+            </div>
+            <a href="/faq/" class="shrink-0 inline-flex items-center gap-2 bg-brand-coral hover:opacity-90 text-white text-xs font-black px-6 py-3 rounded-2xl transition-opacity">
+                <i class="fa-solid fa-circle-question" aria-hidden="true"></i> Read the Parents' FAQ
+            </a>
+        </div>
+        <Disclaimer />
+    </section>
+
+    <script is:inline define:vars={{ searchIndex }}>
+        // Lightweight autocomplete over disease names (rendered server-side data)
+        const input = document.getElementById('home-search');
+        const list = document.getElementById('home-suggestions');
+        if (input && list) {
+            const render = () => {
+                const q = input.value.toLowerCase().trim();
+                if (!q) {
+                    list.classList.add('hidden');
+                    list.innerHTML = '';
+                    return;
+                }
+                const hits = searchIndex.filter(d => d.n.toLowerCase().includes(q)).slice(0, 6);
+                if (!hits.length) {
+                    list.classList.add('hidden');
+                    list.innerHTML = '';
+                    return;
+                }
+                list.innerHTML = hits
+                    .map(
+                        h =>
+                            `<li role="option"><a class="block px-5 py-3 text-xs font-bold text-slate-700 dark:text-[#D8D2F5] hover:bg-teal-50 dark:hover:bg-night-line transition-colors" href="/diseases/${h.s}/">${h.n}</a></li>`
+                    )
+                    .join('');
+                list.classList.remove('hidden');
+            };
+            input.addEventListener('input', render);
+            input.addEventListener('blur', () => setTimeout(() => list.classList.add('hidden'), 200));
+            input.addEventListener('focus', render);
+        }
+    </script>
+</Base>

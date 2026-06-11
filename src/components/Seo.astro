@@ -1,0 +1,41 @@
+---
+/**
+ * Per-page <head> SEO block: title, description, canonical, Open Graph,
+ * Twitter card, and optional JSON-LD structured data.
+ */
+interface Props {
+    title: string;
+    description: string;
+    /** Open Graph type; articles for disease profiles, website otherwise. */
+    ogType?: 'website' | 'article';
+    /** Absolute or site-relative path to a representative image. */
+    image?: string;
+    /** JSON-LD objects rendered as application/ld+json scripts. */
+    jsonLd?: object[];
+}
+
+const { title, description, ogType = 'website', image = '/illustrations/all.svg', jsonLd = [] } = Astro.props;
+
+const canonical = new URL(Astro.url.pathname, Astro.site);
+const imageUrl = new URL(image, Astro.site);
+---
+
+<title>{title}</title>
+<meta name="description" content={description} />
+<link rel="canonical" href={canonical} />
+
+<meta property="og:title" content={title} />
+<meta property="og:description" content={description} />
+<meta property="og:type" content={ogType} />
+<meta property="og:url" content={canonical} />
+<meta property="og:image" content={imageUrl} />
+<meta property="og:site_name" content="PediaCare" />
+
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:title" content={title} />
+<meta name="twitter:description" content={description} />
+<meta name="twitter:image" content={imageUrl} />
+
+{jsonLd.map(obj => (
+    <script type="application/ld+json" set:html={JSON.stringify(obj)} />
+))}

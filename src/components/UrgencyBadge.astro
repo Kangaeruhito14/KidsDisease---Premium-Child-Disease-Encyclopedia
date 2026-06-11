@@ -1,0 +1,21 @@
+---
+import { URGENCY_STYLES, type UrgencyLevel } from '../lib/db';
+
+interface Props {
+    level: UrgencyLevel;
+    size?: 'sm' | 'md';
+}
+
+const { level, size = 'sm' } = Astro.props;
+const style = URGENCY_STYLES[level] ?? URGENCY_STYLES.mild;
+---
+
+<span
+    class:list={[
+        'inline-flex items-center gap-1 rounded-full font-black uppercase tracking-wider text-white',
+        style.badge,
+        size === 'sm' ? 'text-[9px] px-2.5 py-1' : 'text-xs px-3.5 py-1.5'
+    ]}
+>
+    {style.label}
+</span>

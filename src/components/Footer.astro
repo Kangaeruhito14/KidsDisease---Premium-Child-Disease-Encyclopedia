@@ -1,0 +1,111 @@
+---
+import { getDisease, diseaseUrl } from '../lib/db';
+
+const year = new Date().getFullYear();
+
+const systemLinks = [
+    { id: 'resp', label: 'Respiratory System', icon: 'fa-lungs' },
+    { id: 'cardio', label: 'Cardiovascular System', icon: 'fa-heart-pulse' },
+    { id: 'gastro', label: 'Gastrointestinal System', icon: 'fa-apple-whole' },
+    { id: 'neuro', label: 'Neurological System', icon: 'fa-brain' },
+    { id: 'derm', label: 'Dermatological System', icon: 'fa-child-reaching' }
+];
+
+const crucialIds = ['asthma', 'croup', 'otitis_media', 'atopic_derm', 'meningitis'];
+const crucial = crucialIds
+    .map(id => getDisease(id))
+    .filter((d): d is NonNullable<typeof d> => Boolean(d));
+
+const resources = [
+    { href: '/triage/', label: 'Symptom Triage Checker', icon: 'fa-heart-circle-exclamation' },
+    { href: '/vaccines/', label: 'Vaccine Schedule', icon: 'fa-syringe' },
+    { href: '/search/', label: 'Search Index', icon: 'fa-magnifying-glass' },
+    { href: '/faq/', label: 'Parents’ FAQ', icon: 'fa-circle-question' }
+];
+
+const legal = [
+    { href: '/about/', label: 'About Us', icon: 'fa-circle-info' },
+    { href: '/contact/', label: 'Contact Us', icon: 'fa-envelope' },
+    { href: '/terms/', label: 'Terms & Conditions', icon: 'fa-gavel' },
+    { href: '/privacy/', label: 'Privacy Policy', icon: 'fa-shield-halved' }
+];
+---
+
+<footer
+    class="bg-[#F5EBE0] dark:bg-night-deep text-slate-700 dark:text-[#B1A9DE] border-t border-[#EADCCB] dark:border-night-line pt-12 pb-24 md:pb-8 px-6 md:px-8 mt-16"
+>
+    <div class="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-10">
+        <nav class="space-y-4" aria-label="Organ systems">
+            <h2 class="text-xs font-black uppercase text-slate-700 dark:text-[#F1EDFF] tracking-wider">Organ Systems</h2>
+            <ul class="space-y-2 text-xs font-bold">
+                {
+                    systemLinks.map(s => (
+                        <li>
+                            <a href={`/systems/${s.id}/`} class="hover:text-brand-teal transition-colors flex items-center gap-1.5">
+                                <i class={`fa-solid ${s.icon} text-[10px] text-brand-teal`} aria-hidden="true" /> {s.label}
+                            </a>
+                        </li>
+                    ))
+                }
+            </ul>
+        </nav>
+
+        <nav class="space-y-4" aria-label="Crucial illnesses">
+            <h2 class="text-xs font-black uppercase text-slate-700 dark:text-[#F1EDFF] tracking-wider">Crucial Illnesses</h2>
+            <ul class="space-y-2 text-xs font-bold">
+                {
+                    crucial.map(d => (
+                        <li>
+                            <a href={diseaseUrl(d)} class="hover:text-brand-teal transition-colors">
+                                {d.name}
+                            </a>
+                        </li>
+                    ))
+                }
+            </ul>
+        </nav>
+
+        <nav class="space-y-4" aria-label="Resources">
+            <h2 class="text-xs font-black uppercase text-slate-700 dark:text-[#F1EDFF] tracking-wider">Resources Index</h2>
+            <ul class="space-y-2 text-xs font-bold">
+                {
+                    resources.map(r => (
+                        <li>
+                            <a href={r.href} class="hover:text-brand-teal transition-colors flex items-center gap-1.5">
+                                <i class={`fa-solid ${r.icon} text-[10px] text-brand-teal`} aria-hidden="true" /> {r.label}
+                            </a>
+                        </li>
+                    ))
+                }
+            </ul>
+        </nav>
+
+        <nav class="space-y-4" aria-label="Platform and legal">
+            <h2 class="text-xs font-black uppercase text-slate-700 dark:text-[#F1EDFF] tracking-wider">Platform & Legal</h2>
+            <ul class="space-y-2 text-xs font-bold">
+                {
+                    legal.map(l => (
+                        <li>
+                            <a href={l.href} class="hover:text-brand-teal transition-colors flex items-center gap-1.5">
+                                <i class={`fa-solid ${l.icon} text-[10px] text-slate-400 dark:text-[#8B84B8]`} aria-hidden="true" /> {l.label}
+                            </a>
+                        </li>
+                    ))
+                }
+            </ul>
+        </nav>
+    </div>
+
+    <div class="max-w-7xl mx-auto mt-10 pt-6 border-t border-[#EADCCB] dark:border-night-line space-y-3">
+        <p class="text-[11px] leading-relaxed font-bold text-slate-600 dark:text-[#B1A9DE]">
+            <i class="fa-solid fa-triangle-exclamation text-brand-coral mr-1" aria-hidden="true"></i>
+            PediaCare is an educational reference only and is not a substitute for professional
+            medical advice, diagnosis, or treatment. Always consult a qualified pediatrician or
+            emergency provider if your child is sick. In an emergency, call your local emergency
+            number immediately.
+        </p>
+        <p class="text-xs font-black text-slate-700 dark:text-[#F1EDFF]">
+            PediaCare © {year}. All Rights Reserved.
+        </p>
+    </div>
+</footer>

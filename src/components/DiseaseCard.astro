@@ -1,0 +1,40 @@
+---
+import { diseaseUrl, illustrationUrl, overviewOf, type Disease } from '../lib/db';
+import UrgencyBadge from './UrgencyBadge.astro';
+
+interface Props {
+    disease: Disease;
+}
+
+const { disease: d } = Astro.props;
+const summary = overviewOf(d);
+---
+
+<a
+    href={diseaseUrl(d)}
+    class="bounce-hover group bg-white dark:bg-night-card rounded-3xl border border-orange-100 dark:border-night-line shadow-premium hover:shadow-card-hover hover:border-brand-teal/40 p-5 flex flex-col gap-3"
+>
+    <div class="flex items-start justify-between gap-3">
+        <img
+            src={illustrationUrl(d.imagePath)}
+            alt=""
+            width="56"
+            height="56"
+            loading="lazy"
+            class="w-14 h-14 rounded-2xl bg-orange-50 dark:bg-night-line p-1.5 object-contain"
+        />
+        <UrgencyBadge level={d.urgency_level} />
+    </div>
+    <div class="space-y-1.5">
+        <h3 class="text-sm font-black text-slate-800 dark:text-[#F1EDFF] group-hover:text-brand-teal transition-colors leading-snug">
+            {d.name}
+        </h3>
+        <p class="text-xs text-slate-600 dark:text-[#B1A9DE] font-medium leading-relaxed line-clamp-2">
+            {summary}
+        </p>
+    </div>
+    <p class="mt-auto pt-1 text-[10px] font-black uppercase tracking-wider text-slate-500 dark:text-[#8B84B8] flex items-center gap-1.5">
+        <i class="fa-solid fa-child text-brand-coral" aria-hidden="true"></i>
+        {d.affected_age_group}
+    </p>
+</a>

@@ -1,0 +1,146 @@
+@import "tailwindcss";
+
+/* Dark mode is driven by a `.dark` class on <html>, toggled by the theme
+   switcher and set pre-paint by an inline script in the base layout. */
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+    --font-sans: "Outfit", system-ui, -apple-system, "Segoe UI", sans-serif;
+
+    /* Brand palette (carried over from the original PediaCare identity) */
+    --color-brand-bg: #FFF8F0;        /* warm peach cream */
+    --color-brand-teal: #2ABFBF;      /* primary teal */
+    --color-brand-teal-soft: #5BD3CB;
+    --color-brand-coral: #FF7F6E;     /* warm coral accent */
+    --color-badge-mild: #1E7E34;      /* WCAG AA on white */
+    --color-badge-moderate: #B58500;
+    --color-badge-severe: #C35A00;
+    --color-badge-emergency: #C82333;
+
+    /* Dark theme surfaces (midnight purple family) */
+    --color-night-bg: #232038;
+    --color-night-card: #2C2948;
+    --color-night-deep: #181628;
+    --color-night-line: #3A365D;
+    --color-night-raised: #4A4675;
+
+    --shadow-premium: 0 12px 40px rgb(220 140 100 / 0.04);
+    --shadow-card-hover: 0 20px 40px rgb(42 191 191 / 0.08);
+}
+
+/* ---------- Base ---------- */
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: var(--color-brand-bg);
+    color: var(--color-slate-700);
+}
+
+.dark body {
+    background-color: var(--color-night-bg);
+    color: #D8D2F5;
+}
+
+/* Keyboard focus must always be visible (WCAG 2.4.7) */
+:focus-visible {
+    outline: 3px solid var(--color-brand-teal);
+    outline-offset: 2px;
+    border-radius: 4px;
+}
+
+/* Skip link for screen-reader / keyboard users */
+.skip-link {
+    position: absolute;
+    left: -9999px;
+    top: 0;
+    z-index: 100;
+    background: var(--color-brand-teal);
+    color: white;
+    padding: 0.75rem 1.25rem;
+    border-radius: 0 0 0.75rem 0;
+    font-weight: 700;
+}
+
+.skip-link:focus {
+    left: 0;
+}
+
+/* ---------- Micro-interactions ---------- */
+
+.bounce-hover {
+    transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275),
+                box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.bounce-hover:hover {
+    transform: translateY(-4px);
+}
+
+@keyframes emergency-pulse {
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50% { opacity: 0.85; transform: scale(1.02); }
+}
+
+.animate-emergency {
+    animation: emergency-pulse 2.5s infinite ease-in-out;
+}
+
+@keyframes fade-in-up {
+    from { opacity: 0; transform: translateY(8px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.fade-in-up {
+    animation: fade-in-up 0.4s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+/* Gentle floating motion for decorative hero illustrations */
+@keyframes float-soft {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-8px); }
+}
+
+.animate-float {
+    animation: float-soft 5s ease-in-out infinite;
+}
+
+/* Respect users who opt out of motion (WCAG 2.3.3) */
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+    .bounce-hover,
+    .animate-emergency,
+    .fade-in-up,
+    .animate-float {
+        animation: none;
+        transition: none;
+    }
+}
+
+/* ---------- Scrollbar ---------- */
+
+.custom-scrollbar::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+    background: var(--color-brand-bg);
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+    background-color: var(--color-brand-teal);
+    border-radius: 20px;
+}
+
+.dark .custom-scrollbar::-webkit-scrollbar-track {
+    background: var(--color-night-bg);
+}
+
+.dark .custom-scrollbar::-webkit-scrollbar-thumb {
+    background-color: var(--color-night-line);
+}

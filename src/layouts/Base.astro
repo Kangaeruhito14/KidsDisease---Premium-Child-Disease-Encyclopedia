@@ -1,0 +1,80 @@
+---
+import Seo from '../components/Seo.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import '../styles/global.css';
+
+interface Props {
+    title: string;
+    description: string;
+    ogType?: 'website' | 'article';
+    image?: string;
+    jsonLd?: object[];
+}
+
+const { title, description, ogType, image, jsonLd = [] } = Astro.props;
+
+// Site-wide organization + website entities, merged with page-level JSON-LD.
+const siteJsonLd = [
+    {
+        '@context': 'https://schema.org',
+        '@type': 'WebSite',
+        name: 'PediaCare',
+        url: Astro.site?.toString(),
+        description:
+            'Educational child disease encyclopedia for parents and caregivers. Not a substitute for professional medical advice.'
+    },
+    ...jsonLd
+];
+---
+
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link
+            rel="icon"
+            type="image/svg+xml"
+            href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20100%20100%22%3E%3Ctext%20y%3D%220.9em%22%20font-size%3D%2290%22%3E%F0%9F%A9%BA%3C%2Ftext%3E%3C%2Fsvg%3E"
+        />
+        <meta name="generator" content={Astro.generator} />
+        <Seo {title} {description} {ogType} {image} jsonLd={siteJsonLd} />
+
+        <!-- Set theme before first paint to avoid a light-mode flash -->
+        <script is:inline>
+            (function () {
+                try {
+                    var stored = localStorage.getItem('pediacare-theme');
+                    var dark = stored
+                        ? stored === 'dark'
+                        : window.matchMedia('(prefers-color-scheme: dark)').matches;
+                    if (dark) document.documentElement.classList.add('dark');
+                } catch (e) {
+                    /* storage unavailable: stay light */
+                }
+            })();
+        </script>
+
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&display=swap"
+            rel="stylesheet"
+        />
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+            integrity="sha384-iw3OoTErCYJJB9mCa8LNS2hbsQ7M3C0EpIsO/H5+EGAkPGc6rk+V8i04oW/K5xq0"
+            crossorigin="anonymous"
+        />
+    </head>
+    <body class="min-h-screen flex flex-col font-sans antialiased">
+        <a href="#main-content" class="skip-link">Skip to main content</a>
+        <Header />
+        <main id="main-content" class="flex-1 w-full pb-20 md:pb-0">
+            <slot />
+        </main>
+        <Footer />
+    </body>
+</html>
