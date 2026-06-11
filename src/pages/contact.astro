@@ -1,0 +1,49 @@
+---
+import Base from '../layouts/Base.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+---
+
+<Base
+    title="Contact PediaCare"
+    description="How to reach the PediaCare team for corrections, source suggestions, or content requests. For medical emergencies, always call your local emergency number."
+>
+    <Breadcrumbs items={[{ name: 'Home', href: '/' }, { name: 'Contact Us' }]} />
+
+    <article class="max-w-3xl mx-auto px-4 md:px-8 py-8 space-y-6">
+        <h1 class="text-2xl md:text-4xl font-black text-slate-800 dark:text-[#F1EDFF] tracking-tight">Contact Us</h1>
+
+        <div class="rounded-3xl border border-red-200/70 dark:border-red-400/30 bg-red-50/60 dark:bg-red-500/10 p-6 space-y-2">
+            <h2 class="text-sm font-black text-red-900 dark:text-[#FFB3A8]">
+                <i class="fa-solid fa-truck-medical mr-1.5" aria-hidden="true"></i> Medical emergency?
+            </h2>
+            <p class="text-xs md:text-sm text-red-950 dark:text-[#FFD9D2] font-bold leading-relaxed">
+                Do not use this contact channel. Call your local emergency number or go to the
+                nearest emergency department immediately.
+            </p>
+        </div>
+
+        <div class="bg-white dark:bg-night-card rounded-3xl border border-orange-100 dark:border-night-line shadow-premium p-6 md:p-8 space-y-5 text-sm text-slate-700 dark:text-[#D8D2F5] font-medium leading-relaxed">
+            <p>We welcome three kinds of messages:</p>
+            <ul class="list-disc pl-5 space-y-2 text-xs md:text-sm">
+                <li><strong>Corrections</strong> — if any profile conflicts with current AAP/CDC/WHO/NHS guidance, tell us and include the source.</li>
+                <li><strong>Coverage requests</strong> — conditions you looked for and didn't find.</li>
+                <li><strong>Accessibility issues</strong> — anything that doesn't work with your screen reader, keyboard, or device.</li>
+            </ul>
+            <p class="text-xs md:text-sm">
+                Open an issue on the project repository:
+                <a
+                    href="https://github.com/Kangaeruhito14/PediaCare---Premium-Child-Disease-Encyclopedia/issues"
+                    rel="noopener"
+                    target="_blank"
+                    class="text-brand-teal hover:underline font-black"
+                >
+                    <i class="fa-brands fa-github mr-1" aria-hidden="true"></i>GitHub Issues
+                </a>
+            </p>
+            <p class="text-xs text-slate-500 dark:text-[#8B84B8] font-bold">
+                We cannot answer individual medical questions about your child — that would be
+                practicing medicine without an examination, which would be unsafe.
+            </p>
+        </div>
+    </article>
+</Base>

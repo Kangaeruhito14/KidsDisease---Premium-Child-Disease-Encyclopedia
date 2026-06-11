@@ -1,0 +1,71 @@
+---
+import Base from '../layouts/Base.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+
+const updated = '2026-06-11';
+---
+
+<Base
+    title="Terms & Conditions | PediaCare"
+    description="Terms of use for PediaCare: educational content only, no medical advice, no doctor-patient relationship, generic active ingredients without dosages."
+>
+    <Breadcrumbs items={[{ name: 'Home', href: '/' }, { name: 'Terms & Conditions' }]} />
+
+    <article class="max-w-3xl mx-auto px-4 md:px-8 py-8 space-y-6">
+        <header class="space-y-1">
+            <h1 class="text-2xl md:text-4xl font-black text-slate-800 dark:text-[#F1EDFF] tracking-tight">Terms & Conditions</h1>
+            <p class="text-[10px] font-black uppercase tracking-wider text-slate-500 dark:text-[#8B84B8]">Last updated: {updated}</p>
+        </header>
+
+        <div class="bg-white dark:bg-night-card rounded-3xl border border-orange-100 dark:border-night-line shadow-premium p-6 md:p-8 space-y-5 text-sm text-slate-700 dark:text-[#D8D2F5] font-medium leading-relaxed">
+            <section class="space-y-2">
+                <h2 class="text-base font-black text-slate-800 dark:text-[#F1EDFF]">1. Educational purpose only</h2>
+                <p class="text-xs md:text-sm">
+                    All content on PediaCare is provided for general educational purposes. It is
+                    not medical advice, does not establish a doctor–patient relationship, and must
+                    not be used as a substitute for examination, diagnosis, or treatment by a
+                    qualified healthcare professional.
+                </p>
+            </section>
+            <section class="space-y-2">
+                <h2 class="text-base font-black text-slate-800 dark:text-[#F1EDFF]">2. Emergencies</h2>
+                <p class="text-xs md:text-sm">
+                    Never delay seeking professional care because of something read here. If your
+                    child may be experiencing an emergency, call your local emergency number
+                    immediately.
+                </p>
+            </section>
+            <section class="space-y-2">
+                <h2 class="text-base font-black text-slate-800 dark:text-[#F1EDFF]">3. Medication information</h2>
+                <p class="text-xs md:text-sm">
+                    Profiles list generic active ingredients only — never brands and never doses.
+                    Pediatric dosing depends on weight, age, and history and must come from your
+                    child's clinician or pharmacist. Never administer self-designed therapies.
+                </p>
+            </section>
+            <section class="space-y-2">
+                <h2 class="text-base font-black text-slate-800 dark:text-[#F1EDFF]">4. Accuracy and currency</h2>
+                <p class="text-xs md:text-sm">
+                    We aim to align content with reputable guidance (AAP, CDC, WHO, NHS) and
+                    welcome corrections, but medicine evolves and errors are possible. Content is
+                    provided "as is" without warranties of completeness or fitness for a
+                    particular purpose.
+                </p>
+            </section>
+            <section class="space-y-2">
+                <h2 class="text-base font-black text-slate-800 dark:text-[#F1EDFF]">5. Limitation of liability</h2>
+                <p class="text-xs md:text-sm">
+                    To the maximum extent permitted by law, PediaCare and its contributors accept
+                    no liability for decisions made or actions taken based on this site's content.
+                </p>
+            </section>
+            <section class="space-y-2">
+                <h2 class="text-base font-black text-slate-800 dark:text-[#F1EDFF]">6. Intellectual property</h2>
+                <p class="text-xs md:text-sm">
+                    Text and illustrations are © PediaCare unless otherwise noted. You may share
+                    excerpts with attribution for non-commercial educational use.
+                </p>
+            </section>
+        </div>
+    </article>
+</Base>

@@ -1,0 +1,51 @@
+---
+import Base from '../layouts/Base.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+import Disclaimer from '../components/Disclaimer.astro';
+import { diseases, bodySystems } from '../lib/db';
+---
+
+<Base
+    title="About PediaCare — Why This Encyclopedia Exists"
+    description="PediaCare is a free educational child disease encyclopedia: plain-language clinical profiles, generic active ingredients only, and clear doctor thresholds. Not a diagnosis tool."
+>
+    <Breadcrumbs items={[{ name: 'Home', href: '/' }, { name: 'About Us' }]} />
+
+    <article class="max-w-3xl mx-auto px-4 md:px-8 py-8 space-y-6">
+        <header class="space-y-2">
+            <h1 class="text-2xl md:text-4xl font-black text-slate-800 dark:text-[#F1EDFF] tracking-tight">About PediaCare</h1>
+        </header>
+
+        <div class="bg-white dark:bg-night-card rounded-3xl border border-orange-100 dark:border-night-line shadow-premium p-6 md:p-8 space-y-5 text-sm text-slate-700 dark:text-[#D8D2F5] font-medium leading-relaxed">
+            <p>
+                PediaCare exists for one reason: when a child is sick at 2 a.m., parents deserve
+                clear, calm, honestly-sourced information — not panic, not jargon, and not ads for
+                brand medicines.
+            </p>
+            <p>
+                The encyclopedia currently covers <strong>{diseases.length} pediatric conditions</strong>
+                across <strong>{bodySystems.length} body systems</strong>. Every profile follows the same
+                8-section clinical structure: what the condition is, how it develops, staged symptoms
+                from early to severe, how clinicians verify it, the care plan, the exact thresholds
+                for calling a doctor, prevention and vaccines, and the expected recovery timeline.
+            </p>
+            <h2 class="text-base font-black text-slate-800 dark:text-[#F1EDFF] pt-2">Our editorial rules</h2>
+            <ul class="list-disc pl-5 space-y-2 text-xs md:text-sm">
+                <li><strong>Generic active ingredients only.</strong> No brand names, no commercial formulas, and never dosages — dosing belongs to your child's clinician.</li>
+                <li><strong>Severity is never hidden.</strong> Every profile carries an urgency badge from Mild to Emergency and a "Doctor Critical Lines" section.</li>
+                <li><strong>Sources are real.</strong> Guidance-level claims link to the AAP, CDC, WHO, NHS, and academic children's hospitals.</li>
+                <li><strong>Education, not diagnosis.</strong> This site helps you understand and ask better questions. It cannot examine your child.</li>
+            </ul>
+            <h2 class="text-base font-black text-slate-800 dark:text-[#F1EDFF] pt-2">Trusted further reading</h2>
+            <ul class="list-disc pl-5 space-y-2 text-xs md:text-sm">
+                <li><a href="https://www.healthychildren.org" rel="noopener" target="_blank" class="text-brand-teal hover:underline">HealthyChildren.org</a> — the American Academy of Pediatrics' parent site</li>
+                <li><a href="https://kidshealth.org" rel="noopener" target="_blank" class="text-brand-teal hover:underline">KidsHealth (Nemours)</a> — plain-language pediatric health library</li>
+                <li><a href="https://www.cdc.gov/vaccines/index.html" rel="noopener" target="_blank" class="text-brand-teal hover:underline">CDC Vaccines & Immunizations</a></li>
+                <li><a href="https://www.who.int/health-topics/child-health" rel="noopener" target="_blank" class="text-brand-teal hover:underline">WHO Child Health</a></li>
+                <li><a href="https://www.nhs.uk/conditions/baby/" rel="noopener" target="_blank" class="text-brand-teal hover:underline">NHS — Baby & child health</a></li>
+            </ul>
+        </div>
+
+        <Disclaimer />
+    </article>
+</Base>
