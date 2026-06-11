@@ -1,0 +1,182 @@
+---
+import Base from '../layouts/Base.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+import Disclaimer from '../components/Disclaimer.astro';
+
+interface Source {
+    label: string;
+    url: string;
+}
+
+interface Faq {
+    q: string;
+    /** Plain-text answer (also used for FAQPage JSON-LD). */
+    a: string;
+    sources: Source[];
+}
+
+const faqs: Faq[] = [
+    {
+        q: "When should I worry about my child's fever?",
+        a: "A fever means a temperature of 100.4°F (38°C) or higher. For babies under 3 months, any fever needs a doctor immediately — their immune systems are too immature to fight serious infection. For children 3 months to 3 years, call your pediatrician for a fever of 102.2°F (39°C) or higher. Beyond the number, how your child acts matters more: a child who plays, drinks, and responds normally is usually less concerning than a listless child with a lower temperature. Most fevers from common infections run their course in 1 to 4 days.",
+        sources: [
+            { label: 'Nemours KidsHealth — Fevers', url: 'https://kidshealth.org/en/parents/fever.html' },
+            { label: 'Harvard Health — When to worry about your child’s fever', url: 'https://www.health.harvard.edu/blog/worry-childs-fever-2017072512157' }
+        ]
+    },
+    {
+        q: 'When should I take my child to the ER instead of calling the pediatrician?',
+        a: 'Go to the emergency room (or call your local emergency number) for: serious trouble breathing (grunting, deep chest retractions, blue lips), unresponsiveness or extreme difficulty waking, a seizure, signs of severe dehydration (no urine for 8+ hours, no tears, sunken eyes), a dark red or purple rash that does not fade when pressed, or any fever in a baby under 3 months. For milder concerns — ear pain, low-grade fever in an alert child, mild vomiting — call your pediatrician first; many practices have an after-hours nurse line that can direct you.',
+        sources: [
+            { label: 'Johns Hopkins Medicine — Urgent care vs the ER', url: 'https://www.hopkinsmedicine.org/health/wellness-and-prevention/urgent-care-versus-the-er-a-pediatrician-offers-tips-on-making-the-right-choice' },
+            { label: 'Lurie Children’s — Pediatrician, immediate care or ER?', url: 'https://www.luriechildrens.org/en/blog/when-to-take-your-child-to-the-pediatrician-immediate-care-or-er/' }
+        ]
+    },
+    {
+        q: 'What are the signs of dehydration in babies and children?',
+        a: 'Early signs: dry or sticky mouth, fewer tears when crying, darker yellow urine, urinating less often, and unusual tiredness or irritability. In babies, fewer than six wet diapers a day is a warning sign. Severe signs that need emergency care: no urine for 8 or more hours, crying with no tears at all, sunken eyes or a sunken soft spot (fontanelle), lethargy, or cold blotchy skin. Mild dehydration can usually be treated at home with small, frequent sips of oral rehydration solution (ORS).',
+        sources: [
+            { label: 'HealthyChildren.org (AAP) — Signs of dehydration', url: 'https://www.healthychildren.org/English/health-issues/injuries-emergencies/Pages/dehydration.aspx' },
+            { label: 'Nemours KidsHealth — Dehydration', url: 'https://kidshealth.org/en/parents/dehydration.html' }
+        ]
+    },
+    {
+        q: "Are childhood vaccines safe? Can several shots at once overwhelm my baby's immune system?",
+        a: "Yes — the routine childhood schedule is one of the most heavily studied interventions in medicine, and no, multiple vaccines do not overwhelm a baby's immune system. Children encounter far more antigens from everyday germs than from the entire vaccine schedule combined. Side effects are usually minor and brief: soreness at the injection site, fussiness, or a low fever for a day or two. Serious reactions are rare, and your pediatric clinic is prepared for them. Delaying shots only extends the window in which a child is unprotected.",
+        sources: [
+            { label: 'CDC — Questions parents may ask about vaccines', url: 'https://www.cdc.gov/vaccines-children/hcp/conversation-tips/questions-parents-may-ask.html' },
+            { label: 'AAP — Common immunization questions', url: 'https://www.aap.org/en/patient-care/immunizations/communicating-with-families-and-promoting-vaccine-confidence/common-immunization-questions-from-parents/' }
+        ]
+    },
+    {
+        q: 'Will a fever keep rising if I don’t treat it? Can a fever cause brain damage?',
+        a: 'Both are myths for typical fevers. A fever from an everyday infection is the body’s controlled response — it does not climb endlessly if untreated, and temperatures from ordinary infections do not cause brain damage. Fever medicine (acetaminophen/paracetamol or, over 6 months of age, ibuprofen) is for comfort, not because the number itself is dangerous. Never use aspirin in children — it is linked to Reye’s syndrome. See a doctor for fevers with the warning signs above, lasting more than a few days, or in very young babies.',
+        sources: [
+            { label: 'UC Davis Health — Pediatricians answer fever questions', url: 'https://health.ucdavis.edu/blog/cultivating-health/when-to-be-concerned-about-fevers-in-children-pediatricians-answer-your-questions/2025/01' },
+            { label: 'Nemours KidsHealth — Fevers', url: 'https://kidshealth.org/en/parents/fever.html' }
+        ]
+    },
+    {
+        q: 'What is RSV and which babies are most at risk?',
+        a: 'Respiratory syncytial virus (RSV) is the leading cause of bronchiolitis and pneumonia in infants. For most children it behaves like a cold, but in babies — especially those under 6 months, born premature, or with heart/lung conditions — it can inflame the smallest airways and make feeding and breathing hard. Watch for fast breathing, wheezing, chest retractions, or poor feeding, and seek care promptly. Preventive RSV immunization is now recommended for infants entering their first RSV season; ask your pediatrician what applies in your country.',
+        sources: [
+            { label: 'AMA — Pediatric vaccine questions including RSV', url: 'https://www.ama-assn.org/public-health/prevention-wellness/pediatric-vaccines-questions-parents-will-ask-and-how-answer' },
+            { label: 'PediaCare — Acute Viral Bronchiolitis profile', url: '/diseases/bronchiolitis/' }
+        ]
+    },
+    {
+        q: 'How can I tell a measles rash from other childhood rashes?',
+        a: 'Measles classically starts with 3–4 days of high fever, cough, runny nose, and red watery eyes, sometimes with tiny white spots inside the cheeks (Koplik spots). The rash then starts at the hairline and face and spreads downward over the body. Many other childhood rashes (roseola, fifth disease, scarlet fever, chickenpox) follow different patterns — but rash identification by photo or description is unreliable. If you suspect measles, call your clinic before visiting (it is extremely contagious), and tell them your child’s vaccination status.',
+        sources: [
+            { label: 'University of Utah Health — Measles or something else?', url: 'https://healthcare.utah.edu/the-scope/kids-zone/all/2026/04/measles-or-something-else-how-tell-common-childhood-rashes-apart-0' },
+            { label: 'PediaCare — Measles (Rubeola) profile', url: '/diseases/measles/' }
+        ]
+    },
+    {
+        q: 'My child woke up with a barking, seal-like cough (croup). What should I do?',
+        a: 'Croup typically sounds worse at night. Stay calm and keep your child calm — crying worsens the airway swelling. Sit them upright; cool night air or a steamy bathroom may ease symptoms, although evidence is mixed. Most croup resolves on its own in about a week. Seek emergency care if you hear stridor (a high-pitched sound when breathing IN) while your child is calm and at rest, if there are chest retractions, drooling with trouble swallowing, blue lips, or unusual drowsiness.',
+        sources: [
+            { label: 'WebMD — Childhood illnesses every parent should know', url: 'https://www.webmd.com/children/ss/slideshow-childhood-illnesses-to-know' },
+            { label: 'PediaCare — Croup profile', url: '/diseases/croup/' }
+        ]
+    },
+    {
+        q: 'How long do common childhood illnesses last, and when can my child return to school?',
+        a: 'Typical courses: ordinary viral fevers 1–4 days; croup about a week; hand-foot-and-mouth disease 7–10 days; colds 7–14 days. The widely used return rule: your child should be fever-free for 24 hours WITHOUT fever-reducing medicine, able to participate, and past any illness-specific exclusion (for example, chickenpox requires all blisters crusted over). Your school or daycare may have stricter policies — check theirs too.',
+        sources: [
+            { label: 'Nemours KidsHealth — Fevers (duration)', url: 'https://kidshealth.org/en/parents/fever.html' },
+            { label: 'WebMD — Childhood illnesses overview', url: 'https://www.webmd.com/children/ss/slideshow-childhood-illnesses-to-know' }
+        ]
+    },
+    {
+        q: 'What should I keep at home for a sick child?',
+        a: 'A reliable digital thermometer; oral rehydration solution (ORS) sachets; weight-appropriate acetaminophen/paracetamol (and ibuprofen for children over 6 months) with a proper dosing syringe — dose by weight, not age, and never use aspirin; saline nose drops and a bulb suction for babies; and your pediatrician’s and local emergency numbers written where everyone can find them. Avoid over-the-counter cough-and-cold combination medicines for children under 6 — they show little benefit and carry real risks.',
+        sources: [
+            { label: 'HealthyChildren.org (AAP) — Symptom checker & home care', url: 'https://www.healthychildren.org/English/tips-tools/Symptom-Checker/Pages/default.aspx' },
+            { label: 'Nemours KidsHealth — Dehydration (ORS guidance)', url: 'https://kidshealth.org/en/parents/dehydration.html' }
+        ]
+    },
+    {
+        q: 'Why is my child always sick? Is constant illness normal?',
+        a: 'Usually, yes. Young children in daycare or school commonly catch 6–10 viral infections per year — each lasting a week or more, which can feel like one continuous illness, especially in winter. Each infection trains the immune system. Talk to your pediatrician if infections are unusually severe, keep needing antibiotics, involve poor growth, or include repeated pneumonia or abscesses — those patterns deserve a closer look.',
+        sources: [
+            { label: 'Mayo Clinic Press — Why is my child always sick?', url: 'https://mcpress.mayoclinic.org/parenting/the-constant-cold-why-kids-are-always-sick-and-what-to-do-about-it/' }
+        ]
+    },
+    {
+        q: 'Can I use PediaCare instead of seeing a doctor?',
+        a: 'No. PediaCare is an educational encyclopedia that helps you understand conditions, recognize warning signs, and have better conversations with your child’s clinician. It cannot examine your child, weigh their history, or make a diagnosis. It lists generic active ingredients only — never doses — because dosing must come from a professional who knows your child. If your child seems seriously unwell, trust your instinct and seek care; you know your child best.',
+        sources: [
+            { label: 'PediaCare — About this project', url: '/about/' }
+        ]
+    }
+];
+
+const jsonLd = [
+    {
+        '@context': 'https://schema.org',
+        '@type': 'FAQPage',
+        mainEntity: faqs.map(f => ({
+            '@type': 'Question',
+            name: f.q,
+            acceptedAnswer: { '@type': 'Answer', text: f.a }
+        }))
+    }
+];
+---
+
+<Base
+    title="Child Illness FAQ: Fever, ER Decisions, Dehydration & Vaccines | PediaCare"
+    description="Pediatrician-sourced answers to the questions parents search most: fever thresholds by age, ER vs pediatrician, dehydration signs, vaccine safety, croup at night, and school return rules."
+    {jsonLd}
+>
+    <Breadcrumbs items={[{ name: 'Home', href: '/' }, { name: 'Parents’ FAQ' }]} />
+
+    <div class="max-w-4xl mx-auto px-4 md:px-8 py-8 space-y-8">
+        <header class="text-center space-y-2">
+            <h1 class="text-2xl md:text-4xl font-black text-slate-800 dark:text-[#F1EDFF] tracking-tight">
+                Frequently Asked Questions
+            </h1>
+            <p class="text-xs md:text-sm text-slate-600 dark:text-[#B1A9DE] font-bold max-w-2xl mx-auto">
+                The questions parents ask most, answered conservatively and linked to the
+                original guidance from the AAP, CDC, Nemours, and academic children's hospitals.
+            </p>
+        </header>
+
+        <div class="space-y-4">
+            {
+                faqs.map(f => (
+                    <details class="group bg-white dark:bg-night-card rounded-3xl border border-orange-100 dark:border-night-line shadow-premium open:shadow-card-hover transition-shadow">
+                        <summary class="flex items-start justify-between gap-4 cursor-pointer list-none p-6 select-none">
+                            <h2 class="text-sm md:text-base font-black text-slate-800 dark:text-[#F1EDFF] leading-snug">
+                                {f.q}
+                            </h2>
+                            <i class="fa-solid fa-chevron-down text-brand-teal mt-1 shrink-0 transition-transform group-open:rotate-180" aria-hidden="true" />
+                        </summary>
+                        <div class="px-6 pb-6 space-y-4">
+                            <p class="text-xs md:text-sm text-slate-700 dark:text-[#D8D2F5] font-medium leading-relaxed">{f.a}</p>
+                            <p class="text-[11px] font-bold text-slate-500 dark:text-[#8B84B8]">
+                                Sources:{' '}
+                                {f.sources.map((s, i) => (
+                                    <>
+                                        {i > 0 && ' · '}
+                                        <a
+                                            href={s.url}
+                                            rel={s.url.startsWith('/') ? undefined : 'noopener'}
+                                            target={s.url.startsWith('/') ? undefined : '_blank'}
+                                            class="text-brand-teal hover:underline"
+                                        >
+                                            {s.label}
+                                        </a>
+                                    </>
+                                ))}
+                            </p>
+                        </div>
+                    </details>
+                ))
+            }
+        </div>
+
+        <Disclaimer />
+    </div>
+</Base>
