@@ -12,16 +12,30 @@ interface Props {
     image?: string;
     /** JSON-LD objects rendered as application/ld+json scripts. */
     jsonLd?: object[];
+    /** Page-specific keywords appended to the site-wide set. */
+    keywords?: string[];
 }
 
-const { title, description, ogType = 'website', image = '/illustrations/all.svg', jsonLd = [] } = Astro.props;
+const { title, description, ogType = 'website', image = '/illustrations/all.svg', jsonLd = [], keywords = [] } = Astro.props;
 
+// Core brand/topic keywords carried on every page (the variants parents
+// actually type), plus any page-specific terms.
+const SITE_KEYWORDS = [
+    'kids disease', 'kid disease', 'child disease', 'childhood diseases',
+    'children diseases', 'kids diseases', 'pediatric diseases',
+    'child health', 'kids health', 'kid health', 'children health',
+    'baby illnesses', 'common childhood illnesses', 'child symptoms',
+    'kids symptom checker', 'child disease encyclopedia', 'pediatric care',
+    'when to see a doctor child', 'child vaccination schedule'
+];
+const keywordContent = [...new Set([...SITE_KEYWORDS, ...keywords])].join(', ');
 const canonical = new URL(Astro.url.pathname, Astro.site);
 const imageUrl = new URL(image, Astro.site);
 ---
 
 <title>{title}</title>
 <meta name="description" content={description} />
+<meta name="keywords" content={keywordContent} />
 <link rel="canonical" href={canonical} />
 
 <meta property="og:title" content={title} />
@@ -29,7 +43,7 @@ const imageUrl = new URL(image, Astro.site);
 <meta property="og:type" content={ogType} />
 <meta property="og:url" content={canonical} />
 <meta property="og:image" content={imageUrl} />
-<meta property="og:site_name" content="PediaCare" />
+<meta property="og:site_name" content="Kids Disease" />
 
 <meta name="twitter:card" content="summary" />
 <meta name="twitter:title" content={title} />

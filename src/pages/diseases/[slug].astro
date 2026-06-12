@@ -40,6 +40,18 @@ const elements = d.medicinal_elements
 
 const title = `${d.name} in Children: Symptoms, Treatment & When to Worry`;
 
+// Per-disease long-tail keyword cluster (see docs/seo-strategy.md).
+const keywords = [
+    d.name,
+    `${d.name} in children`,
+    `${d.name} symptoms`,
+    `${d.name} treatment`,
+    `${d.name} in kids`,
+    `is ${d.name} contagious`,
+    `child ${d.name}`,
+    ...d.tags
+];
+
 // Structured data limited to facts visibly present on this page.
 const jsonLd = [
     {
@@ -75,7 +87,7 @@ const sections = [
 ];
 ---
 
-<Base {title} description={metaDescription(d)} ogType="article" image={illustrationUrl(d.imagePath)} {jsonLd}>
+<Base {title} description={metaDescription(d)} ogType="article" image={illustrationUrl(d.imagePath)} {jsonLd} {keywords}>
     <Breadcrumbs
         items={[
             { name: 'Home', href: '/' },
