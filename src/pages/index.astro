@@ -202,6 +202,8 @@ const milestones = [
         // Lightweight autocomplete over disease names (rendered server-side data)
         const input = document.getElementById('home-search');
         const list = document.getElementById('home-suggestions');
+        const esc = s =>
+            s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
         if (input && list) {
             const render = () => {
                 const q = input.value.toLowerCase().trim();
@@ -219,7 +221,7 @@ const milestones = [
                 list.innerHTML = hits
                     .map(
                         h =>
-                            `<li role="option"><a class="block px-5 py-3 text-xs font-bold text-slate-700 dark:text-[#D8D2F5] hover:bg-teal-50 dark:hover:bg-night-line transition-colors" href="/diseases/${h.s}/">${h.n}</a></li>`
+                            `<li role="option"><a class="block px-5 py-3 text-xs font-bold text-slate-700 dark:text-[#D8D2F5] hover:bg-teal-50 dark:hover:bg-night-line transition-colors" href="/diseases/${encodeURIComponent(h.s)}/">${esc(h.n)}</a></li>`
                     )
                     .join('');
                 list.classList.remove('hidden');
