@@ -1,6 +1,6 @@
 {
-  "name": "pediacare",
-  "description": "PediaCare — child disease encyclopedia for parents and caregivers. Educational reference only; not medical advice.",
+  "name": "kidsdisease",
+  "description": "Kids Disease — child disease encyclopedia for parents and caregivers. Educational reference only; not medical advice.",
   "version": "2.0.0",
   "private": true,
   "type": "module",

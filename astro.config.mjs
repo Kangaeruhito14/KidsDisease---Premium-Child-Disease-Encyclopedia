@@ -5,7 +5,7 @@ import sitemap from '@astrojs/sitemap';
 export default defineConfig({
     // TODO: replace with the real domain once purchased. Sitemap and
     // canonical URLs regenerate automatically from this single value.
-    site: 'https://pediacare.health',
+    site: 'https://kidsdisease.com',
     trailingSlash: 'ignore',
     integrations: [sitemap()],
     // Tailwind 4 runs via PostCSS (postcss.config.mjs): the @tailwindcss/vite

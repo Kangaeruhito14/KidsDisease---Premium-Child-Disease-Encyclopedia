@@ -1,4 +1,4 @@
-# PediaCare SEO & Content Strategy
+# Kids Disease SEO & Content Strategy
 
 Research date: 2026-06-10. Sources: live web research + programmatic-seo /
 seo-audit skills. This document drives the Astro site's page architecture.
@@ -23,7 +23,7 @@ Each disease page targets the cluster:
 - `how long does [disease] last in children`
 
 Title template: `{Disease Name} in Children: Symptoms, Treatment & When to
-Worry | PediaCare` (≤60 chars where possible).
+Worry | Kids Disease` (≤60 chars where possible).
 Meta description template: first ~155 chars of classification + age group +
 urgency, unique per page.
 
@@ -42,7 +42,7 @@ Johns Hopkins, Harvard Health, NHS, Lurie Children's, UC Davis Health.
 9. My child has a barking cough at night (croup) — what should I do?
 10. When can my child go back to school or daycare after being sick?
 11. What belongs in a home care kit for a sick child?
-12. Can I use PediaCare instead of seeing a doctor? (scope/disclaimer)
+12. Can I use Kids Disease instead of seeing a doctor? (scope/disclaimer)
 
 ## Architecture (hub & spoke)
 
@@ -80,7 +80,7 @@ dictionary) remains in `legacy/` and keeps working.
 
 ## Domain note
 
-`site` in astro.config.mjs uses the placeholder `https://pediacare.health`.
+`site` in astro.config.mjs uses the placeholder `https://kidsdisease.com`.
 When the real domain is purchased, change it in ONE place (astro.config.mjs)
 and rebuild — sitemap and canonical URLs update automatically.
 

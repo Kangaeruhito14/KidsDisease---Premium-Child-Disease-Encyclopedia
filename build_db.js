@@ -54,7 +54,7 @@ for (const d of db.diseases) {
 }
 
 const payload = Buffer.from(JSON.stringify(db), 'utf8').toString('base64');
-const banner = '/**\n * PediaCare disease database payload.\n * GENERATED FILE — edit data/database.source.json and run `node build_db.js`.\n */\n';
+const banner = '/**\n * Kids Disease disease database payload.\n * GENERATED FILE — edit data/database.source.json and run `node build_db.js`.\n */\n';
 fs.writeFileSync(outputPath, `${banner}const PediaCareDB_Encrypted = "${payload}";\n`);
 
 console.log(`OK: ${db.diseases.length} diseases, ${db.bodySystems.length} systems, ${db.diseaseCategories.length} categories -> legacy/data/database.js`);

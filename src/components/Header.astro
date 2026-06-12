@@ -17,14 +17,14 @@ const isActive = (href: string) =>
     class="sticky top-0 z-50 bg-white/95 dark:bg-night-card/95 border-b border-orange-200/50 dark:border-night-line shadow-premium backdrop-blur-md"
 >
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
-        <a href="/" class="flex items-center gap-3 select-none" aria-label="PediaCare home">
+        <a href="/" class="flex items-center gap-3 select-none" aria-label="Kids Disease home">
             <span
                 class="w-10 h-10 rounded-2xl bg-gradient-to-br from-brand-teal to-brand-teal-soft flex items-center justify-center text-white shadow-md"
             >
                 <i class="fa-solid fa-stethoscope text-lg" aria-hidden="true"></i>
             </span>
             <span>
-                <span class="block font-black text-xl text-slate-800 dark:text-[#F1EDFF] tracking-tight leading-none">PediaCare</span>
+                <span class="block font-black text-xl text-slate-800 dark:text-[#F1EDFF] tracking-tight leading-none">Kids Disease</span>
                 <span class="block text-[9px] font-black text-slate-600 dark:text-[#B1A9DE] uppercase tracking-wider mt-0.5">
                     Child Disease Encyclopedia
                 </span>
@@ -91,7 +91,7 @@ const isActive = (href: string) =>
     toggle?.addEventListener('click', () => {
         const dark = document.documentElement.classList.toggle('dark');
         try {
-            localStorage.setItem('pediacare-theme', dark ? 'dark' : 'light');
+            localStorage.setItem('kidsdisease-theme', dark ? 'dark' : 'light');
         } catch {
             /* storage unavailable */
         }
