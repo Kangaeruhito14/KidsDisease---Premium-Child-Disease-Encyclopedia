@@ -1,0 +1,11 @@
+# Security headers for Netlify / Cloudflare Pages deployments.
+# The full CSP (with per-page script hashes) lives in each page's <meta> tag;
+# this header layer adds only what <meta> CSP cannot express.
+/*
+  Content-Security-Policy: frame-ancestors 'none'
+  X-Frame-Options: DENY
+  X-Content-Type-Options: nosniff
+  Referrer-Policy: strict-origin-when-cross-origin
+  Permissions-Policy: camera=(), microphone=(), geolocation=(), payment=(), usb=()
+  Cross-Origin-Opener-Policy: same-origin
+  Strict-Transport-Security: max-age=31536000; includeSubDomains
