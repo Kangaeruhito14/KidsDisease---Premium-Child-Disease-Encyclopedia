@@ -6,12 +6,18 @@
 
 @theme {
     --font-sans: "Outfit", system-ui, -apple-system, "Segoe UI", sans-serif;
+    /* Editorial display face for headings — gives the site a "designed",
+       publication feel rather than a single all-bold sans. */
+    --font-display: "Fraunces", "Iowan Old Style", Georgia, "Times New Roman", serif;
 
-    /* Brand palette (carried over from the original Kids Disease identity) */
-    --color-brand-bg: #FFF8F0;        /* warm peach cream */
-    --color-brand-teal: #2ABFBF;      /* primary teal */
-    --color-brand-teal-soft: #5BD3CB;
-    --color-brand-coral: #FF7F6E;     /* warm coral accent */
+    /* Brand palette (warm editorial neutrals + confident teal accent) */
+    --color-brand-bg: #FBF6EF;        /* soft ivory paper */
+    --color-brand-surface: #FFFFFF;
+    --color-ink: #23201C;             /* warm near-black for body text */
+    --color-brand-teal: #138A8A;      /* deepened teal — AA on ivory */
+    --color-brand-teal-soft: #2ABFBF;
+    --color-brand-coral: #E8654E;     /* deepened coral accent */
+    --color-brand-gold: #C8861B;      /* warm secondary accent */
     --color-badge-mild: #1E7E34;      /* WCAG AA on white */
     --color-badge-moderate: #B58500;
     --color-badge-severe: #C35A00;
@@ -36,12 +42,25 @@ html {
 
 body {
     background-color: var(--color-brand-bg);
-    color: var(--color-slate-700);
+    color: var(--color-ink);
+    /* Whisper-quiet paper grain — adds an editorial, "crafted" texture that
+       reads as designed without any runtime cost or distraction. */
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.025'/%3E%3C/svg%3E");
 }
 
 .dark body {
     background-color: var(--color-night-bg);
     color: #D8D2F5;
+    background-image: none;
+}
+
+/* Editorial display headings: big titles in the serif, small/uppercase
+   labels stay in the sans (set explicitly where needed). */
+.font-display,
+h1 {
+    font-family: var(--font-display);
+    font-optical-sizing: auto;
+    letter-spacing: -0.015em;
 }
 
 /* Keyboard focus must always be visible (WCAG 2.4.7) */

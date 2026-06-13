@@ -54,68 +54,100 @@ const milestones = [
     description={`Plain-language profiles of ${diseases.length} childhood illnesses: staged symptoms, home care, prevention, and when to see a doctor. Educational reference for parents and caregivers.`}
 >
     <!-- Hero -->
-    <section class="max-w-7xl mx-auto px-4 md:px-8 pt-12 md:pt-20 pb-10 text-center space-y-6">
-        <p class="inline-flex items-center gap-1.5 text-[11px] font-black text-slate-600 dark:text-[#B1A9DE] bg-orange-50 dark:bg-night-line px-3 py-1.5 rounded-xl border border-orange-100 dark:border-night-raised">
-            <i class="fa-solid fa-shield-halved text-brand-coral" aria-hidden="true"></i>
-            Generic active ingredients only — no brand formulas
-        </p>
-        <h1 class="text-3xl md:text-5xl font-black text-slate-800 dark:text-[#F1EDFF] tracking-tight leading-tight">
-            Kids Disease<br class="hidden md:block" /> Encyclopedia
-        </h1>
-        <p class="max-w-2xl mx-auto text-sm md:text-base text-slate-600 dark:text-[#B1A9DE] font-medium leading-relaxed">
-            A plain-language guide to child and kids' diseases for parents and caregivers — explore
-            {diseases.length} childhood illnesses with staged symptoms, home care, prevention, vaccine
-            guidance, and exactly when to call a doctor. Built to support your child's health, not
-            replace your pediatrician.
-        </p>
+    <section class="relative overflow-hidden border-b border-orange-100/70 dark:border-night-line">
+        <div class="max-w-7xl mx-auto px-4 md:px-8 pt-12 md:pt-20 pb-12 grid lg:grid-cols-[1.05fr_0.95fr] gap-10 lg:gap-6 items-center">
+            <div class="space-y-6 text-center lg:text-left">
+                <p class="inline-flex items-center gap-1.5 text-[11px] font-black uppercase tracking-wider text-brand-teal bg-white/70 dark:bg-night-line px-3 py-1.5 rounded-full border border-orange-100 dark:border-night-raised">
+                    <i class="fa-solid fa-book-medical" aria-hidden="true"></i> Child Disease Encyclopedia
+                </p>
+                <h1 class="font-display text-4xl md:text-6xl font-semibold text-ink dark:text-[#F1EDFF] leading-[1.05]">
+                    When your child<br class="hidden sm:block" /> is sick, <span class="italic text-brand-teal">start here.</span>
+                </h1>
+                <p class="max-w-xl mx-auto lg:mx-0 text-sm md:text-base text-slate-600 dark:text-[#B1A9DE] font-medium leading-relaxed">
+                    Plain-language guidance on {diseases.length} child and kids' diseases — staged
+                    symptoms, home care, prevention, and exactly when to call a doctor. Built to
+                    support your child's health, never to replace your pediatrician.
+                </p>
 
-        <!-- Search -->
-        <form action="/search/" method="get" role="search" class="max-w-xl mx-auto relative">
-            <label for="home-search" class="sr-only">Search childhood diseases</label>
-            <input
-                id="home-search"
-                name="q"
-                type="search"
-                placeholder="Quick search (e.g. fever, rash, asthma)…"
-                autocomplete="off"
-                class="w-full rounded-2xl border border-orange-200/70 dark:border-night-line bg-white dark:bg-night-card px-5 py-4 pr-28 text-sm font-bold text-slate-800 dark:text-[#F1EDFF] placeholder:text-slate-400 focus:border-brand-teal focus:outline-none shadow-premium"
-            />
-            <button
-                type="submit"
-                class="absolute right-2 top-1/2 -translate-y-1/2 bg-brand-teal hover:bg-brand-teal-soft text-white text-xs font-black px-5 py-2.5 rounded-xl transition-colors cursor-pointer"
-            >
-                <i class="fa-solid fa-magnifying-glass mr-1" aria-hidden="true"></i> Search
-            </button>
-            <ul
-                id="home-suggestions"
-                class="absolute left-0 right-0 mt-2 bg-white dark:bg-night-card border border-orange-100 dark:border-night-line rounded-2xl shadow-card-hover overflow-hidden text-left hidden z-30"
-                role="listbox"
-                aria-label="Disease suggestions"
-            >
-            </ul>
-        </form>
+                <!-- Search -->
+                <form action="/search/" method="get" role="search" class="max-w-xl mx-auto lg:mx-0 relative">
+                    <label for="home-search" class="sr-only">Search childhood diseases</label>
+                    <input
+                        id="home-search"
+                        name="q"
+                        type="search"
+                        placeholder="Quick search (e.g. fever, rash, asthma)…"
+                        autocomplete="off"
+                        class="w-full rounded-2xl border border-orange-200/70 dark:border-night-line bg-white dark:bg-night-card px-5 py-4 pr-28 text-sm font-bold text-ink dark:text-[#F1EDFF] placeholder:text-slate-400 focus:border-brand-teal focus:outline-none shadow-premium"
+                    />
+                    <button
+                        type="submit"
+                        class="absolute right-2 top-1/2 -translate-y-1/2 bg-brand-teal hover:bg-brand-teal-soft text-white text-xs font-black px-5 py-2.5 rounded-xl transition-colors cursor-pointer"
+                    >
+                        <i class="fa-solid fa-magnifying-glass mr-1" aria-hidden="true"></i> Search
+                    </button>
+                    <ul
+                        id="home-suggestions"
+                        class="absolute left-0 right-0 mt-2 bg-white dark:bg-night-card border border-orange-100 dark:border-night-line rounded-2xl shadow-card-hover overflow-hidden text-left hidden z-30"
+                        role="listbox"
+                        aria-label="Disease suggestions"
+                    >
+                    </ul>
+                </form>
+
+                <!-- Trust / sourcing strip (also an E-E-A-T + AI-citation signal) -->
+                <p class="text-[11px] font-bold text-slate-500 dark:text-[#8B84B8] flex flex-wrap items-center justify-center lg:justify-start gap-x-2 gap-y-1">
+                    <i class="fa-solid fa-circle-check text-brand-teal" aria-hidden="true"></i>
+                    Compiled from and aligned with
+                    <span class="text-ink dark:text-[#D8D2F5]">AAP · CDC · WHO · NHS</span>
+                </p>
+            </div>
+
+            <!-- Custom editorial motif (owned inline SVG — no stock imagery) -->
+            <div class="relative order-first lg:order-none">
+                <svg viewBox="0 0 420 420" class="w-56 sm:w-72 lg:w-full max-w-md mx-auto animate-float" role="img" aria-label="A caring heartbeat connecting the body's systems">
+                    <defs>
+                        <linearGradient id="heroHeart" x1="0" y1="0" x2="1" y2="1">
+                            <stop offset="0" stop-color="#2ABFBF" />
+                            <stop offset="1" stop-color="#138A8A" />
+                        </linearGradient>
+                    </defs>
+                    <circle cx="210" cy="210" r="168" fill="none" stroke="#138A8A" stroke-opacity="0.16" stroke-width="2" />
+                    <circle cx="210" cy="210" r="126" fill="none" stroke="#E8654E" stroke-opacity="0.22" stroke-width="2" stroke-dasharray="2 10" stroke-linecap="round" />
+                    <circle cx="318" cy="116" r="6" fill="#C8861B" />
+                    <circle cx="92" cy="250" r="5" fill="#E8654E" />
+                    <circle cx="330" cy="288" r="4" fill="#2ABFBF" />
+                    <circle cx="120" cy="118" r="3.5" fill="#138A8A" />
+                    <path fill="none" stroke="#23201C" stroke-opacity="0.78" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" d="M44 168 H150 l16-42 27 96 20-64 14 28 H376" />
+                    <path fill="url(#heroHeart)" d="M210 318 c-54-39-82-70-82-102 0-22 17-38 39-38 17 0 30 9 43 28 13-19 26-28 43-28 22 0 39 16 39 38 0 32-28 63-82 102Z" />
+                    <path fill="none" stroke="#FBF6EF" stroke-opacity="0.85" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" d="M168 250 h22 l9-18 13 34 10-22 h20" />
+                </svg>
+            </div>
+        </div>
 
         <!-- Live stats from the database -->
-        <dl class="flex items-center justify-center gap-8 md:gap-14 pt-4">
-            <div>
-                <dt class="text-[10px] font-black uppercase tracking-wider text-slate-500 dark:text-[#8B84B8]">Disease Profiles</dt>
-                <dd class="text-2xl md:text-3xl font-black text-brand-teal">{diseases.length}</dd>
-            </div>
-            <div>
-                <dt class="text-[10px] font-black uppercase tracking-wider text-slate-500 dark:text-[#8B84B8]">Body Systems</dt>
-                <dd class="text-2xl md:text-3xl font-black text-brand-coral">{bodySystems.length}</dd>
-            </div>
-            <div>
-                <dt class="text-[10px] font-black uppercase tracking-wider text-slate-500 dark:text-[#8B84B8]">Categories</dt>
-                <dd class="text-2xl md:text-3xl font-black text-slate-700 dark:text-[#D8D2F5]">{diseaseCategories.length}</dd>
-            </div>
-        </dl>
+        <div class="max-w-7xl mx-auto px-4 md:px-8 pb-10">
+            <dl class="flex items-center justify-center lg:justify-start gap-8 md:gap-14">
+                <div>
+                    <dt class="text-[10px] font-black uppercase tracking-wider text-slate-500 dark:text-[#8B84B8]">Disease Profiles</dt>
+                    <dd class="font-display text-3xl md:text-4xl font-semibold text-brand-teal">{diseases.length}</dd>
+                </div>
+                <div>
+                    <dt class="text-[10px] font-black uppercase tracking-wider text-slate-500 dark:text-[#8B84B8]">Body Systems</dt>
+                    <dd class="font-display text-3xl md:text-4xl font-semibold text-brand-coral">{bodySystems.length}</dd>
+                </div>
+                <div>
+                    <dt class="text-[10px] font-black uppercase tracking-wider text-slate-500 dark:text-[#8B84B8]">Categories</dt>
+                    <dd class="font-display text-3xl md:text-4xl font-semibold text-ink dark:text-[#D8D2F5]">{diseaseCategories.length}</dd>
+                </div>
+            </dl>
+        </div>
     </section>
 
     <!-- Featured profiles -->
     <section class="max-w-7xl mx-auto px-4 md:px-8 py-10 space-y-6" aria-labelledby="featured-heading">
         <div class="text-center space-y-1">
-            <h2 id="featured-heading" class="text-xl md:text-2xl font-black text-slate-800 dark:text-[#F1EDFF]">Featured Pediatric Profiles</h2>
+            <h2 id="featured-heading" class="font-display text-2xl md:text-3xl font-semibold text-ink dark:text-[#F1EDFF]">Featured Pediatric Profiles</h2>
             <p class="text-xs md:text-sm text-slate-600 dark:text-[#B1A9DE] font-bold">Quick links to the most consulted clinical references</p>
         </div>
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
@@ -126,7 +158,7 @@ const milestones = [
     <!-- Body systems -->
     <section class="max-w-7xl mx-auto px-4 md:px-8 py-10 space-y-6" aria-labelledby="systems-heading">
         <div class="text-center space-y-1">
-            <h2 id="systems-heading" class="text-xl md:text-2xl font-black text-slate-800 dark:text-[#F1EDFF]">Explore Body Systems</h2>
+            <h2 id="systems-heading" class="font-display text-2xl md:text-3xl font-semibold text-ink dark:text-[#F1EDFF]">Explore Body Systems</h2>
             <p class="text-xs md:text-sm text-slate-600 dark:text-[#B1A9DE] font-bold">Browse illnesses by the organ system they affect</p>
         </div>
         <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3">
@@ -157,7 +189,7 @@ const milestones = [
     <!-- Immunology milestones -->
     <section class="max-w-5xl mx-auto px-4 md:px-8 py-10 space-y-6" aria-labelledby="timeline-heading">
         <div class="text-center space-y-1">
-            <h2 id="timeline-heading" class="text-xl md:text-2xl font-black text-slate-800 dark:text-[#F1EDFF]">Childhood Immunology Milestones</h2>
+            <h2 id="timeline-heading" class="font-display text-2xl md:text-3xl font-semibold text-ink dark:text-[#F1EDFF]">Childhood Immunology Milestones</h2>
             <p class="text-xs md:text-sm text-slate-600 dark:text-[#B1A9DE] font-bold">How the immune system develops and why vaccine timing matters</p>
         </div>
         <ol class="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -187,7 +219,7 @@ const milestones = [
     <section class="max-w-5xl mx-auto px-4 md:px-8 py-10 space-y-6">
         <div class="bg-white dark:bg-night-card rounded-3xl border border-orange-100 dark:border-night-line p-6 md:p-8 shadow-premium flex flex-col md:flex-row items-center gap-6">
             <div class="flex-1 space-y-2 text-center md:text-left">
-                <h2 class="text-lg md:text-xl font-black text-slate-800 dark:text-[#F1EDFF]">When should you actually worry?</h2>
+                <h2 class="font-display text-xl md:text-2xl font-semibold text-ink dark:text-[#F1EDFF]">When should you actually worry?</h2>
                 <p class="text-xs md:text-sm text-slate-600 dark:text-[#B1A9DE] font-medium leading-relaxed">
                     Fever thresholds by age, ER-versus-pediatrician decisions, dehydration warning
                     signs, vaccine safety — answered with sources from the AAP, CDC, and NHS.
