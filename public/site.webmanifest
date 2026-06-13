@@ -1,0 +1,12 @@
+{
+    "name": "Kids Disease — Child Disease Encyclopedia",
+    "short_name": "Kids Disease",
+    "description": "Educational child disease encyclopedia for parents and caregivers.",
+    "start_url": "/",
+    "display": "standalone",
+    "background_color": "#FFF8F0",
+    "theme_color": "#2ABFBF",
+    "icons": [
+        { "src": "/favicon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any" }
+    ]
+}

@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Kids Disease">
+  <defs>
+    <linearGradient id="kdGrad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#2ABFBF"/>
+      <stop offset="1" stop-color="#5BD3CB"/>
+    </linearGradient>
+  </defs>
+  <rect width="64" height="64" rx="16" fill="url(#kdGrad)"/>
+  <path fill="#FFFFFF" d="M32 47C20 38 14 31 14 25c0-5 4-8 9-8 4 0 7 2 9 5 2-3 5-5 9-5 5 0 9 3 9 8 0 6-6 13-18 22Z"/>
+  <path fill="none" stroke="#2ABFBF" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" d="M18 30h6l3-6 4 12 3-6h7"/>
+</svg>

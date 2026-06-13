@@ -1,10 +1,10 @@
-# PediaCare — Child Disease Encyclopedia
+# Kids Disease — Child Disease Encyclopedia
 
-An educational reference for parents and caregivers covering **115 pediatric
+An educational reference for parents and caregivers covering **140 pediatric
 conditions** across **18 body systems**: staged symptoms, home care, prevention,
 and exactly when to call a doctor.
 
-> **PediaCare is not medical advice.** It lists generic active ingredients only
+> **Kids Disease is not medical advice.** It lists generic active ingredients only
 > (never brands, never doses) and always defers to qualified clinicians. In an
 > emergency, call your local emergency number.
 

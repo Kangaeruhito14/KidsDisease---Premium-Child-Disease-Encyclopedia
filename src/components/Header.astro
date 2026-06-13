@@ -18,10 +18,11 @@ const isActive = (href: string) =>
 >
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
         <a href="/" class="flex items-center gap-3 select-none" aria-label="Kids Disease home">
-            <span
-                class="w-10 h-10 rounded-2xl bg-gradient-to-br from-brand-teal to-brand-teal-soft flex items-center justify-center text-white shadow-md"
-            >
-                <i class="fa-solid fa-stethoscope text-lg" aria-hidden="true"></i>
+            <span class="w-10 h-10 rounded-2xl bg-gradient-to-br from-brand-teal to-brand-teal-soft flex items-center justify-center shadow-md shadow-brand-teal/30">
+                <svg viewBox="0 0 64 64" class="w-6 h-6" aria-hidden="true">
+                    <path fill="#FFFFFF" d="M32 47C20 38 14 31 14 25c0-5 4-8 9-8 4 0 7 2 9 5 2-3 5-5 9-5 5 0 9 3 9 8 0 6-6 13-18 22Z" />
+                    <path fill="none" stroke="#2ABFBF" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" d="M18 30h6l3-6 4 12 3-6h7" />
+                </svg>
             </span>
             <span>
                 <span class="block font-black text-xl text-slate-800 dark:text-[#F1EDFF] tracking-tight leading-none">Kids Disease</span>
@@ -53,11 +54,15 @@ const isActive = (href: string) =>
         <button
             id="theme-toggle"
             type="button"
-            class="w-9 h-9 flex items-center justify-center rounded-xl bg-orange-50 dark:bg-night-line border border-orange-100 dark:border-night-raised text-slate-700 dark:text-amber-300 hover:border-brand-teal/40 cursor-pointer transition-colors"
+            role="switch"
             aria-label="Toggle dark mode"
+            class="relative w-14 h-7 rounded-full border border-orange-200 dark:border-night-raised bg-orange-100/80 dark:bg-night-line transition-colors cursor-pointer shrink-0"
         >
-            <i class="fa-solid fa-moon text-sm dark:hidden" aria-hidden="true"></i>
-            <i class="fa-solid fa-sun text-sm hidden dark:inline" aria-hidden="true"></i>
+            <span class="absolute inset-0 flex items-center justify-between px-2 text-[11px]" aria-hidden="true">
+                <i class="fa-solid fa-sun text-amber-500"></i>
+                <i class="fa-solid fa-moon text-brand-teal-soft"></i>
+            </span>
+            <span class="theme-knob absolute top-0.5 left-0.5 w-6 h-6 rounded-full bg-white dark:bg-night-card shadow-md transition-transform duration-300 dark:translate-x-7"></span>
         </button>
     </div>
 </header>
@@ -88,8 +93,11 @@ const isActive = (href: string) =>
 
 <script>
     const toggle = document.getElementById('theme-toggle');
+    const sync = () => toggle?.setAttribute('aria-checked', String(document.documentElement.classList.contains('dark')));
+    sync();
     toggle?.addEventListener('click', () => {
         const dark = document.documentElement.classList.toggle('dark');
+        sync();
         try {
             localStorage.setItem('kidsdisease-theme', dark ? 'dark' : 'light');
         } catch {
