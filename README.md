@@ -52,13 +52,21 @@ chips — never dead links).
 
 ```
 data/database.source.json   # editable disease database (source of truth)
-src/pages/                  # routes (115 disease pages generated from data)
+src/pages/                  # routes (140 disease pages generated from data)
 src/components/             # header, footer, SEO head, cards, breadcrumbs
 src/lib/db.ts               # typed data access + slug/URL helpers
 public/illustrations/       # 148 condition/system illustrations
 docs/seo-strategy.md        # keyword research and content rules
 legacy/                     # previous Vue SPA, kept runnable for reference
 ```
+
+## Feedback & corrections
+
+This is a public health resource, so there's no personal contact address.
+Report a correction, request a condition, or flag an accessibility problem by
+opening a [GitHub issue](https://github.com/Kangaeruhito14/KidsDisease---Premium-Child-Disease-Encyclopedia/issues).
+Please don't send questions about a specific child — that needs a clinician who
+can examine them.
 
 ## Content rules (do not break these)
 
