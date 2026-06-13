@@ -10,6 +10,9 @@ export default defineConfig({
     // Hide the floating Astro dev toolbar that appears at the bottom in dev mode.
     devToolbar: { enabled: false },
     integrations: [sitemap()],
+    // No code blocks anywhere on the site, and Shiki's inline styles clash with
+    // our strict CSP — disable syntax highlighting to drop the build warning.
+    markdown: { syntaxHighlight: false },
     // Tailwind 4 runs via PostCSS (postcss.config.mjs): the @tailwindcss/vite
     // plugin is incompatible with Astro 6's rolldown-vite as of 4.3.0.
     security: {

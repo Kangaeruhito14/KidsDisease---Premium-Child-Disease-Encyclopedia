@@ -18,5 +18,8 @@
   },
   "devDependencies": {
     "@tailwindcss/postcss": "^4.3.0"
+  },
+  "overrides": {
+    "vite": "^7"
   }
 }
