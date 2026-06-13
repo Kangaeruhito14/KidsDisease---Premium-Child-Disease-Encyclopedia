@@ -5,6 +5,9 @@ node_modules/
 dist/
 .astro/
 
+# Legacy Vue SPA — kept locally for reference only, never published
+legacy/
+
 # Generated knowledge graph
 graphify-out/
 
