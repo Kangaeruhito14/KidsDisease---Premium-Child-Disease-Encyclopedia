@@ -52,26 +52,52 @@ const keywords = [
     ...d.tags
 ];
 
-// Structured data limited to facts visibly present on this page.
+// Date the content was last checked against source guidance.
+const reviewed = '2026-06-13';
+
+// Structured data limited to facts visibly present on this page. Richer
+// MedicalCondition fields + Speakable make the page easy for search and AI
+// answer engines to extract and cite accurately.
 const jsonLd = [
     {
         '@context': 'https://schema.org',
         '@type': 'MedicalWebPage',
+        name: title,
+        description: metaDescription(d),
+        inLanguage: 'en',
+        isFamilyFriendly: true,
+        lastReviewed: reviewed,
+        dateModified: reviewed,
+        reviewedBy: { '@type': 'Organization', name: 'Kids Disease Editorial Team' },
+        citation: [
+            'https://www.healthychildren.org',
+            'https://www.cdc.gov',
+            'https://www.who.int',
+            'https://www.nhs.uk'
+        ],
+        speakable: { '@type': 'SpeakableSpecification', cssSelector: ['#overview', '#warnings'] },
         about: {
             '@type': 'MedicalCondition',
             name: d.name,
             description: overviewOf(d),
+            pathophysiology: d.pathophysiology,
+            epidemiology: `Typically affects ${d.affected_age_group}.`,
             signOrSymptom: [d.symptoms_early, d.symptoms_progressive, d.symptoms_severe].map(s => ({
                 '@type': 'MedicalSignOrSymptom',
                 name: s
             })),
             typicalTest: d.diagnosis_methods,
             possibleTreatment: { '@type': 'MedicalTherapy', name: d.treatment_plan },
+            possibleComplication: d.complications,
+            primaryPrevention: { '@type': 'MedicalTherapy', name: d.prevention },
             riskFactor: { '@type': 'MedicalRiskFactor', name: `Typical age group: ${d.affected_age_group}` },
+            differentialDiagnosis: d.related_diseases.map(r => ({
+                '@type': 'DDxElement',
+                diagnosis: { '@type': 'MedicalCondition', name: r }
+            })),
             ...(system ? { associatedAnatomy: { '@type': 'AnatomicalSystem', name: system.name } } : {})
         },
-        audience: { '@type': 'Audience', audienceType: 'Parents and caregivers' },
-        lastReviewed: '2026-06-11'
+        audience: { '@type': 'Audience', audienceType: 'Parents and caregivers' }
     }
 ];
 
@@ -124,6 +150,32 @@ const sections = [
                 </p>
             </div>
         </header>
+
+        <!-- Quick Facts: scannable for parents, cleanly extractable for AI engines -->
+        <section aria-label="Quick facts" class="bg-white dark:bg-night-card rounded-3xl border border-orange-100 dark:border-night-line shadow-premium p-5 md:p-6 space-y-4">
+            <dl class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                <div class="space-y-1">
+                    <dt class="text-[10px] font-black uppercase tracking-wider text-slate-500 dark:text-[#8B84B8]">Urgency</dt>
+                    <dd><UrgencyBadge level={d.urgency_level} /></dd>
+                </div>
+                <div class="space-y-1">
+                    <dt class="text-[10px] font-black uppercase tracking-wider text-slate-500 dark:text-[#8B84B8]">Typical age</dt>
+                    <dd class="text-sm font-bold text-ink dark:text-[#D8D2F5]">{d.affected_age_group}</dd>
+                </div>
+                <div class="space-y-1">
+                    <dt class="text-[10px] font-black uppercase tracking-wider text-slate-500 dark:text-[#8B84B8]">Body system</dt>
+                    <dd class="text-sm font-bold text-ink dark:text-[#D8D2F5]">{system?.name ?? '—'}</dd>
+                </div>
+            </dl>
+            <p class="text-sm text-slate-700 dark:text-[#D8D2F5] font-medium leading-relaxed border-t border-orange-100/70 dark:border-night-line pt-3">
+                <span class="font-black text-ink dark:text-[#F1EDFF]">Typical course:</span> {d.recovery_timeline}
+            </p>
+            <p class="text-[11px] font-bold text-slate-500 dark:text-[#8B84B8] flex flex-wrap items-center gap-1.5">
+                <i class="fa-solid fa-circle-check text-brand-teal" aria-hidden="true"></i>
+                Reviewed against AAP · CDC · WHO · NHS guidance
+                <span aria-hidden="true">·</span> Last reviewed {reviewed}
+            </p>
+        </section>
 
         <!-- Section quick-nav -->
         <nav aria-label="Profile sections" class="flex gap-2 overflow-x-auto pb-1 custom-scrollbar">

@@ -16,15 +16,29 @@ interface Props {
 const { title, description, ogType, image, jsonLd = [], keywords = [] } = Astro.props;
 
 // Site-wide organization + website entities, merged with page-level JSON-LD.
+const siteUrl = Astro.site?.toString();
 const siteJsonLd = [
     {
         '@context': 'https://schema.org',
         '@type': 'WebSite',
         name: 'Kids Disease',
         alternateName: ['KidsDisease', 'Kids Disease Encyclopedia', 'Child Disease Encyclopedia'],
-        url: Astro.site?.toString(),
+        url: siteUrl,
+        inLanguage: 'en',
         description:
-            'Educational child disease encyclopedia for parents and caregivers. Not a substitute for professional medical advice.'
+            'Educational child disease encyclopedia for parents and caregivers. Not a substitute for professional medical advice.',
+        publisher: { '@id': `${siteUrl}#org` }
+    },
+    {
+        '@context': 'https://schema.org',
+        '@type': 'Organization',
+        '@id': `${siteUrl}#org`,
+        name: 'Kids Disease',
+        url: siteUrl,
+        logo: `${siteUrl}favicon.svg`,
+        description:
+            'A free, source-cited educational encyclopedia of childhood diseases for parents and caregivers.',
+        sameAs: ['https://github.com/Kangaeruhito14/PediaCare---Premium-Child-Disease-Encyclopedia']
     },
     ...jsonLd
 ];
