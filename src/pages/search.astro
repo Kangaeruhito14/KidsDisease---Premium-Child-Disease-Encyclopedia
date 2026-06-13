@@ -75,7 +75,16 @@ const URGENCIES = ['all', 'mild', 'moderate', 'severe', 'emergency'];
         <Disclaimer />
     </div>
 
-    <script is:inline define:vars={{ index }}>
+    <script
+        is:inline
+        type="application/json"
+        id="search-index"
+        set:html={JSON.stringify(index).replace(/</g, '\\u003c')}
+    />
+    <script is:inline>
+        // Index is read from the JSON block above, so this script's content is
+        // static and its hash is pinned in the CSP.
+        const index = JSON.parse(document.getElementById('search-index').textContent);
         const input = document.getElementById('search-input');
         const filter = document.getElementById('urgency-filter');
         const list = document.getElementById('search-results');

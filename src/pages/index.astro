@@ -232,8 +232,19 @@ const milestones = [
         <Disclaimer />
     </section>
 
-    <script is:inline define:vars={{ searchIndex }}>
-        // Lightweight autocomplete over disease names (rendered server-side data)
+    <script
+        is:inline
+        type="application/json"
+        id="home-search-index"
+        set:html={JSON.stringify(searchIndex).replace(/</g, '\\u003c')}
+    />
+    <script is:inline>
+        // Lightweight autocomplete over disease names. The dataset is read from
+        // the JSON block above, so this script's content is static and its hash
+        // is pinned in the CSP (see astro.config.mjs scriptDirective.hashes).
+        const searchIndex = JSON.parse(
+            document.getElementById('home-search-index').textContent
+        );
         const input = document.getElementById('home-search');
         const list = document.getElementById('home-suggestions');
         const esc = s =>

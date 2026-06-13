@@ -154,7 +154,16 @@ const scoring = Object.fromEntries(
         <Disclaimer />
     </div>
 
-    <script is:inline define:vars={{ scoring }}>
+    <script
+        is:inline
+        type="application/json"
+        id="triage-scoring"
+        set:html={JSON.stringify(scoring).replace(/</g, '\\u003c')}
+    />
+    <script is:inline>
+        // Scoring table is read from the JSON block above, so this script's
+        // content is static and its hash is pinned in the CSP.
+        const scoring = JSON.parse(document.getElementById('triage-scoring').textContent);
         const form = document.getElementById('triage-form');
         const badge = document.getElementById('triage-badge');
         const icon = document.getElementById('triage-icon');
