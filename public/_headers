@@ -9,3 +9,14 @@
   Permissions-Policy: camera=(), microphone=(), geolocation=(), payment=(), usb=()
   Cross-Origin-Opener-Policy: same-origin
   Strict-Transport-Security: max-age=31536000; includeSubDomains
+
+# Keep the *.pages.dev URLs out of Google so they don't duplicate the
+# canonical custom domain (kidsdisease.com). These absolute-URL rules match
+# ONLY pages.dev hosts — kidsdisease.com never matches, so it stays indexable.
+# :project / :version are Cloudflare placeholders, so this also covers the
+# per-deploy preview URLs (e.g. <hash>.kidsdisease.pages.dev).
+https://:project.pages.dev/*
+  X-Robots-Tag: noindex
+
+https://:version.:project.pages.dev/*
+  X-Robots-Tag: noindex
