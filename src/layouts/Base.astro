@@ -15,6 +15,13 @@ interface Props {
 
 const { title, description, ogType, image, jsonLd = [], keywords = [] } = Astro.props;
 
+// Google Analytics (GA4). Defined here as strings so the inline init script can
+// be injected via set:html without the JSX parser mistaking its braces for
+// expressions. Only emitted in the production build (see below).
+const GA_ID = 'G-ZZW979TXFQ';
+const GA_SRC = `https://www.googletagmanager.com/gtag/js?id=${GA_ID}`;
+const GA_INIT = `window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','${GA_ID}');`;
+
 // Site-wide organization + website entities, merged with page-level JSON-LD.
 const siteUrl = Astro.site?.toString();
 const siteJsonLd = [
@@ -49,6 +56,17 @@ const siteJsonLd = [
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+        <!-- Google Analytics (GA4). Loaded only in the production build so that
+             local `npm run dev` traffic never pollutes the analytics data. -->
+        {
+            import.meta.env.PROD && (
+                <Fragment>
+                    <script is:inline async src={GA_SRC} />
+                    <script is:inline set:html={GA_INIT} />
+                </Fragment>
+            )
+        }
         <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
         <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
         <link rel="shortcut icon" href="/favicon.ico" />
