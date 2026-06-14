@@ -436,7 +436,21 @@
         "hib-vaccine"
       ],
       "imagePath": "assets/illustrations/epiglottitis.svg",
-      "overview": "Life-Threatening Upper Airway Supraglottic Cellulitis"
+      "overview": "Life-Threatening Upper Airway Supraglottic Cellulitis",
+      "sources": [
+        {
+          "label": "American Academy of Pediatrics (HealthyChildren.org) — Epiglottitis",
+          "url": "https://www.healthychildren.org/English/health-issues/conditions/ear-nose-throat/Pages/Epiglottitis.aspx"
+        },
+        {
+          "label": "NHS — Epiglottitis",
+          "url": "https://www.nhs.uk/conditions/epiglottitis/"
+        },
+        {
+          "label": "Stanford Medicine Children's Health — Epiglottitis in children",
+          "url": "https://www.stanfordchildrens.org/en/topic/default?id=epiglottitis-in-children-90-P02944"
+        }
+      ]
     },
     {
       "id": "bronchiolitis",
@@ -474,7 +488,25 @@
         "suctioning"
       ],
       "imagePath": "assets/illustrations/bronchiolitis.svg",
-      "overview": "Lower Respiratory Small Airway Inflammatory Disease"
+      "overview": "Lower Respiratory Small Airway Inflammatory Disease",
+      "sources": [
+        {
+          "label": "American Academy of Pediatrics (HealthyChildren.org) — Bronchiolitis & your young child",
+          "url": "https://www.healthychildren.org/English/health-issues/conditions/chest-lungs/Pages/Bronchiolitis.aspx"
+        },
+        {
+          "label": "Nemours KidsHealth — Bronchiolitis",
+          "url": "https://kidshealth.org/en/parents/bronchiolitis.html"
+        },
+        {
+          "label": "NHS — Bronchiolitis",
+          "url": "https://www.nhs.uk/conditions/bronchiolitis/"
+        },
+        {
+          "label": "CDC — RSV (a common cause)",
+          "url": "https://www.cdc.gov/rsv/about/index.html"
+        }
+      ]
     },
     {
       "id": "asthma",
@@ -569,7 +601,17 @@
         "furosemide"
       ],
       "imagePath": "assets/illustrations/vsd.svg",
-      "overview": "Congenital Acyanotic Left-to-Right Shunt Heart Malformation"
+      "overview": "Congenital Acyanotic Left-to-Right Shunt Heart Malformation",
+      "sources": [
+        {
+          "label": "Nemours KidsHealth — Ventricular septal defect (VSD)",
+          "url": "https://kidshealth.org/en/parents/vsd.html"
+        },
+        {
+          "label": "CDC — Ventricular septal defect",
+          "url": "https://www.cdc.gov/heart-defects/about/ventricular-septal-defect.html"
+        }
+      ]
     },
     {
       "id": "tof",
@@ -607,7 +649,17 @@
         "boot-shaped-heart"
       ],
       "imagePath": "assets/illustrations/tof.svg",
-      "overview": "Cyanotic Congenital Heart Disease (Right-to-Left Shunt)"
+      "overview": "Cyanotic Congenital Heart Disease (Right-to-Left Shunt)",
+      "sources": [
+        {
+          "label": "Nemours KidsHealth — Tetralogy of Fallot",
+          "url": "https://kidshealth.org/en/parents/tetralogy-of-fallot.html"
+        },
+        {
+          "label": "CDC — Tetralogy of Fallot",
+          "url": "https://www.cdc.gov/heart-defects/about/tetralogy-of-fallot.html"
+        }
+      ]
     },
     {
       "id": "kawasaki",
@@ -646,7 +698,21 @@
         "fever"
       ],
       "imagePath": "assets/illustrations/kawasaki.svg",
-      "overview": "Acute Systemic Medium-Vessel Vasculitis"
+      "overview": "Acute Systemic Medium-Vessel Vasculitis",
+      "sources": [
+        {
+          "label": "American Academy of Pediatrics (HealthyChildren.org) — Kawasaki disease",
+          "url": "https://www.healthychildren.org/English/health-issues/conditions/heart/Pages/Kawasaki-Disease.aspx"
+        },
+        {
+          "label": "Nemours KidsHealth — Kawasaki disease",
+          "url": "https://kidshealth.org/en/parents/kawasaki.html"
+        },
+        {
+          "label": "NHS — Kawasaki disease",
+          "url": "https://www.nhs.uk/conditions/kawasaki-disease/"
+        }
+      ]
     },
     {
       "id": "rheumatic_fever",
@@ -685,7 +751,17 @@
         "carditis"
       ],
       "imagePath": "assets/illustrations/rheumatic_fever.svg",
-      "overview": "Post-Streptococcal Autoimmune Inflammatory Connective Tissue Disease"
+      "overview": "Post-Streptococcal Autoimmune Inflammatory Connective Tissue Disease",
+      "sources": [
+        {
+          "label": "CDC — Rheumatic fever",
+          "url": "https://www.cdc.gov/group-a-strep/about/rheumatic-fever.html"
+        },
+        {
+          "label": "NHS — Rheumatic fever",
+          "url": "https://www.nhs.uk/conditions/rheumatic-fever/"
+        }
+      ]
     },
     {
       "id": "rotavirus",
@@ -4212,7 +4288,21 @@
         "floppy-airway",
         "infant"
       ],
-      "imagePath": "assets/illustrations/laryngomalacia.svg"
+      "imagePath": "assets/illustrations/laryngomalacia.svg",
+      "sources": [
+        {
+          "label": "American Academy of Pediatrics (HealthyChildren.org) — Laryngomalacia & stridor",
+          "url": "https://www.healthychildren.org/English/health-issues/conditions/ear-nose-throat/Pages/laryngomalacia-and-stridor-is-my-babys-noisy-breathing-serious.aspx"
+        },
+        {
+          "label": "Nemours KidsHealth — Laryngomalacia",
+          "url": "https://kidshealth.org/en/parents/laryngomalacia.html"
+        },
+        {
+          "label": "Cincinnati Children's — Laryngomalacia (infantile)",
+          "url": "https://www.cincinnatichildrens.org/health/l/laryngomalacia-infantile"
+        }
+      ]
     },
     {
       "id": "osteomyelitis",
@@ -4784,7 +4874,17 @@
         "wheezing"
       ],
       "imagePath": "assets/illustrations/cough.svg",
-      "overview": "Acute Inflammatory Bronchial Airway Disease"
+      "overview": "Acute Inflammatory Bronchial Airway Disease",
+      "sources": [
+        {
+          "label": "Nemours KidsHealth — Bronchitis",
+          "url": "https://kidshealth.org/en/parents/bronchitis.html"
+        },
+        {
+          "label": "NHS — Bronchitis",
+          "url": "https://www.nhs.uk/conditions/bronchitis/"
+        }
+      ]
     },
     {
       "id": "fuo",
@@ -4862,7 +4962,25 @@
         "congestion"
       ],
       "imagePath": "assets/illustrations/microbe.svg",
-      "overview": "Self-limiting viral upper respiratory tract infection."
+      "overview": "Self-limiting viral upper respiratory tract infection.",
+      "sources": [
+        {
+          "label": "American Academy of Pediatrics (HealthyChildren.org) — Children and colds",
+          "url": "https://www.healthychildren.org/English/health-issues/conditions/ear-nose-throat/Pages/Children-and-Colds.aspx"
+        },
+        {
+          "label": "Nemours KidsHealth — The common cold",
+          "url": "https://kidshealth.org/en/parents/cold.html"
+        },
+        {
+          "label": "NHS — Common cold",
+          "url": "https://www.nhs.uk/conditions/common-cold/"
+        },
+        {
+          "label": "CDC — Common cold",
+          "url": "https://www.cdc.gov/common-cold/about/index.html"
+        }
+      ]
     },
     {
       "id": "influenza",
@@ -4901,7 +5019,25 @@
         "respiratory"
       ],
       "imagePath": "assets/illustrations/microbe.svg",
-      "overview": "Acute systemic viral respiratory infection caused by influenza viruses."
+      "overview": "Acute systemic viral respiratory infection caused by influenza viruses.",
+      "sources": [
+        {
+          "label": "American Academy of Pediatrics (HealthyChildren.org) — The flu (influenza)",
+          "url": "https://www.healthychildren.org/English/health-issues/conditions/flu/Pages/default.aspx"
+        },
+        {
+          "label": "Nemours KidsHealth — Flu (influenza)",
+          "url": "https://kidshealth.org/en/parents/flu.html"
+        },
+        {
+          "label": "NHS — Flu",
+          "url": "https://www.nhs.uk/conditions/flu/"
+        },
+        {
+          "label": "CDC — Influenza (flu)",
+          "url": "https://www.cdc.gov/flu/index.html"
+        }
+      ]
     },
     {
       "id": "pneumonia",
@@ -4940,7 +5076,25 @@
         "cough"
       ],
       "imagePath": "assets/illustrations/microbe.svg",
-      "overview": "Infection and inflammation of the lung tissue (alveoli)."
+      "overview": "Infection and inflammation of the lung tissue (alveoli).",
+      "sources": [
+        {
+          "label": "American Academy of Pediatrics (HealthyChildren.org) — Pneumonia",
+          "url": "https://www.healthychildren.org/English/health-issues/conditions/chest-lungs/Pages/Pneumonia.aspx"
+        },
+        {
+          "label": "Nemours KidsHealth — Pneumonia",
+          "url": "https://kidshealth.org/en/parents/pneumonia.html"
+        },
+        {
+          "label": "NHS — Pneumonia",
+          "url": "https://www.nhs.uk/conditions/pneumonia/"
+        },
+        {
+          "label": "CDC — Pneumonia",
+          "url": "https://www.cdc.gov/pneumonia/about/index.html"
+        }
+      ]
     },
     {
       "id": "sinusitis",
@@ -5492,7 +5646,21 @@
         "newborn heart"
       ],
       "imagePath": "assets/illustrations/heart_defect.svg",
-      "overview": "Congenital heart condition in which a normal fetal blood vessel fails to close after birth."
+      "overview": "Congenital heart condition in which a normal fetal blood vessel fails to close after birth.",
+      "sources": [
+        {
+          "label": "Nemours KidsHealth — Patent ductus arteriosus (PDA)",
+          "url": "https://kidshealth.org/en/parents/patent-ductus-arteriosus.html"
+        },
+        {
+          "label": "Nationwide Children's Hospital — Patent ductus arteriosus (PDA)",
+          "url": "https://www.nationwidechildrens.org/conditions/patent-ductus-arteriosus-pda"
+        },
+        {
+          "label": "Cincinnati Children's — Patent ductus arteriosus (PDA)",
+          "url": "https://www.cincinnatichildrens.org/health/p/patent-ductus-arteriosus"
+        }
+      ]
     },
     {
       "id": "asd",
@@ -5529,7 +5697,17 @@
         "murmur"
       ],
       "imagePath": "assets/illustrations/heart_defect.svg",
-      "overview": "Congenital opening in the wall between the heart’s two upper chambers."
+      "overview": "Congenital opening in the wall between the heart’s two upper chambers.",
+      "sources": [
+        {
+          "label": "Nemours KidsHealth — Atrial septal defect (ASD)",
+          "url": "https://kidshealth.org/en/parents/asd.html"
+        },
+        {
+          "label": "CDC — Atrial septal defect",
+          "url": "https://www.cdc.gov/heart-defects/about/atrial-septal-defect.html"
+        }
+      ]
     },
     {
       "id": "myocarditis",
@@ -5566,7 +5744,17 @@
         "emergency"
       ],
       "imagePath": "assets/illustrations/heart_inflammation.svg",
-      "overview": "Inflammation of the heart muscle, most often following a viral infection."
+      "overview": "Inflammation of the heart muscle, most often following a viral infection.",
+      "sources": [
+        {
+          "label": "Nemours KidsHealth — Myocarditis",
+          "url": "https://kidshealth.org/en/parents/myocarditis.html"
+        },
+        {
+          "label": "Cincinnati Children's — Myocarditis in children",
+          "url": "https://www.cincinnatichildrens.org/health/m/myocarditis"
+        }
+      ]
     },
     {
       "id": "hus",
@@ -5643,7 +5831,21 @@
         "joint pain"
       ],
       "imagePath": "assets/illustrations/bleeding.svg",
-      "overview": "The most common childhood vasculitis, inflaming small blood vessels in the skin, joints, gut, and kidneys."
+      "overview": "The most common childhood vasculitis, inflaming small blood vessels in the skin, joints, gut, and kidneys.",
+      "sources": [
+        {
+          "label": "NHS — Henoch-Schönlein purpura (HSP)",
+          "url": "https://www.nhs.uk/conditions/henoch-schonlein-purpura-hsp/"
+        },
+        {
+          "label": "Nemours KidsHealth — Henoch-Schönlein purpura (HSP)",
+          "url": "https://kidshealth.org/en/parents/hsp.html"
+        },
+        {
+          "label": "Nationwide Children's Hospital — IgA vasculitis (HSP) in children",
+          "url": "https://www.nationwidechildrens.org/conditions/health-library/iga-vasculitis-in-children"
+        }
+      ]
     },
     {
       "id": "mumps",
