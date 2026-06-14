@@ -2963,7 +2963,21 @@
         "early-intervention"
       ],
       "imagePath": "assets/illustrations/down_syndrome.svg",
-      "overview": "Chromosomal Aneuploidy Syndrome"
+      "overview": "Chromosomal Aneuploidy Syndrome",
+      "sources": [
+        {
+          "label": "Nemours KidsHealth — Down syndrome",
+          "url": "https://kidshealth.org/en/parents/down-syndrome.html"
+        },
+        {
+          "label": "CDC — Down syndrome",
+          "url": "https://www.cdc.gov/birth-defects/about/down-syndrome.html"
+        },
+        {
+          "label": "NHS — Down's syndrome",
+          "url": "https://www.nhs.uk/conditions/downs-syndrome/"
+        }
+      ]
     },
     {
       "id": "turner_syndrome",
@@ -3001,7 +3015,17 @@
         "coarctation-of-aorta"
       ],
       "imagePath": "assets/illustrations/turner_syndrome.svg",
-      "overview": "Sex Chromosome Aneuploidy Syndrome (Monosomy X)"
+      "overview": "Sex Chromosome Aneuploidy Syndrome (Monosomy X)",
+      "sources": [
+        {
+          "label": "Nemours KidsHealth — Turner syndrome",
+          "url": "https://kidshealth.org/en/parents/turner.html"
+        },
+        {
+          "label": "NHS — Turner syndrome",
+          "url": "https://www.nhs.uk/conditions/turner-syndrome/"
+        }
+      ]
     },
     {
       "id": "cystic_fibrosis",
@@ -3040,7 +3064,21 @@
         "chest-physiotherapy"
       ],
       "imagePath": "assets/illustrations/cystic_fibrosis.svg",
-      "overview": "Autosomal Recessive Multi-System Exocrine Disorder"
+      "overview": "Autosomal Recessive Multi-System Exocrine Disorder",
+      "sources": [
+        {
+          "label": "Nemours KidsHealth — Cystic fibrosis",
+          "url": "https://kidshealth.org/en/parents/cf.html"
+        },
+        {
+          "label": "CDC — Cystic fibrosis",
+          "url": "https://www.cdc.gov/cystic-fibrosis/about/index.html"
+        },
+        {
+          "label": "NHS — Cystic fibrosis",
+          "url": "https://www.nhs.uk/conditions/cystic-fibrosis/"
+        }
+      ]
     },
     {
       "id": "williams_syndrome",
@@ -3078,7 +3116,17 @@
         "cocktail-party-personality"
       ],
       "imagePath": "assets/illustrations/williams_syndrome.svg",
-      "overview": "Autosomal Dominant Microdeletion Syndrome"
+      "overview": "Autosomal Dominant Microdeletion Syndrome",
+      "sources": [
+        {
+          "label": "Nemours KidsHealth — Williams syndrome",
+          "url": "https://kidshealth.org/en/parents/williams-syndrome.html"
+        },
+        {
+          "label": "Nationwide Children's Hospital — Williams syndrome",
+          "url": "https://www.nationwidechildrens.org/conditions/williams-syndrome"
+        }
+      ]
     },
     {
       "id": "rickets",
@@ -3116,7 +3164,17 @@
         "craniotabes"
       ],
       "imagePath": "assets/illustrations/rickets.svg",
-      "overview": "Metabolic Bone Mineralization Deficiency Disease"
+      "overview": "Metabolic Bone Mineralization Deficiency Disease",
+      "sources": [
+        {
+          "label": "Nemours KidsHealth — Rickets",
+          "url": "https://kidshealth.org/en/parents/rickets.html"
+        },
+        {
+          "label": "NHS — Rickets and osteomalacia",
+          "url": "https://www.nhs.uk/conditions/rickets-and-osteomalacia/"
+        }
+      ]
     },
     {
       "id": "scurvy",
@@ -3155,7 +3213,13 @@
         "frog-leg-posture"
       ],
       "imagePath": "assets/illustrations/scurvy.svg",
-      "overview": "Vitamin C (Ascorbic Acid) Deficiency Disease"
+      "overview": "Vitamin C (Ascorbic Acid) Deficiency Disease",
+      "sources": [
+        {
+          "label": "NHS — Scurvy",
+          "url": "https://www.nhs.uk/conditions/scurvy/"
+        }
+      ]
     },
     {
       "id": "kwashiorkor",
@@ -3194,7 +3258,13 @@
         "refeeding-syndrome"
       ],
       "imagePath": "assets/illustrations/kwashiorkor.svg",
-      "overview": "Severe Protein-Energy Malnutrition (Edematous Malnutrition)"
+      "overview": "Severe Protein-Energy Malnutrition (Edematous Malnutrition)",
+      "sources": [
+        {
+          "label": "Cleveland Clinic — Kwashiorkor",
+          "url": "https://my.clevelandclinic.org/health/diseases/23099-kwashiorkor"
+        }
+      ]
     },
     {
       "id": "marasmus",
@@ -3233,7 +3303,13 @@
         "resomal"
       ],
       "imagePath": "assets/illustrations/marasmus.svg",
-      "overview": "Severe Protein-Energy Malnutrition (Non-Edematous Malnutrition)"
+      "overview": "Severe Protein-Energy Malnutrition (Non-Edematous Malnutrition)",
+      "sources": [
+        {
+          "label": "Cleveland Clinic — Marasmus",
+          "url": "https://my.clevelandclinic.org/health/diseases/23296-marasmus"
+        }
+      ]
     },
     {
       "id": "autism",
@@ -3272,7 +3348,21 @@
         "behavioral-therapy"
       ],
       "imagePath": "assets/illustrations/autism.svg",
-      "overview": "Neurodevelopmental Communication & Behavioral Disorder"
+      "overview": "Neurodevelopmental Communication & Behavioral Disorder",
+      "sources": [
+        {
+          "label": "Nemours KidsHealth — Autism spectrum disorder",
+          "url": "https://kidshealth.org/en/parents/pervasive-develop-disorders.html"
+        },
+        {
+          "label": "CDC — Autism spectrum disorder",
+          "url": "https://www.cdc.gov/autism/about/index.html"
+        },
+        {
+          "label": "NHS — Autism",
+          "url": "https://www.nhs.uk/conditions/autism/"
+        }
+      ]
     },
     {
       "id": "adhd",
@@ -3310,7 +3400,21 @@
         "executive-function"
       ],
       "imagePath": "assets/illustrations/adhd.svg",
-      "overview": "Neurodevelopmental Executive Function Disorder"
+      "overview": "Neurodevelopmental Executive Function Disorder",
+      "sources": [
+        {
+          "label": "Nemours KidsHealth — ADHD",
+          "url": "https://kidshealth.org/en/parents/adhd.html"
+        },
+        {
+          "label": "CDC — ADHD",
+          "url": "https://www.cdc.gov/adhd/about/index.html"
+        },
+        {
+          "label": "NHS — ADHD",
+          "url": "https://www.nhs.uk/conditions/attention-deficit-hyperactivity-disorder-adhd/"
+        }
+      ]
     },
     {
       "id": "cerebral_palsy",
@@ -3348,7 +3452,21 @@
         "physical-therapy"
       ],
       "imagePath": "assets/illustrations/cerebral_palsy.svg",
-      "overview": "Non-Progressive Congenital Motor & Postural Dysfunction"
+      "overview": "Non-Progressive Congenital Motor & Postural Dysfunction",
+      "sources": [
+        {
+          "label": "Nemours KidsHealth — Cerebral palsy",
+          "url": "https://kidshealth.org/en/parents/cerebral-palsy.html"
+        },
+        {
+          "label": "CDC — Cerebral palsy",
+          "url": "https://www.cdc.gov/cerebral-palsy/about/index.html"
+        },
+        {
+          "label": "NHS — Cerebral palsy",
+          "url": "https://www.nhs.uk/conditions/cerebral-palsy/"
+        }
+      ]
     },
     {
       "id": "dcd",
@@ -3387,7 +3505,13 @@
         "dysgraphia"
       ],
       "imagePath": "assets/illustrations/dcd.svg",
-      "overview": "Neurodevelopmental Motor Skill Acquisition Disorder"
+      "overview": "Neurodevelopmental Motor Skill Acquisition Disorder",
+      "sources": [
+        {
+          "label": "NHS — Developmental coordination disorder (dyspraxia)",
+          "url": "https://www.nhs.uk/conditions/developmental-coordination-disorder-dyspraxia/"
+        }
+      ]
     },
     {
       "id": "all",
@@ -3426,7 +3550,13 @@
         "chemotherapy"
       ],
       "imagePath": "assets/illustrations/all.svg",
-      "overview": "Malignant Proliferation of Lymphoid Progenitor Cells"
+      "overview": "Malignant Proliferation of Lymphoid Progenitor Cells",
+      "sources": [
+        {
+          "label": "Nemours KidsHealth — Acute lymphoblastic leukemia (ALL)",
+          "url": "https://kidshealth.org/en/parents/all.html"
+        }
+      ]
     },
     {
       "id": "hodgkin_lymphoma",
@@ -3465,7 +3595,17 @@
         "swollen-lymph-nodes"
       ],
       "imagePath": "assets/illustrations/hodgkin_lymphoma.svg",
-      "overview": "Malignant Lymphatic Neoplasm (Reed-Sternberg Cell Pathology)"
+      "overview": "Malignant Lymphatic Neoplasm (Reed-Sternberg Cell Pathology)",
+      "sources": [
+        {
+          "label": "Nemours KidsHealth — Hodgkin lymphoma",
+          "url": "https://kidshealth.org/en/parents/hodgkin.html"
+        },
+        {
+          "label": "St. Jude Children's Research Hospital — Hodgkin lymphoma in children & teens",
+          "url": "https://together.stjude.org/en-us/about-pediatric-cancer/types/lymphoma/hodgkin-lymphoma.html"
+        }
+      ]
     },
     {
       "id": "neuroblastoma",
@@ -3503,7 +3643,17 @@
         "mycn-amplification"
       ],
       "imagePath": "assets/illustrations/neuroblastoma.svg",
-      "overview": "Malignant Embryonal Tumor of the Sympathetic Nervous System"
+      "overview": "Malignant Embryonal Tumor of the Sympathetic Nervous System",
+      "sources": [
+        {
+          "label": "Nemours KidsHealth — Neuroblastoma",
+          "url": "https://kidshealth.org/en/parents/neuroblastoma.html"
+        },
+        {
+          "label": "St. Jude Children's Research Hospital — Neuroblastoma",
+          "url": "https://together.stjude.org/en-us/about-pediatric-cancer/types/neuroblastoma.html"
+        }
+      ]
     },
     {
       "id": "wilms_tumor",
@@ -3541,7 +3691,13 @@
         "nephrectomy"
       ],
       "imagePath": "assets/illustrations/wilms_tumor.svg",
-      "overview": "Malignant Embryonal Renal Tumor"
+      "overview": "Malignant Embryonal Renal Tumor",
+      "sources": [
+        {
+          "label": "Nemours KidsHealth — Wilms tumor",
+          "url": "https://kidshealth.org/en/parents/wilms.html"
+        }
+      ]
     },
     {
       "id": "rds",
@@ -3579,7 +3735,13 @@
         "grunting"
       ],
       "imagePath": "assets/illustrations/rds.svg",
-      "overview": "Neonatal Surfactant Deficiency Pulmonary Disease"
+      "overview": "Neonatal Surfactant Deficiency Pulmonary Disease",
+      "sources": [
+        {
+          "label": "Nemours KidsHealth — Respiratory distress syndrome (RDS)",
+          "url": "https://kidshealth.org/en/parents/rds.html"
+        }
+      ]
     },
     {
       "id": "neonatal_jaundice",
@@ -3617,7 +3779,17 @@
         "newborn-care"
       ],
       "imagePath": "assets/illustrations/neonatal_jaundice.svg",
-      "overview": "Neonatal Bilirubin Metabolic Clearance Dysfunction"
+      "overview": "Neonatal Bilirubin Metabolic Clearance Dysfunction",
+      "sources": [
+        {
+          "label": "Nemours KidsHealth — Newborn jaundice",
+          "url": "https://kidshealth.org/en/parents/jaundice.html"
+        },
+        {
+          "label": "NHS — Newborn jaundice",
+          "url": "https://www.nhs.uk/conditions/jaundice-newborn/"
+        }
+      ]
     },
     {
       "id": "nec",
@@ -3655,7 +3827,13 @@
         "npo"
       ],
       "imagePath": "assets/illustrations/nec.svg",
-      "overview": "Acute Ischemic & Inflammatory Neonatal Intestinal Necrosis"
+      "overview": "Acute Ischemic & Inflammatory Neonatal Intestinal Necrosis",
+      "sources": [
+        {
+          "label": "Nemours KidsHealth — Necrotizing enterocolitis (NEC)",
+          "url": "https://kidshealth.org/en/parents/nec.html"
+        }
+      ]
     },
     {
       "id": "neonatal_sepsis",
@@ -3693,7 +3871,13 @@
         "sepsis-workup"
       ],
       "imagePath": "assets/illustrations/neonatal_sepsis.svg",
-      "overview": "Acute Neonatal Systemic Bacterial Infection"
+      "overview": "Acute Neonatal Systemic Bacterial Infection",
+      "sources": [
+        {
+          "label": "Stanford Medicine Children's Health — Sepsis in the newborn",
+          "url": "https://www.stanfordchildrens.org/en/topic/default?id=newborn-sepsis-90-P02410"
+        }
+      ]
     },
     {
       "id": "anxiety",
@@ -3731,7 +3915,17 @@
         "mental-health"
       ],
       "imagePath": "assets/illustrations/anxiety.svg",
-      "overview": "Chronic Pediatric Neuro-Psychiatric Anxiety Syndrome"
+      "overview": "Chronic Pediatric Neuro-Psychiatric Anxiety Syndrome",
+      "sources": [
+        {
+          "label": "Nemours KidsHealth — Anxiety disorders",
+          "url": "https://kidshealth.org/en/parents/anxiety-disorders.html"
+        },
+        {
+          "label": "CDC — Anxiety & depression in children",
+          "url": "https://www.cdc.gov/children-mental-health/about/about-anxiety-and-depression-in-children.html"
+        }
+      ]
     },
     {
       "id": "depression",
@@ -3769,7 +3963,17 @@
         "adolescent-mental-health"
       ],
       "imagePath": "assets/illustrations/depression.svg",
-      "overview": "Pediatric Affective Neurotransmitter Deficiency Disorder"
+      "overview": "Pediatric Affective Neurotransmitter Deficiency Disorder",
+      "sources": [
+        {
+          "label": "Nemours KidsHealth — Understanding depression",
+          "url": "https://kidshealth.org/en/parents/understanding-depression.html"
+        },
+        {
+          "label": "CDC — Anxiety & depression in children",
+          "url": "https://www.cdc.gov/children-mental-health/about/about-anxiety-and-depression-in-children.html"
+        }
+      ]
     },
     {
       "id": "spd",
@@ -3807,7 +4011,13 @@
         "occupational-therapy"
       ],
       "imagePath": "assets/illustrations/spd.svg",
-      "overview": "Atypical Sensory Integration & Neuromodulation Disorder"
+      "overview": "Atypical Sensory Integration & Neuromodulation Disorder",
+      "sources": [
+        {
+          "label": "STAR Institute (sensoryhealth.org) — Understanding sensory processing disorder",
+          "url": "https://sensoryhealth.org/basic/understanding-sensory-processing-disorder"
+        }
+      ]
     },
     {
       "id": "odd",
@@ -3845,7 +4055,13 @@
         "parent-training"
       ],
       "imagePath": "assets/illustrations/odd.svg",
-      "overview": "Childhood Behavioral Disruption & Dysregulation Syndrome"
+      "overview": "Childhood Behavioral Disruption & Dysregulation Syndrome",
+      "sources": [
+        {
+          "label": "American Academy of Child & Adolescent Psychiatry — Children with oppositional defiant disorder",
+          "url": "https://www.aacap.org/AACAP/Families_and_Youth/Facts_for_Families/FFF-Guide/Children-With-Oppositional-Defiant-Disorder-072.aspx"
+        }
+      ]
     },
     {
       "id": "prader_willi",
@@ -3883,7 +4099,13 @@
         "growth-hormone"
       ],
       "imagePath": "assets/illustrations/prader_willi.svg",
-      "overview": "15q11-q13 Paternal Chromosomal Deletion Syndrome"
+      "overview": "15q11-q13 Paternal Chromosomal Deletion Syndrome",
+      "sources": [
+        {
+          "label": "NHS — Prader-Willi syndrome",
+          "url": "https://www.nhs.uk/conditions/prader-willi-syndrome/"
+        }
+      ]
     },
     {
       "id": "fragile_x",
@@ -3921,7 +4143,13 @@
         "hand-flapping"
       ],
       "imagePath": "assets/illustrations/fragile_x.svg",
-      "overview": "FMR1 Gene Trinucleotide Repeat Expansion Syndrome"
+      "overview": "FMR1 Gene Trinucleotide Repeat Expansion Syndrome",
+      "sources": [
+        {
+          "label": "CDC — Fragile X syndrome",
+          "url": "https://www.cdc.gov/fragile-x-syndrome/about/index.html"
+        }
+      ]
     },
     {
       "id": "rett",
@@ -3959,7 +4187,13 @@
         "trofinetide"
       ],
       "imagePath": "assets/illustrations/rett.svg",
-      "overview": "MECP2 Mutation X-Linked Neurodevelopmental Regression Disorder"
+      "overview": "MECP2 Mutation X-Linked Neurodevelopmental Regression Disorder",
+      "sources": [
+        {
+          "label": "NHS — Rett syndrome",
+          "url": "https://www.nhs.uk/conditions/rett-syndrome/"
+        }
+      ]
     },
     {
       "id": "nas",
@@ -3997,7 +4231,13 @@
         "morphine-taper"
       ],
       "imagePath": "assets/illustrations/nas.svg",
-      "overview": "Neonatal Perinatal Drug Withdrawal Syndrome"
+      "overview": "Neonatal Perinatal Drug Withdrawal Syndrome",
+      "sources": [
+        {
+          "label": "Nemours KidsHealth — Neonatal abstinence syndrome (NAS)",
+          "url": "https://kidshealth.org/en/parents/nas.html"
+        }
+      ]
     },
     {
       "id": "pphn",
@@ -4035,7 +4275,13 @@
         "nicu-emergency"
       ],
       "imagePath": "assets/illustrations/pphn.svg",
-      "overview": "Neonatal Severe Right-to-Left Shunt Hypoxemia"
+      "overview": "Neonatal Severe Right-to-Left Shunt Hypoxemia",
+      "sources": [
+        {
+          "label": "Nationwide Children's Hospital — Persistent pulmonary hypertension of the newborn (PPHN)",
+          "url": "https://www.nationwidechildrens.org/conditions/persistent-pulmonary-hypertension-of-the-newborn-pphn"
+        }
+      ]
     },
     {
       "id": "ivh",
@@ -4073,7 +4319,17 @@
         "hydrocephalus"
       ],
       "imagePath": "assets/illustrations/ivh.svg",
-      "overview": "Neonatal Germinal Matrix Capillary Rupture Syndrome"
+      "overview": "Neonatal Germinal Matrix Capillary Rupture Syndrome",
+      "sources": [
+        {
+          "label": "Nationwide Children's Hospital — Intraventricular hemorrhage (IVH) in babies",
+          "url": "https://www.nationwidechildrens.org/conditions/health-library/intraventricular-hemorrhage-in-babies"
+        },
+        {
+          "label": "Children's Hospital of Philadelphia (CHOP) — Intraventricular hemorrhage (IVH)",
+          "url": "https://www.chop.edu/conditions-diseases/intraventricular-hemorrhage"
+        }
+      ]
     },
     {
       "id": "ttn",
@@ -4111,7 +4367,13 @@
         "self-limiting"
       ],
       "imagePath": "assets/illustrations/ttn.svg",
-      "overview": "Neonatal Alveolar Fluid Clearance Delay Syndrome"
+      "overview": "Neonatal Alveolar Fluid Clearance Delay Syndrome",
+      "sources": [
+        {
+          "label": "Nemours KidsHealth — Transient tachypnea of the newborn (TTN)",
+          "url": "https://kidshealth.org/en/parents/ttn.html"
+        }
+      ]
     },
     {
       "id": "addisons",
@@ -4488,7 +4750,17 @@
         "newborn"
       ],
       "imagePath": "assets/illustrations/pyloric_stenosis.svg",
-      "overview": "Gastric Outlet Obstruction"
+      "overview": "Gastric Outlet Obstruction",
+      "sources": [
+        {
+          "label": "Nemours KidsHealth — Pyloric stenosis",
+          "url": "https://kidshealth.org/en/parents/pyloric-stenosis.html"
+        },
+        {
+          "label": "Nationwide Children's Hospital — Pyloric stenosis",
+          "url": "https://www.nationwidechildrens.org/conditions/pyloric-stenosis"
+        }
+      ]
     },
     {
       "id": "scarlet_fever",
@@ -4723,7 +4995,17 @@
         "tics",
         "autoimmune-neuro"
       ],
-      "imagePath": "assets/illustrations/pandas.svg"
+      "imagePath": "assets/illustrations/pandas.svg",
+      "sources": [
+        {
+          "label": "Nemours KidsHealth — PANDAS",
+          "url": "https://kidshealth.org/en/parents/pandas.html"
+        },
+        {
+          "label": "National Institute of Mental Health (NIMH) — PANDAS",
+          "url": "https://www.nimh.nih.gov/health/publications/pandas"
+        }
+      ]
     },
     {
       "id": "biliary_atresia",
@@ -4761,7 +5043,17 @@
         "liver-failure",
         "kasai-procedure"
       ],
-      "imagePath": "assets/illustrations/biliary_atresia.svg"
+      "imagePath": "assets/illustrations/biliary_atresia.svg",
+      "sources": [
+        {
+          "label": "Nemours KidsHealth — Biliary atresia",
+          "url": "https://kidshealth.org/en/parents/biliary-atresia.html"
+        },
+        {
+          "label": "Children's Hospital of Philadelphia (CHOP) — Biliary atresia",
+          "url": "https://www.chop.edu/conditions-diseases/biliary-atresia"
+        }
+      ]
     },
     {
       "id": "g6pd_deficiency",
@@ -4992,7 +5284,17 @@
         "kasai-ecmo",
         "newborn-emergency"
       ],
-      "imagePath": "assets/illustrations/cdh.svg"
+      "imagePath": "assets/illustrations/cdh.svg",
+      "sources": [
+        {
+          "label": "Children's Hospital of Philadelphia (CHOP) — Congenital diaphragmatic hernia (CDH)",
+          "url": "https://www.chop.edu/conditions-diseases/congenital-diaphragmatic-hernia-cdh"
+        },
+        {
+          "label": "Nationwide Children's Hospital — Congenital diaphragmatic hernia",
+          "url": "https://www.nationwidechildrens.org/conditions/congenital-diaphragmatic-hernia"
+        }
+      ]
     },
     {
       "id": "shigellosis",
@@ -5466,7 +5768,17 @@
         "apnea"
       ],
       "imagePath": "assets/illustrations/preemie.svg",
-      "overview": "Gestational Immaturity and Development Deprivation"
+      "overview": "Gestational Immaturity and Development Deprivation",
+      "sources": [
+        {
+          "label": "Nemours KidsHealth — Premature babies",
+          "url": "https://kidshealth.org/en/parents/preemies.html"
+        },
+        {
+          "label": "American Academy of Pediatrics (HealthyChildren.org) — Preemie (premature) babies",
+          "url": "https://www.healthychildren.org/English/ages-stages/baby/preemie/Pages/default.aspx"
+        }
+      ]
     },
     {
       "id": "cmpa",
@@ -6447,7 +6759,17 @@
         "nutrition"
       ],
       "imagePath": "assets/illustrations/growth.svg",
-      "overview": "Excess body fat that increases the risk of health problems, defined by age- and sex-specific BMI charts."
+      "overview": "Excess body fat that increases the risk of health problems, defined by age- and sex-specific BMI charts.",
+      "sources": [
+        {
+          "label": "Nemours KidsHealth — Overweight and obesity",
+          "url": "https://kidshealth.org/en/parents/overweight-obesity.html"
+        },
+        {
+          "label": "NHS — Obesity",
+          "url": "https://www.nhs.uk/conditions/obesity/"
+        }
+      ]
     },
     {
       "id": "pda",
@@ -6836,7 +7158,17 @@
         "vision"
       ],
       "imagePath": "assets/illustrations/onco.svg",
-      "overview": "Cancer of the developing retina; the most common eye cancer in children."
+      "overview": "Cancer of the developing retina; the most common eye cancer in children.",
+      "sources": [
+        {
+          "label": "Nemours KidsHealth — Retinoblastoma",
+          "url": "https://kidshealth.org/en/parents/retinoblastoma.html"
+        },
+        {
+          "label": "NHS — Retinoblastoma",
+          "url": "https://www.nhs.uk/conditions/retinoblastoma/"
+        }
+      ]
     }
   ]
 }
