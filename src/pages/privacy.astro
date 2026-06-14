@@ -2,67 +2,169 @@
 import Base from '../layouts/Base.astro';
 import Breadcrumbs from '../components/Breadcrumbs.astro';
 
-const updated = '2026-06-11';
+const updated = '2026-06-14';
 ---
 
 <Base
-    title="Privacy Policy | Kids Disease"
-    description="Kids Disease's privacy policy: a static educational site with no accounts, no tracking cookies, and no collection of health data. Theme preference is stored locally on your device."
+    title="Privacy & Cookie Policy | Kids Disease"
+    description="How Kids Disease handles data: a static educational site with optional, consent-based Google Analytics, no accounts, no ads, and no collection of health data. Full cookie list and your choices explained."
 >
     <Breadcrumbs items={[{ name: 'Home', href: '/' }, { name: 'Privacy Policy' }]} />
 
     <article class="max-w-3xl mx-auto px-4 md:px-8 py-8 space-y-6">
         <header class="space-y-1">
-            <h1 class="text-2xl md:text-4xl font-black text-slate-800 dark:text-[#F1EDFF] tracking-tight">Privacy Policy</h1>
+            <h1 class="text-2xl md:text-4xl font-black text-slate-800 dark:text-[#F1EDFF] tracking-tight">Privacy &amp; Cookie Policy</h1>
             <p class="text-[10px] font-black uppercase tracking-wider text-slate-500 dark:text-[#8B84B8]">Last updated: {updated}</p>
         </header>
 
-        <div class="bg-white dark:bg-night-card rounded-3xl border border-orange-100 dark:border-night-line shadow-premium p-6 md:p-8 space-y-5 text-sm text-slate-700 dark:text-[#D8D2F5] font-medium leading-relaxed">
+        <div class="bg-white dark:bg-night-card rounded-3xl border border-orange-100 dark:border-night-line shadow-premium p-6 md:p-8 space-y-6 text-sm text-slate-700 dark:text-[#D8D2F5] font-medium leading-relaxed">
             <section class="space-y-2">
-                <h2 class="text-base font-black text-slate-800 dark:text-[#F1EDFF]">What we collect: essentially nothing</h2>
+                <h2 class="text-base font-black text-slate-800 dark:text-[#F1EDFF]">The short version</h2>
                 <p class="text-xs md:text-sm">
-                    Kids Disease is a static website. It has no user accounts, no forms that submit
-                    data to us, no advertising trackers, and no analytics cookies. We never see
-                    what you search for or which conditions you read about — searches and the
-                    triage checker run entirely inside your browser and are not transmitted.
+                    Kids Disease is a free, static educational website. We have no user accounts,
+                    show no ads, and never collect health information about you or your child. The
+                    only optional data activity is <strong>Google Analytics</strong>, which counts
+                    visits so we can see which pages are useful — and it runs <strong>only if you
+                    choose “Accept”</strong> on the cookie banner. If you decline, no analytics
+                    cookies are set and the site works exactly the same.
                 </p>
             </section>
+
             <section class="space-y-2">
-                <h2 class="text-base font-black text-slate-800 dark:text-[#F1EDFF]">Health information</h2>
+                <h2 class="text-base font-black text-slate-800 dark:text-[#F1EDFF]">Cookies and local storage we use</h2>
                 <p class="text-xs md:text-sm">
-                    We do not collect, store, or process any health information about you or your
-                    child. Triage answers exist only in your browser tab and disappear when you
-                    leave the page.
+                    Two small items are stored on your own device to make the site work — these are
+                    strictly necessary and never sent anywhere. Analytics cookies are set
+                    <strong>only after you accept</strong> them.
+                </p>
+                <div class="overflow-x-auto">
+                    <table class="w-full text-[11px] md:text-xs border-collapse">
+                        <thead>
+                            <tr class="text-left border-b border-orange-100 dark:border-night-line">
+                                <th class="py-2 pr-3 font-black text-slate-800 dark:text-[#F1EDFF]">Name</th>
+                                <th class="py-2 pr-3 font-black text-slate-800 dark:text-[#F1EDFF]">Type</th>
+                                <th class="py-2 pr-3 font-black text-slate-800 dark:text-[#F1EDFF]">Purpose</th>
+                                <th class="py-2 font-black text-slate-800 dark:text-[#F1EDFF]">Set when</th>
+                            </tr>
+                        </thead>
+                        <tbody class="align-top">
+                            <tr class="border-b border-orange-50 dark:border-night-line/60">
+                                <td class="py-2 pr-3"><code>kidsdisease-theme</code></td>
+                                <td class="py-2 pr-3">Local storage (necessary)</td>
+                                <td class="py-2 pr-3">Remembers your light/dark theme choice.</td>
+                                <td class="py-2">Always · stays on your device</td>
+                            </tr>
+                            <tr class="border-b border-orange-50 dark:border-night-line/60">
+                                <td class="py-2 pr-3"><code>kidsdisease-consent</code></td>
+                                <td class="py-2 pr-3">Local storage (necessary)</td>
+                                <td class="py-2 pr-3">Remembers your cookie choice so we don't ask again.</td>
+                                <td class="py-2">After you choose · stays on your device</td>
+                            </tr>
+                            <tr>
+                                <td class="py-2 pr-3"><code>_ga</code>, <code>_ga_&lt;id&gt;</code></td>
+                                <td class="py-2 pr-3">Cookie (analytics)</td>
+                                <td class="py-2 pr-3">Google Analytics — counts visits and distinguishes sessions.</td>
+                                <td class="py-2">Only after you click “Accept” (up to ~2 years)</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <section class="space-y-2">
+                <h2 class="text-base font-black text-slate-800 dark:text-[#F1EDFF]">Analytics (Google Analytics 4)</h2>
+                <p class="text-xs md:text-sm">
+                    With your consent, we use Google Analytics 4 (provided by Google Ireland/LLC) to
+                    understand aggregate traffic — for example, how many people visit, which pages
+                    they read, the approximate country, and the general device or browser type. This
+                    helps us improve the most-used content.
+                </p>
+                <ul class="list-disc pl-5 space-y-1.5 text-xs md:text-sm">
+                    <li>Google Analytics 4 <strong>does not store your IP address</strong>; it is used only briefly to estimate country, then discarded.</li>
+                    <li>We have <strong>not</strong> enabled Google Signals, advertising features, or ad personalisation.</li>
+                    <li>We never upload anything you type — searches and the triage checker run entirely in your browser (see below).</li>
+                    <li>Google processes this data under its own terms. See
+                        <a href="https://policies.google.com/privacy" rel="noopener" target="_blank" class="text-brand-teal hover:underline">Google's Privacy Policy</a>,
+                        <a href="https://policies.google.com/technologies/partner-sites" rel="noopener" target="_blank" class="text-brand-teal hover:underline">how Google uses data</a>, and the optional
+                        <a href="https://tools.google.com/dlpage/gaoptout" rel="noopener" target="_blank" class="text-brand-teal hover:underline">browser opt-out add-on</a>.
+                    </li>
+                </ul>
+            </section>
+
+            <section class="space-y-2">
+                <h2 class="text-base font-black text-slate-800 dark:text-[#F1EDFF]">Your choices</h2>
+                <p class="text-xs md:text-sm">
+                    Analytics is entirely your choice. You can <strong>Accept</strong> or
+                    <strong>Decline</strong> on the banner shown on your first visit. You can change
+                    your mind at any time using the <strong>“Cookie preferences”</strong> link in the
+                    footer — choosing Decline afterwards disables Google Analytics and clears its
+                    cookies. You can also block or delete cookies in your browser settings.
                 </p>
             </section>
+
             <section class="space-y-2">
-                <h2 class="text-base font-black text-slate-800 dark:text-[#F1EDFF]">Local storage</h2>
+                <h2 class="text-base font-black text-slate-800 dark:text-[#F1EDFF]">Health information &amp; what we never do</h2>
                 <p class="text-xs md:text-sm">
-                    One preference — your light/dark theme choice — is stored in your browser's
-                    local storage under <code>kidsdisease-theme</code>. It never leaves your device.
+                    We do <strong>not</strong> collect, store, or transmit any health information
+                    about you or your child. The symptom triage checker and the search box run
+                    entirely inside your browser — your answers and search terms are never sent to
+                    us or to anyone else, and they disappear when you leave the page. We have no user
+                    accounts, no forms that submit data to us, no advertising, and we never sell data.
                 </p>
             </section>
+
             <section class="space-y-2">
-                <h2 class="text-base font-black text-slate-800 dark:text-[#F1EDFF]">Third-party resources</h2>
+                <h2 class="text-base font-black text-slate-800 dark:text-[#F1EDFF]">Service providers &amp; third parties</h2>
                 <p class="text-xs md:text-sm">
-                    Pages load fonts from Google Fonts and icons from Cloudflare's cdnjs. Your
-                    browser contacts those servers to fetch the files, which exposes your IP
-                    address to them under their own privacy policies. No other third parties are
-                    involved.
+                    To deliver the site, your browser necessarily contacts a few providers, which
+                    receive your IP address and request details as a normal part of serving web
+                    pages (this is required for any website to load and is not used to track you):
+                </p>
+                <ul class="list-disc pl-5 space-y-1.5 text-xs md:text-sm">
+                    <li><strong>Cloudflare</strong> — hosting and content delivery (the site runs on Cloudflare Pages). See <a href="https://www.cloudflare.com/privacypolicy/" rel="noopener" target="_blank" class="text-brand-teal hover:underline">Cloudflare's privacy policy</a>.</li>
+                    <li><strong>Google Fonts</strong> — web fonts, and <strong>Cloudflare cdnjs</strong> — icon files.</li>
+                    <li><strong>Google Analytics</strong> — only with your consent, as described above.</li>
+                </ul>
+            </section>
+
+            <section class="space-y-2">
+                <h2 class="text-base font-black text-slate-800 dark:text-[#F1EDFF]">Legal basis &amp; your rights</h2>
+                <p class="text-xs md:text-sm">
+                    Where the GDPR / UK GDPR applies: analytics relies on your <strong>consent</strong>
+                    (which you can withdraw at any time), and the providers needed to deliver the page
+                    rely on our <strong>legitimate interest</strong> in serving a working, secure
+                    website. You have the right to access, correct, erase, or object to processing of
+                    your personal data, and to lodge a complaint with your data-protection authority.
+                    Because we hold no personal data ourselves, requests about analytics data are
+                    handled through Google's controls and your browser; for anything else,
+                    <a href="/contact/" class="text-brand-teal hover:underline">contact us</a>.
                 </p>
             </section>
+
+            <section class="space-y-2">
+                <h2 class="text-base font-black text-slate-800 dark:text-[#F1EDFF]">International transfers</h2>
+                <p class="text-xs md:text-sm">
+                    Our providers (Cloudflare, Google) operate globally and may process data outside
+                    your country, including in the United States, under their own safeguards such as
+                    the EU Standard Contractual Clauses and the EU–US Data Privacy Framework.
+                </p>
+            </section>
+
             <section class="space-y-2">
                 <h2 class="text-base font-black text-slate-800 dark:text-[#F1EDFF]">Children's privacy</h2>
                 <p class="text-xs md:text-sm">
-                    The site is written for parents and caregivers. Because we collect no personal
-                    data at all, no data about children is collected either.
+                    Kids Disease is written for parents and caregivers and is not directed at
+                    children. We do not knowingly collect personal data from children. Any analytics
+                    data is aggregate and not used to identify individuals.
                 </p>
             </section>
+
             <section class="space-y-2">
-                <h2 class="text-base font-black text-slate-800 dark:text-[#F1EDFF]">Changes</h2>
+                <h2 class="text-base font-black text-slate-800 dark:text-[#F1EDFF]">Changes &amp; contact</h2>
                 <p class="text-xs md:text-sm">
-                    If hosting or features ever change what is collected, this page will be
-                    updated first, with the date above revised.
+                    If what we collect ever changes, we will update this page and revise the date
+                    above before the change takes effect. Questions or concerns?
+                    <a href="/contact/" class="text-brand-teal hover:underline">Contact us</a>.
                 </p>
             </section>
         </div>
