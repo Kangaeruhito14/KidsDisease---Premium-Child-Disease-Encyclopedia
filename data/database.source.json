@@ -1601,7 +1601,21 @@
         "hemolysis"
       ],
       "imagePath": "assets/illustrations/sickle_cell.svg",
-      "overview": "Autosomal Recessive Hemoglobinopathy"
+      "overview": "Autosomal Recessive Hemoglobinopathy",
+      "sources": [
+        {
+          "label": "Nemours KidsHealth — Sickle cell disease",
+          "url": "https://kidshealth.org/en/parents/sickle-cell-anemia.html"
+        },
+        {
+          "label": "CDC — Sickle cell disease",
+          "url": "https://www.cdc.gov/sickle-cell/about/index.html"
+        },
+        {
+          "label": "NHS — Sickle cell disease",
+          "url": "https://www.nhs.uk/conditions/sickle-cell-disease/"
+        }
+      ]
     },
     {
       "id": "thalassemia",
@@ -1639,7 +1653,21 @@
         "hemoglobinopathy"
       ],
       "imagePath": "assets/illustrations/thalassemia.svg",
-      "overview": "Autosomal Recessive Microcytic Hemolytic Anemia"
+      "overview": "Autosomal Recessive Microcytic Hemolytic Anemia",
+      "sources": [
+        {
+          "label": "Nemours KidsHealth — Thalassemias",
+          "url": "https://kidshealth.org/en/parents/thalassemias.html"
+        },
+        {
+          "label": "CDC — Thalassemia",
+          "url": "https://www.cdc.gov/thalassemia/about/index.html"
+        },
+        {
+          "label": "NHS — Thalassaemia",
+          "url": "https://www.nhs.uk/conditions/thalassaemia/"
+        }
+      ]
     },
     {
       "id": "itp",
@@ -1677,7 +1705,17 @@
         "ivig"
       ],
       "imagePath": "assets/illustrations/itp.svg",
-      "overview": "Acquired Autoimmune Anti-Platelet Destruction Disorder"
+      "overview": "Acquired Autoimmune Anti-Platelet Destruction Disorder",
+      "sources": [
+        {
+          "label": "Nationwide Children's Hospital — Immune thrombocytopenia (ITP)",
+          "url": "https://www.nationwidechildrens.org/conditions/immune-thrombocytopenia-itp"
+        },
+        {
+          "label": "Cincinnati Children's — Immune thrombocytopenia (ITP)",
+          "url": "https://www.cincinnatichildrens.org/health/i/itp"
+        }
+      ]
     },
     {
       "id": "hemophilia",
@@ -1715,7 +1753,21 @@
         "bleeding-disorder"
       ],
       "imagePath": "assets/illustrations/hemophilia.svg",
-      "overview": "X-Linked Recessive Coagulation Factor Deficiency"
+      "overview": "X-Linked Recessive Coagulation Factor Deficiency",
+      "sources": [
+        {
+          "label": "Nemours KidsHealth — Hemophilia",
+          "url": "https://kidshealth.org/en/parents/hemophilia.html"
+        },
+        {
+          "label": "CDC — Hemophilia",
+          "url": "https://www.cdc.gov/hemophilia/about/index.html"
+        },
+        {
+          "label": "NHS — Haemophilia",
+          "url": "https://www.nhs.uk/conditions/haemophilia/"
+        }
+      ]
     },
     {
       "id": "diabetes_type1",
@@ -1753,7 +1805,17 @@
         "polyuria"
       ],
       "imagePath": "assets/illustrations/diabetes_type1.svg",
-      "overview": "Autoimmune Pancreatic Beta-Cell Destruction Disorder"
+      "overview": "Autoimmune Pancreatic Beta-Cell Destruction Disorder",
+      "sources": [
+        {
+          "label": "Nemours KidsHealth — Type 1 diabetes",
+          "url": "https://kidshealth.org/en/parents/type1.html"
+        },
+        {
+          "label": "NHS — Type 1 diabetes",
+          "url": "https://www.nhs.uk/conditions/type-1-diabetes/"
+        }
+      ]
     },
     {
       "id": "hypothyroidism",
@@ -1791,7 +1853,17 @@
         "macroglossia"
       ],
       "imagePath": "assets/illustrations/hypothyroidism.svg",
-      "overview": "Inborn Thyroid Hormone Deficiency Disorder"
+      "overview": "Inborn Thyroid Hormone Deficiency Disorder",
+      "sources": [
+        {
+          "label": "Nemours KidsHealth — Hypothyroidism",
+          "url": "https://kidshealth.org/en/parents/hypothyroidism.html"
+        },
+        {
+          "label": "Nationwide Children's Hospital — Congenital hypothyroidism",
+          "url": "https://www.nationwidechildrens.org/conditions/congenital-hypothyroidism"
+        }
+      ]
     },
     {
       "id": "pku",
@@ -1829,7 +1901,13 @@
         "sapropterin"
       ],
       "imagePath": "assets/illustrations/pku.svg",
-      "overview": "Inborn Error of Amino Acid Metabolism"
+      "overview": "Inborn Error of Amino Acid Metabolism",
+      "sources": [
+        {
+          "label": "NHS — Phenylketonuria (PKU)",
+          "url": "https://www.nhs.uk/conditions/phenylketonuria/"
+        }
+      ]
     },
     {
       "id": "galactosemia",
@@ -1867,7 +1945,13 @@
         "ecoli-sepsis"
       ],
       "imagePath": "assets/illustrations/galactosemia.svg",
-      "overview": "Inborn Error of Carbohydrate Metabolism"
+      "overview": "Inborn Error of Carbohydrate Metabolism",
+      "sources": [
+        {
+          "label": "Nemours KidsHealth — Galactosemia",
+          "url": "https://kidshealth.org/en/parents/galactosemia.html"
+        }
+      ]
     },
     {
       "id": "nephrotic",
@@ -1905,7 +1989,17 @@
         "podocyte"
       ],
       "imagePath": "assets/illustrations/nephrotic.svg",
-      "overview": "Glomerular Podocyte Barrier Dysfunction Syndrome"
+      "overview": "Glomerular Podocyte Barrier Dysfunction Syndrome",
+      "sources": [
+        {
+          "label": "Nemours KidsHealth — Nephrotic syndrome",
+          "url": "https://kidshealth.org/en/parents/nephrotic-syndrome.html"
+        },
+        {
+          "label": "American Academy of Pediatrics (HealthyChildren.org) — Nephrotic syndrome in children",
+          "url": "https://www.healthychildren.org/English/health-issues/conditions/genitourinary-tract/Pages/Nephrotic-Syndrome-in-Children.aspx"
+        }
+      ]
     },
     {
       "id": "apsgn",
@@ -1943,7 +2037,17 @@
         "complement-c3"
       ],
       "imagePath": "assets/illustrations/apsgn.svg",
-      "overview": "Post-Streptococcal Immune Complex Glomerulopathy"
+      "overview": "Post-Streptococcal Immune Complex Glomerulopathy",
+      "sources": [
+        {
+          "label": "Nemours KidsHealth — Glomerulonephritis",
+          "url": "https://kidshealth.org/en/parents/glomerulonephritis.html"
+        },
+        {
+          "label": "Nationwide Children's Hospital — Glomerulonephritis",
+          "url": "https://www.nationwidechildrens.org/conditions/glomerulonephritis"
+        }
+      ]
     },
     {
       "id": "uti",
@@ -1982,7 +2086,17 @@
         "urine-culture"
       ],
       "imagePath": "assets/illustrations/uti.svg",
-      "overview": "Bacterial Colonization of the Urinary Tract"
+      "overview": "Bacterial Colonization of the Urinary Tract",
+      "sources": [
+        {
+          "label": "Nemours KidsHealth — Urinary tract infections",
+          "url": "https://kidshealth.org/en/parents/urinary.html"
+        },
+        {
+          "label": "NHS — Urinary tract infections (UTIs)",
+          "url": "https://www.nhs.uk/conditions/urinary-tract-infections-utis/"
+        }
+      ]
     },
     {
       "id": "vur",
@@ -2020,7 +2134,17 @@
         "urology"
       ],
       "imagePath": "assets/illustrations/vur.svg",
-      "overview": "Congenital Retrograde Urinary Flow Dysfunction"
+      "overview": "Congenital Retrograde Urinary Flow Dysfunction",
+      "sources": [
+        {
+          "label": "Nemours KidsHealth — Vesicoureteral reflux (VUR)",
+          "url": "https://kidshealth.org/en/parents/vesicoureteral-reflux.html"
+        },
+        {
+          "label": "Nationwide Children's Hospital — Vesicoureteral reflux (VUR)",
+          "url": "https://www.nationwidechildrens.org/conditions/vesicoureteral-reflux-vur"
+        }
+      ]
     },
     {
       "id": "ophthalmia_neonatorum",
@@ -3871,7 +3995,17 @@
         "adrenal-crisis"
       ],
       "imagePath": "assets/illustrations/addisons.svg",
-      "overview": "Pediatric Primary Adrenal Insufficiency Syndrome"
+      "overview": "Pediatric Primary Adrenal Insufficiency Syndrome",
+      "sources": [
+        {
+          "label": "NHS — Addison's disease",
+          "url": "https://www.nhs.uk/conditions/addisons-disease/"
+        },
+        {
+          "label": "Nemours KidsHealth — Adrenal insufficiency",
+          "url": "https://kidshealth.org/en/parents/adrenal-insufficiency.html"
+        }
+      ]
     },
     {
       "id": "cah",
@@ -3909,7 +4043,13 @@
         "adrenal-hyperplasia"
       ],
       "imagePath": "assets/illustrations/cah.svg",
-      "overview": "Inherited Adrenal Steroidogenesis Enzyme Deficiency"
+      "overview": "Inherited Adrenal Steroidogenesis Enzyme Deficiency",
+      "sources": [
+        {
+          "label": "Nemours KidsHealth — Congenital adrenal hyperplasia (CAH)",
+          "url": "https://kidshealth.org/en/parents/congenital-adrenal-hyperplasia.html"
+        }
+      ]
     },
     {
       "id": "msud",
@@ -3947,7 +4087,17 @@
         "metabolic-crisis"
       ],
       "imagePath": "assets/illustrations/msud.svg",
-      "overview": "Inherited Branched-Chain Amino Acid Decarboxylase Deficiency"
+      "overview": "Inherited Branched-Chain Amino Acid Decarboxylase Deficiency",
+      "sources": [
+        {
+          "label": "Nemours KidsHealth — Maple syrup urine disease (MSUD)",
+          "url": "https://kidshealth.org/en/parents/msud.html"
+        },
+        {
+          "label": "NHS — Maple syrup urine disease",
+          "url": "https://www.nhs.uk/conditions/maple-syrup-urine-disease/"
+        }
+      ]
     },
     {
       "id": "taysachs",
@@ -3985,7 +4135,17 @@
         "lysosomal-storage"
       ],
       "imagePath": "assets/illustrations/taysachs.svg",
-      "overview": "Inherited GM2 Gangliosidosis Lysosomal Storage Disorder"
+      "overview": "Inherited GM2 Gangliosidosis Lysosomal Storage Disorder",
+      "sources": [
+        {
+          "label": "Nemours KidsHealth — Tay-Sachs disease",
+          "url": "https://kidshealth.org/en/parents/tay-sachs.html"
+        },
+        {
+          "label": "NHS — Tay-Sachs disease",
+          "url": "https://www.nhs.uk/conditions/tay-sachs-disease/"
+        }
+      ]
     },
     {
       "id": "roseola",
@@ -4446,7 +4606,13 @@
         "hemolytic-anemia",
         "jaundice"
       ],
-      "imagePath": "assets/illustrations/g6pd_deficiency.svg"
+      "imagePath": "assets/illustrations/g6pd_deficiency.svg",
+      "sources": [
+        {
+          "label": "Nemours KidsHealth — G6PD deficiency",
+          "url": "https://kidshealth.org/en/parents/g6pd.html"
+        }
+      ]
     },
     {
       "id": "laryngomalacia",
@@ -4881,7 +5047,17 @@
         "ferrous"
       ],
       "imagePath": "assets/illustrations/anemia.svg",
-      "overview": "Microcytic Hypochromic Anemia"
+      "overview": "Microcytic Hypochromic Anemia",
+      "sources": [
+        {
+          "label": "Nemours KidsHealth — Iron-deficiency anemia",
+          "url": "https://kidshealth.org/en/parents/ida.html"
+        },
+        {
+          "label": "NHS — Iron deficiency anaemia",
+          "url": "https://www.nhs.uk/conditions/iron-deficiency-anaemia/"
+        }
+      ]
     },
     {
       "id": "pediatric_migraine",
@@ -5868,7 +6044,17 @@
         "bladder"
       ],
       "imagePath": "assets/illustrations/kidney_filter.svg",
-      "overview": "Involuntary night-time wetting beyond the age when bladder control is expected."
+      "overview": "Involuntary night-time wetting beyond the age when bladder control is expected.",
+      "sources": [
+        {
+          "label": "Nemours KidsHealth — Bedwetting (enuresis)",
+          "url": "https://kidshealth.org/en/parents/enuresis.html"
+        },
+        {
+          "label": "NHS — Bedwetting",
+          "url": "https://www.nhs.uk/conditions/bedwetting/"
+        }
+      ]
     },
     {
       "id": "type2_diabetes",
@@ -5904,7 +6090,17 @@
         "obesity"
       ],
       "imagePath": "assets/illustrations/diabetes.svg",
-      "overview": "Chronic disorder of high blood sugar from insulin resistance and relative insulin deficiency."
+      "overview": "Chronic disorder of high blood sugar from insulin resistance and relative insulin deficiency.",
+      "sources": [
+        {
+          "label": "Nemours KidsHealth — Type 2 diabetes",
+          "url": "https://kidshealth.org/en/parents/type2.html"
+        },
+        {
+          "label": "NHS — Type 2 diabetes",
+          "url": "https://www.nhs.uk/conditions/type-2-diabetes/"
+        }
+      ]
     },
     {
       "id": "obesity",
@@ -6124,7 +6320,17 @@
         "emergency"
       ],
       "imagePath": "assets/illustrations/kidney_filter.svg",
-      "overview": "Serious condition combining red-cell destruction, low platelets, and acute kidney injury."
+      "overview": "Serious condition combining red-cell destruction, low platelets, and acute kidney injury.",
+      "sources": [
+        {
+          "label": "CDC — Hemolytic uremic syndrome (HUS)",
+          "url": "https://www.cdc.gov/ecoli/signs-symptoms/hus.html"
+        },
+        {
+          "label": "Nationwide Children's Hospital — Hemolytic uremic syndrome (HUS) in children",
+          "url": "https://www.nationwidechildrens.org/conditions/health-library/hemolytic-uremic-syndrome-hus-in-children"
+        }
+      ]
     },
     {
       "id": "hsp",
