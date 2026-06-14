@@ -38,6 +38,10 @@ const elements = d.medicinal_elements
     .map(s => s.trim())
     .filter(Boolean);
 
+// Visible, per-disease authoritative references (rolled out condition by
+// condition). When present they also become the page's JSON-LD citations.
+const sources = d.sources ?? [];
+
 const title = `${d.name} in Children: Symptoms, Treatment & When to Worry`;
 
 // Per-disease long-tail keyword cluster (see docs/seo-strategy.md).
@@ -69,12 +73,9 @@ const jsonLd = [
         lastReviewed: reviewed,
         dateModified: reviewed,
         reviewedBy: { '@type': 'Organization', name: 'Kids Disease Editorial Team' },
-        citation: [
-            'https://www.healthychildren.org',
-            'https://www.cdc.gov',
-            'https://www.who.int',
-            'https://www.nhs.uk'
-        ],
+        citation: sources.length
+            ? sources.map(s => s.url)
+            : ['https://www.healthychildren.org', 'https://www.cdc.gov', 'https://www.who.int', 'https://www.nhs.uk'],
         speakable: { '@type': 'SpeakableSpecification', cssSelector: ['#overview', '#warnings'] },
         about: {
             '@type': 'MedicalCondition',
@@ -362,6 +363,36 @@ const sections = [
                 )
             }
         </section>
+
+        {
+            sources.length > 0 && (
+                <section id="sources" class="bg-white dark:bg-night-card rounded-3xl p-6 md:p-8 border border-orange-100 dark:border-night-line shadow-premium space-y-4 scroll-mt-24">
+                    <h2 class="text-base md:text-lg font-black text-slate-800 dark:text-[#F1EDFF] flex items-center gap-2 border-b border-orange-100/50 dark:border-night-line pb-3">
+                        <i class="fa-solid fa-book-medical text-brand-teal" aria-hidden="true" /> Sources &amp; references
+                    </h2>
+                    <p class="text-xs text-slate-600 dark:text-[#B1A9DE] font-medium leading-relaxed">
+                        This profile is compiled from and checked against the following authoritative
+                        pediatric guidance. These are external resources; always confirm anything
+                        important with your child's own clinician.
+                    </p>
+                    <ul class="space-y-2 list-none">
+                        {sources.map(s => (
+                            <li>
+                                <a
+                                    href={s.url}
+                                    rel="noopener"
+                                    target="_blank"
+                                    class="inline-flex items-start gap-2 text-xs md:text-sm font-bold text-brand-teal hover:underline"
+                                >
+                                    <i class="fa-solid fa-arrow-up-right-from-square text-[10px] mt-1 shrink-0" aria-hidden="true" />
+                                    <span>{s.label}</span>
+                                </a>
+                            </li>
+                        ))}
+                    </ul>
+                </section>
+            )
+        }
 
         {
             sameCategory.length > 0 && (

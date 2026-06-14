@@ -49,6 +49,8 @@ export interface Disease {
     tags: string[];
     imagePath: string;
     overview?: string;
+    /** Visible, authoritative references for this profile (AAP/CDC/WHO/NHS/Nemours). */
+    sources?: { label: string; url: string }[];
 }
 
 export const bodySystems = db.bodySystems as BodySystem[];
