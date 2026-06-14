@@ -1000,7 +1000,21 @@
         "postictal"
       ],
       "imagePath": "assets/illustrations/seizures.svg",
-      "overview": "Benign Age-Dependent Convulsive Disorder"
+      "overview": "Benign Age-Dependent Convulsive Disorder",
+      "sources": [
+        {
+          "label": "NHS — Febrile seizures",
+          "url": "https://www.nhs.uk/conditions/febrile-seizures/"
+        },
+        {
+          "label": "Nemours KidsHealth — Febrile seizures",
+          "url": "https://kidshealth.org/en/parents/febrile.html"
+        },
+        {
+          "label": "American Academy of Pediatrics (HealthyChildren.org) — Febrile seizures in children",
+          "url": "https://www.healthychildren.org/English/health-issues/conditions/fever/Pages/Febrile-Seizures.aspx"
+        }
+      ]
     },
     {
       "id": "absence_epilepsy",
@@ -1038,7 +1052,17 @@
         "thalamocortical"
       ],
       "imagePath": "assets/illustrations/absence_epilepsy.svg",
-      "overview": "Generalized Idiopathic Genetic Epilepsy Syndrome"
+      "overview": "Generalized Idiopathic Genetic Epilepsy Syndrome",
+      "sources": [
+        {
+          "label": "Nemours KidsHealth — Epilepsy",
+          "url": "https://kidshealth.org/en/parents/epilepsy.html"
+        },
+        {
+          "label": "NHS — Epilepsy",
+          "url": "https://www.nhs.uk/conditions/epilepsy/"
+        }
+      ]
     },
     {
       "id": "meningitis",
@@ -1133,7 +1157,17 @@
         "brain-mri"
       ],
       "imagePath": "assets/illustrations/encephalitis.svg",
-      "overview": "Acute Inflammatory Brain Parenchyma Infection"
+      "overview": "Acute Inflammatory Brain Parenchyma Infection",
+      "sources": [
+        {
+          "label": "Nemours KidsHealth — Encephalitis",
+          "url": "https://kidshealth.org/en/parents/encephalitis.html"
+        },
+        {
+          "label": "NHS — Encephalitis",
+          "url": "https://www.nhs.uk/conditions/encephalitis/"
+        }
+      ]
     },
     {
       "id": "ddh",
@@ -1171,7 +1205,17 @@
         "swaddling"
       ],
       "imagePath": "assets/illustrations/ddh.svg",
-      "overview": "Congenital Structural Hip Joint Instability"
+      "overview": "Congenital Structural Hip Joint Instability",
+      "sources": [
+        {
+          "label": "Nemours KidsHealth — Developmental dysplasia of the hip",
+          "url": "https://kidshealth.org/en/parents/ddh.html"
+        },
+        {
+          "label": "NHS — Developmental dysplasia of the hip",
+          "url": "https://www.nhs.uk/conditions/developmental-dysplasia-of-the-hip/"
+        }
+      ]
     },
     {
       "id": "clubfoot",
@@ -1209,7 +1253,17 @@
         "orthopedics"
       ],
       "imagePath": "assets/illustrations/clubfoot.svg",
-      "overview": "Congenital Foot & Ankle Structural Deformity"
+      "overview": "Congenital Foot & Ankle Structural Deformity",
+      "sources": [
+        {
+          "label": "Nemours KidsHealth — Clubfoot",
+          "url": "https://kidshealth.org/en/parents/clubfoot.html"
+        },
+        {
+          "label": "NHS — Club foot",
+          "url": "https://www.nhs.uk/conditions/club-foot/"
+        }
+      ]
     },
     {
       "id": "jia",
@@ -1248,7 +1302,17 @@
         "rheumatology"
       ],
       "imagePath": "assets/illustrations/jia.svg",
-      "overview": "Chronic Pediatric Autoimmune Inflammatory Arthritis"
+      "overview": "Chronic Pediatric Autoimmune Inflammatory Arthritis",
+      "sources": [
+        {
+          "label": "Nemours KidsHealth — Juvenile idiopathic arthritis (JIA)",
+          "url": "https://kidshealth.org/en/parents/jra.html"
+        },
+        {
+          "label": "Cincinnati Children's — Juvenile idiopathic arthritis (JIA)",
+          "url": "https://www.cincinnatichildrens.org/health/j/jia"
+        }
+      ]
     },
     {
       "id": "dmd",
@@ -1286,7 +1350,21 @@
         "creatine-kinase"
       ],
       "imagePath": "assets/illustrations/dmd.svg",
-      "overview": "X-Linked Recessive Progressive Myopathic Degeneration"
+      "overview": "X-Linked Recessive Progressive Myopathic Degeneration",
+      "sources": [
+        {
+          "label": "Nemours KidsHealth — Muscular dystrophy",
+          "url": "https://kidshealth.org/en/parents/muscular-dystrophy.html"
+        },
+        {
+          "label": "CDC — Muscular dystrophy",
+          "url": "https://www.cdc.gov/muscular-dystrophy/about/index.html"
+        },
+        {
+          "label": "NHS — Muscular dystrophy",
+          "url": "https://www.nhs.uk/conditions/muscular-dystrophy/"
+        }
+      ]
     },
     {
       "id": "atopic_derm",
@@ -1377,7 +1455,13 @@
         "benign-dermatosis"
       ],
       "imagePath": "assets/illustrations/erythema_toxicum.svg",
-      "overview": "Benign Transient Neonatal Pustular Dermatosis"
+      "overview": "Benign Transient Neonatal Pustular Dermatosis",
+      "sources": [
+        {
+          "label": "Nemours KidsHealth — Erythema toxicum",
+          "url": "https://kidshealth.org/en/parents/erythema-toxicum.html"
+        }
+      ]
     },
     {
       "id": "impetigo",
@@ -1416,7 +1500,21 @@
         "contagious-rash"
       ],
       "imagePath": "assets/illustrations/impetigo.svg",
-      "overview": "Superficial Bacterial Epidermal Infection"
+      "overview": "Superficial Bacterial Epidermal Infection",
+      "sources": [
+        {
+          "label": "Nemours KidsHealth — Impetigo",
+          "url": "https://kidshealth.org/en/parents/impetigo.html"
+        },
+        {
+          "label": "CDC — Impetigo",
+          "url": "https://www.cdc.gov/group-a-strep/about/impetigo.html"
+        },
+        {
+          "label": "NHS — Impetigo",
+          "url": "https://www.nhs.uk/conditions/impetigo/"
+        }
+      ]
     },
     {
       "id": "hfmd",
@@ -1455,7 +1553,17 @@
         "enterovirus"
       ],
       "imagePath": "assets/illustrations/hfmd.svg",
-      "overview": "Enteroviral Mucocutaneous Vesicular Eruption"
+      "overview": "Enteroviral Mucocutaneous Vesicular Eruption",
+      "sources": [
+        {
+          "label": "CDC — Hand, foot, and mouth disease",
+          "url": "https://www.cdc.gov/hand-foot-mouth/about/index.html"
+        },
+        {
+          "label": "NHS — Hand, foot and mouth disease",
+          "url": "https://www.nhs.uk/conditions/hand-foot-and-mouth-disease/"
+        }
+      ]
     },
     {
       "id": "sickle_cell",
@@ -4167,7 +4275,17 @@
         "self-limiting",
         "skin"
       ],
-      "imagePath": "assets/illustrations/pityriasis_rosea.svg"
+      "imagePath": "assets/illustrations/pityriasis_rosea.svg",
+      "sources": [
+        {
+          "label": "Nemours KidsHealth — Pityriasis rosea",
+          "url": "https://kidshealth.org/en/parents/pityriasis-rosea.html"
+        },
+        {
+          "label": "NHS — Pityriasis rosea",
+          "url": "https://www.nhs.uk/conditions/pityriasis-rosea/"
+        }
+      ]
     },
     {
       "id": "transient_synovitis",
@@ -4205,7 +4323,17 @@
         "transient",
         "ibuprofen"
       ],
-      "imagePath": "assets/illustrations/transient_synovitis.svg"
+      "imagePath": "assets/illustrations/transient_synovitis.svg",
+      "sources": [
+        {
+          "label": "Nemours KidsHealth — Transient (toxic) synovitis",
+          "url": "https://kidshealth.org/en/parents/toxic-synovitis.html"
+        },
+        {
+          "label": "NHS (Chelsea & Westminster) — Transient synovitis (irritable hip)",
+          "url": "https://www.chelwest.nhs.uk/your-visit/patient-leaflets/paediatrics/transient-synovitis-irritable-hip"
+        }
+      ]
     },
     {
       "id": "pandas",
@@ -4408,7 +4536,17 @@
         "mri",
         "intravenous-antibiotics"
       ],
-      "imagePath": "assets/illustrations/osteomyelitis.svg"
+      "imagePath": "assets/illustrations/osteomyelitis.svg",
+      "sources": [
+        {
+          "label": "Nemours KidsHealth — Osteomyelitis",
+          "url": "https://kidshealth.org/en/parents/osteomyelitis.html"
+        },
+        {
+          "label": "NHS — Osteomyelitis",
+          "url": "https://www.nhs.uk/conditions/osteomyelitis/"
+        }
+      ]
     },
     {
       "id": "scoliosis",
@@ -4445,7 +4583,21 @@
         "adams-test",
         "growth-spurt"
       ],
-      "imagePath": "assets/illustrations/scoliosis.svg"
+      "imagePath": "assets/illustrations/scoliosis.svg",
+      "sources": [
+        {
+          "label": "Nemours KidsHealth — Scoliosis",
+          "url": "https://kidshealth.org/en/parents/scoliosis.html"
+        },
+        {
+          "label": "American Academy of Pediatrics (HealthyChildren.org) — Scoliosis",
+          "url": "https://www.healthychildren.org/English/health-issues/conditions/orthopedic/Pages/Scoliosis.aspx"
+        },
+        {
+          "label": "NHS — Scoliosis",
+          "url": "https://www.nhs.uk/conditions/scoliosis/"
+        }
+      ]
     },
     {
       "id": "cdh",
@@ -4685,7 +4837,13 @@
         "orthopedic"
       ],
       "imagePath": "assets/illustrations/bone_fracture.svg",
-      "overview": "Pediatric Incomplete Cortical Bone Fracture"
+      "overview": "Pediatric Incomplete Cortical Bone Fracture",
+      "sources": [
+        {
+          "label": "Nemours KidsHealth — Greenstick fractures",
+          "url": "https://kidshealth.org/en/parents/fractures-greenstick.html"
+        }
+      ]
     },
     {
       "id": "iron_deficiency_anemia",
@@ -4761,7 +4919,17 @@
         "nausea"
       ],
       "imagePath": "assets/illustrations/headache.svg",
-      "overview": "Pediatric Primary Neurovascular Headache"
+      "overview": "Pediatric Primary Neurovascular Headache",
+      "sources": [
+        {
+          "label": "Nemours KidsHealth — Migraines",
+          "url": "https://kidshealth.org/en/parents/migraines.html"
+        },
+        {
+          "label": "NHS — Migraine",
+          "url": "https://www.nhs.uk/conditions/migraine/"
+        }
+      ]
     },
     {
       "id": "otitis_externa",
@@ -5391,7 +5559,21 @@
         "candida"
       ],
       "imagePath": "assets/illustrations/rash.svg",
-      "overview": "Common irritant or fungal inflammation of the skin in the diaper area."
+      "overview": "Common irritant or fungal inflammation of the skin in the diaper area.",
+      "sources": [
+        {
+          "label": "Nemours KidsHealth — Diaper rash",
+          "url": "https://kidshealth.org/en/parents/diaper-rash.html"
+        },
+        {
+          "label": "NHS — Nappy rash",
+          "url": "https://www.nhs.uk/baby/caring-for-a-newborn/nappy-rash/"
+        },
+        {
+          "label": "Cincinnati Children's — Diaper rash",
+          "url": "https://www.cincinnatichildrens.org/health/d/diaper-rash"
+        }
+      ]
     },
     {
       "id": "cradle_cap",
@@ -5426,7 +5608,17 @@
         "flaking"
       ],
       "imagePath": "assets/illustrations/rash.svg",
-      "overview": "Common, harmless scaly scalp condition of infancy."
+      "overview": "Common, harmless scaly scalp condition of infancy.",
+      "sources": [
+        {
+          "label": "Nemours KidsHealth — Cradle cap",
+          "url": "https://kidshealth.org/en/parents/cradle-cap.html"
+        },
+        {
+          "label": "NHS — Cradle cap",
+          "url": "https://www.nhs.uk/conditions/cradle-cap/"
+        }
+      ]
     },
     {
       "id": "head_lice",
@@ -5500,7 +5692,21 @@
         "parasite"
       ],
       "imagePath": "assets/illustrations/parasite.svg",
-      "overview": "Intensely itchy skin infestation by the human scabies mite."
+      "overview": "Intensely itchy skin infestation by the human scabies mite.",
+      "sources": [
+        {
+          "label": "Nemours KidsHealth — Scabies",
+          "url": "https://kidshealth.org/en/parents/scabies.html"
+        },
+        {
+          "label": "CDC — Scabies",
+          "url": "https://www.cdc.gov/scabies/about/index.html"
+        },
+        {
+          "label": "NHS — Scabies",
+          "url": "https://www.nhs.uk/conditions/scabies/"
+        }
+      ]
     },
     {
       "id": "ringworm",
@@ -5537,7 +5743,21 @@
         "rash"
       ],
       "imagePath": "assets/illustrations/microbe.svg",
-      "overview": "Common contagious fungal skin infection (not a worm)."
+      "overview": "Common contagious fungal skin infection (not a worm).",
+      "sources": [
+        {
+          "label": "Nemours KidsHealth — Ringworm (tinea)",
+          "url": "https://kidshealth.org/en/parents/fungal-ringworm.html"
+        },
+        {
+          "label": "CDC — Ringworm",
+          "url": "https://www.cdc.gov/ringworm/about/index.html"
+        },
+        {
+          "label": "NHS — Ringworm",
+          "url": "https://www.nhs.uk/conditions/ringworm/"
+        }
+      ]
     },
     {
       "id": "urticaria",
