@@ -383,7 +383,21 @@
         "airway"
       ],
       "imagePath": "assets/illustrations/croup.svg",
-      "overview": "Upper Airway Viral Subglottic Stenosis"
+      "overview": "Upper Airway Viral Subglottic Stenosis",
+      "sources": [
+        {
+          "label": "American Academy of Pediatrics (HealthyChildren.org) — Croup in young children",
+          "url": "https://www.healthychildren.org/English/health-issues/conditions/chest-lungs/Pages/Croup-Treatment.aspx"
+        },
+        {
+          "label": "Nemours KidsHealth — Croup",
+          "url": "https://kidshealth.org/en/parents/croup.html"
+        },
+        {
+          "label": "NHS — Croup",
+          "url": "https://www.nhs.uk/conditions/croup/"
+        }
+      ]
     },
     {
       "id": "epiglottitis",
@@ -499,7 +513,25 @@
         "bronchospasm"
       ],
       "imagePath": "assets/illustrations/asthma.svg",
-      "overview": "Chronic Reversible Inflammatory Airway Hyperreactivity"
+      "overview": "Chronic Reversible Inflammatory Airway Hyperreactivity",
+      "sources": [
+        {
+          "label": "American Academy of Pediatrics (HealthyChildren.org) — Allergies & Asthma",
+          "url": "https://www.healthychildren.org/English/health-issues/conditions/allergies-asthma/Pages/default.aspx"
+        },
+        {
+          "label": "Nemours KidsHealth — Asthma (parents' guide)",
+          "url": "https://kidshealth.org/en/parents/asthma-basics.html"
+        },
+        {
+          "label": "NHS — Asthma",
+          "url": "https://www.nhs.uk/conditions/asthma/"
+        },
+        {
+          "label": "CDC — Asthma",
+          "url": "https://www.cdc.gov/asthma/index.html"
+        }
+      ]
     },
     {
       "id": "vsd",
@@ -920,7 +952,25 @@
         "nuchal-rigidity"
       ],
       "imagePath": "assets/illustrations/meningitis.svg",
-      "overview": "Acute Suppurative Central Nervous System Infection"
+      "overview": "Acute Suppurative Central Nervous System Infection",
+      "sources": [
+        {
+          "label": "American Academy of Pediatrics (HealthyChildren.org) — Meningitis in infants & children",
+          "url": "https://www.healthychildren.org/English/health-issues/conditions/head-neck-nervous-system/Pages/Meningitis.aspx"
+        },
+        {
+          "label": "Nemours KidsHealth — Meningitis",
+          "url": "https://kidshealth.org/en/parents/meningitis.html"
+        },
+        {
+          "label": "NHS — Meningitis",
+          "url": "https://www.nhs.uk/conditions/meningitis/"
+        },
+        {
+          "label": "CDC — Meningitis",
+          "url": "https://www.cdc.gov/meningitis/about/index.html"
+        }
+      ]
     },
     {
       "id": "encephalitis",
@@ -1150,7 +1200,21 @@
         "topical-steroid"
       ],
       "imagePath": "assets/illustrations/atopic_derm.svg",
-      "overview": "Chronic Relapsing Pruritic Inflammatory Skin Disease"
+      "overview": "Chronic Relapsing Pruritic Inflammatory Skin Disease",
+      "sources": [
+        {
+          "label": "American Academy of Pediatrics (HealthyChildren.org) — Treating & controlling eczema in children",
+          "url": "https://www.healthychildren.org/English/health-issues/conditions/skin/Pages/How-to-Treat-and-Control-Eczema-Rashes-in-Children.aspx"
+        },
+        {
+          "label": "Nemours KidsHealth — Eczema (atopic dermatitis)",
+          "url": "https://kidshealth.org/en/parents/eczema-atopic-dermatitis.html"
+        },
+        {
+          "label": "NHS — Atopic eczema",
+          "url": "https://www.nhs.uk/conditions/atopic-eczema/"
+        }
+      ]
     },
     {
       "id": "erythema_toxicum",
@@ -1915,7 +1979,21 @@
         "otalgia"
       ],
       "imagePath": "assets/illustrations/otitis_media.svg",
-      "overview": "Acute Suppurative Middle Ear Infection"
+      "overview": "Acute Suppurative Middle Ear Infection",
+      "sources": [
+        {
+          "label": "American Academy of Pediatrics (HealthyChildren.org) — Ear infections in children",
+          "url": "https://www.healthychildren.org/English/health-issues/conditions/ear-nose-throat/Pages/Ear-Infection-Information.aspx"
+        },
+        {
+          "label": "Nemours KidsHealth — Middle ear infections (otitis media)",
+          "url": "https://kidshealth.org/en/parents/otitis-media.html"
+        },
+        {
+          "label": "NHS — Ear infections",
+          "url": "https://www.nhs.uk/conditions/ear-infections/"
+        }
+      ]
     },
     {
       "id": "ome",
