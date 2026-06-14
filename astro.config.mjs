@@ -44,7 +44,7 @@ export default defineConfig({
                 resources: ["'self'", 'https://www.googletagmanager.com'],
                 hashes: [
                     'sha256-o2dTOuxs7awbhiQbI+XfhSBQ4xZLHWlxe6JO+QiK4nY=', // theme pre-paint — Base.astro
-                    'sha256-UPYjqbNMU1KAbP1G7/j6qOBPjsCLm4zjgpa1gSh9hHs=', // GA init — Base.astro
+                    'sha256-VDLxNztdDNr27od0GJcQWmgOgnxTQbAWe6o8YGN4m3Y=', // cookie-consent manager (loads GA on accept) — Base.astro
                     'sha256-/ffGbvw6rb1b22s9sSW4xXLcmVp4jJUBYPw6urITaYc=', // home autocomplete — index.astro
                     'sha256-/WPzvRkALhBBaylYrFU9GWK04fnDWULOH+t9Rhu69gg=', // triage scorer — triage.astro
                     'sha256-fMIPF2OY7uQ86kzlGYD7b8nen57nmC3c6wb6k4t9Ni8=' // search — search.astro

@@ -15,12 +15,46 @@ interface Props {
 
 const { title, description, ogType, image, jsonLd = [], keywords = [] } = Astro.props;
 
-// Google Analytics (GA4). Defined here as strings so the inline init script can
-// be injected via set:html without the JSX parser mistaking its braces for
-// expressions. Only emitted in the production build (see below).
+// Google Analytics (GA4) is loaded ONLY after the visitor accepts the cookie
+// banner (the consent manager lives at the end of <body>). Until then there is
+// no GA script and no GA cookie. "Decline" hard-disables GA and clears its
+// cookies. Defined as a string so set:html keeps it inline — and hashable for
+// the strict CSP — without the JSX parser choking on its braces.
 const GA_ID = 'G-ZZW979TXFQ';
-const GA_SRC = `https://www.googletagmanager.com/gtag/js?id=${GA_ID}`;
-const GA_INIT = `window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','${GA_ID}');`;
+const GA_STREAM = GA_ID.replace('G-', '');
+const CONSENT_JS = `(function(){
+var KEY='kidsdisease-consent',GA='${GA_ID}',loaded=false;
+var banner=document.getElementById('cookie-banner');
+function store(v){try{localStorage.setItem(KEY,v);}catch(e){}}
+function read(){try{return localStorage.getItem(KEY);}catch(e){return null;}}
+function show(){if(banner)banner.hidden=false;}
+function hide(){if(banner)banner.hidden=true;}
+function loadGA(){
+if(loaded)return;loaded=true;
+window['ga-disable-'+GA]=false;
+window.dataLayer=window.dataLayer||[];
+function gtag(){dataLayer.push(arguments);}
+window.gtag=gtag;
+gtag('js',new Date());
+gtag('config',GA);
+var s=document.createElement('script');
+s.async=true;s.src='https://www.googletagmanager.com/gtag/js?id='+GA;
+document.head.appendChild(s);
+}
+function clearGA(){
+window['ga-disable-'+GA]=true;
+var names=['_ga','_ga_${GA_STREAM}','_gid'];
+var h=location.hostname,base='.'+h.split('.').slice(-2).join('.');
+var doms=['',';domain='+h,';domain=.'+h,';domain='+base];
+names.forEach(function(n){doms.forEach(function(d){document.cookie=n+'=;path=/;expires=Thu, 01 Jan 1970 00:00:00 GMT'+d;});});
+}
+var c=read();
+if(c==='granted'){loadGA();}else if(c!=='denied'){show();}
+var a=document.getElementById('cookie-accept'),r=document.getElementById('cookie-reject'),m=document.getElementById('cookie-manage');
+if(a)a.addEventListener('click',function(){store('granted');hide();loadGA();});
+if(r)r.addEventListener('click',function(){store('denied');hide();clearGA();});
+if(m)m.addEventListener('click',function(e){e.preventDefault();show();});
+})();`;
 
 // Site-wide organization + website entities, merged with page-level JSON-LD.
 const siteUrl = Astro.site?.toString();
@@ -57,16 +91,8 @@ const siteJsonLd = [
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-        <!-- Google Analytics (GA4). Loaded only in the production build so that
-             local `npm run dev` traffic never pollutes the analytics data. -->
-        {
-            import.meta.env.PROD && (
-                <Fragment>
-                    <script is:inline async src={GA_SRC} />
-                    <script is:inline set:html={GA_INIT} />
-                </Fragment>
-            )
-        }
+        <!-- Analytics is consent-gated; it is loaded from the cookie banner at
+             the end of <body>, never automatically here. -->
         <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
         <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
         <link rel="shortcut icon" href="/favicon.ico" />
@@ -112,5 +138,51 @@ const siteJsonLd = [
             <slot />
         </main>
         <Footer />
+
+        <!-- Cookie consent. GA4 loads only after "Accept"; "Decline" keeps it
+             off and clears any GA cookies. Production builds only. -->
+        {
+            import.meta.env.PROD && (
+                <Fragment>
+                    <div
+                        id="cookie-banner"
+                        hidden
+                        role="dialog"
+                        aria-label="Cookie consent"
+                        aria-live="polite"
+                        class="fixed inset-x-0 bottom-0 z-50 px-4 pb-4 sm:px-6 sm:pb-6"
+                    >
+                        <div class="max-w-3xl mx-auto bg-white dark:bg-night-card border border-orange-100 dark:border-night-line shadow-premium rounded-2xl p-5 sm:p-6 flex flex-col sm:flex-row sm:items-center gap-4">
+                            <p class="text-xs md:text-sm text-slate-700 dark:text-[#D8D2F5] font-medium leading-relaxed flex-1">
+                                We'd like to use <strong>Google Analytics</strong> cookies only to
+                                count visits and see which pages help most — no ads, no personal
+                                data, no health data. Decline and the site works exactly the same.{' '}
+                                <a href="/privacy/" class="text-brand-teal hover:underline font-bold">
+                                    Privacy &amp; cookies
+                                </a>
+                                .
+                            </p>
+                            <div class="flex gap-2 shrink-0">
+                                <button
+                                    id="cookie-reject"
+                                    type="button"
+                                    class="px-4 py-2 rounded-xl text-xs font-black text-slate-700 dark:text-[#D8D2F5] bg-orange-50 dark:bg-night-line hover:opacity-90 transition-opacity"
+                                >
+                                    Decline
+                                </button>
+                                <button
+                                    id="cookie-accept"
+                                    type="button"
+                                    class="px-4 py-2 rounded-xl text-xs font-black text-white bg-brand-teal hover:opacity-90 transition-opacity"
+                                >
+                                    Accept
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <script is:inline set:html={CONSENT_JS} />
+                </Fragment>
+            )
+        }
     </body>
 </html>

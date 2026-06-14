@@ -104,8 +104,21 @@ const legal = [
             emergency provider if your child is sick. In an emergency, call your local emergency
             number immediately.
         </p>
-        <p class="text-xs font-black text-slate-700 dark:text-[#F1EDFF]">
-            Kids Disease © {year}. All Rights Reserved.
-        </p>
+        <div class="flex flex-wrap items-center gap-x-4 gap-y-1">
+            <p class="text-xs font-black text-slate-700 dark:text-[#F1EDFF]">
+                Kids Disease © {year}. All Rights Reserved.
+            </p>
+            {
+                import.meta.env.PROD && (
+                    <button
+                        id="cookie-manage"
+                        type="button"
+                        class="text-[11px] font-bold text-slate-500 dark:text-[#8B84B8] hover:text-brand-teal underline transition-colors"
+                    >
+                        Cookie preferences
+                    </button>
+                )
+            }
+        </div>
     </div>
 </footer>
