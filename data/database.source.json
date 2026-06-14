@@ -2182,7 +2182,13 @@
         "eyebirth-prophylaxis"
       ],
       "imagePath": "assets/illustrations/ophthalmia_neonatorum.svg",
-      "overview": "Acute Neonatal Hyper-purulent Ocular Infection"
+      "overview": "Acute Neonatal Hyper-purulent Ocular Infection",
+      "sources": [
+        {
+          "label": "Nemours KidsHealth — Pink eye (conjunctivitis) — incl. newborns",
+          "url": "https://kidshealth.org/en/parents/conjunctivitis.html"
+        }
+      ]
     },
     {
       "id": "dacryocystitis",
@@ -2221,7 +2227,17 @@
         "crigler-massage"
       ],
       "imagePath": "assets/illustrations/dacryocystitis.svg",
-      "overview": "Infection & Inflammation of the Lacrimal Sac"
+      "overview": "Infection & Inflammation of the Lacrimal Sac",
+      "sources": [
+        {
+          "label": "Nemours KidsHealth — Blocked tear duct",
+          "url": "https://kidshealth.org/en/parents/tear-duct-blockage.html"
+        },
+        {
+          "label": "Stanford Medicine Children's Health — Blocked tear duct (dacryostenosis) in children",
+          "url": "https://www.stanfordchildrens.org/en/topic/default?id=blocked-tear-duct-dacryostenosis-in-children-90-P02081"
+        }
+      ]
     },
     {
       "id": "rop",
@@ -2259,7 +2275,17 @@
         "anti-vegf"
       ],
       "imagePath": "assets/illustrations/rop.svg",
-      "overview": "Vasoproliferative Retinal Disorder of Premature Infants"
+      "overview": "Vasoproliferative Retinal Disorder of Premature Infants",
+      "sources": [
+        {
+          "label": "Nemours KidsHealth — Retinopathy of prematurity (ROP)",
+          "url": "https://kidshealth.org/en/parents/rop.html"
+        },
+        {
+          "label": "Nationwide Children's Hospital — Retinopathy of prematurity (ROP)",
+          "url": "https://www.nationwidechildrens.org/conditions/retinopathy-of-prematurity"
+        }
+      ]
     },
     {
       "id": "congenital_cataract",
@@ -2297,7 +2323,17 @@
         "lens-opacification"
       ],
       "imagePath": "assets/illustrations/congenital_cataract.svg",
-      "overview": "Congenital Opacification of the Ocular Lens"
+      "overview": "Congenital Opacification of the Ocular Lens",
+      "sources": [
+        {
+          "label": "NHS — Childhood cataracts",
+          "url": "https://www.nhs.uk/conditions/childhood-cataracts/"
+        },
+        {
+          "label": "American Academy of Pediatrics (HealthyChildren.org) — Cataracts",
+          "url": "https://www.healthychildren.org/English/health-issues/conditions/eyes/Pages/Cataracts.aspx"
+        }
+      ]
     },
     {
       "id": "otitis_media",
@@ -2387,7 +2423,17 @@
         "tympanometry"
       ],
       "imagePath": "assets/illustrations/ome.svg",
-      "overview": "Non-Infectious Middle Ear Fluid Accumulation"
+      "overview": "Non-Infectious Middle Ear Fluid Accumulation",
+      "sources": [
+        {
+          "label": "NHS — Glue ear",
+          "url": "https://www.nhs.uk/conditions/glue-ear/"
+        },
+        {
+          "label": "Children's Hospital of Philadelphia (CHOP) — Otitis media with effusion (OME)",
+          "url": "https://www.chop.edu/conditions-diseases/otitis-media-effusion-ome"
+        }
+      ]
     },
     {
       "id": "tonsillitis",
@@ -2425,7 +2471,17 @@
         "tonsillar-exudate"
       ],
       "imagePath": "assets/illustrations/tonsillitis.svg",
-      "overview": "Acute Inflammation of the Tonsils & Pharynx"
+      "overview": "Acute Inflammation of the Tonsils & Pharynx",
+      "sources": [
+        {
+          "label": "Nemours KidsHealth — Tonsillitis",
+          "url": "https://kidshealth.org/en/parents/tonsillitis.html"
+        },
+        {
+          "label": "NHS — Tonsillitis",
+          "url": "https://www.nhs.uk/conditions/tonsillitis/"
+        }
+      ]
     },
     {
       "id": "adenoids",
@@ -2463,7 +2519,13 @@
         "adenoidectomy"
       ],
       "imagePath": "assets/illustrations/adenoids.svg",
-      "overview": "Chronic Hyperplasia of the Nasopharyngeal Tonsils"
+      "overview": "Chronic Hyperplasia of the Nasopharyngeal Tonsils",
+      "sources": [
+        {
+          "label": "Nemours KidsHealth — Adenoids & adenoidectomy",
+          "url": "https://kidshealth.org/en/parents/adenoids.html"
+        }
+      ]
     },
     {
       "id": "anaphylaxis",
@@ -2502,7 +2564,17 @@
         "angioedema"
       ],
       "imagePath": "assets/illustrations/anaphylaxis.svg",
-      "overview": "Acute Systemic IgE-Mediated Hypersensitivity Reaction"
+      "overview": "Acute Systemic IgE-Mediated Hypersensitivity Reaction",
+      "sources": [
+        {
+          "label": "Nemours KidsHealth — Anaphylaxis",
+          "url": "https://kidshealth.org/en/parents/anaphylaxis.html"
+        },
+        {
+          "label": "NHS — Anaphylaxis",
+          "url": "https://www.nhs.uk/conditions/anaphylaxis/"
+        }
+      ]
     },
     {
       "id": "allergic_rhinitis",
@@ -2541,7 +2613,17 @@
         "allergic-shiners"
       ],
       "imagePath": "assets/illustrations/allergic_rhinitis.svg",
-      "overview": "Type I IgE-Mediated Nasal Mucosal Hypersensitivity"
+      "overview": "Type I IgE-Mediated Nasal Mucosal Hypersensitivity",
+      "sources": [
+        {
+          "label": "NHS — Hay fever",
+          "url": "https://www.nhs.uk/conditions/hay-fever/"
+        },
+        {
+          "label": "American Academy of Pediatrics (HealthyChildren.org) — Seasonal allergies in children",
+          "url": "https://www.healthychildren.org/English/health-issues/conditions/allergies-asthma/Pages/Seasonal-Allergies-in-Children.aspx"
+        }
+      ]
     },
     {
       "id": "scid",
@@ -2579,7 +2661,17 @@
         "trec-screening"
       ],
       "imagePath": "assets/illustrations/scid.svg",
-      "overview": "Primary Humoral & Cellular Immunodeficiency Syndrome"
+      "overview": "Primary Humoral & Cellular Immunodeficiency Syndrome",
+      "sources": [
+        {
+          "label": "Nemours KidsHealth — Severe combined immunodeficiency (SCID)",
+          "url": "https://kidshealth.org/en/parents/severe-immunodeficiency.html"
+        },
+        {
+          "label": "Children's Hospital of Philadelphia (CHOP) — Severe combined immunodeficiency (SCID)",
+          "url": "https://www.chop.edu/conditions-diseases/severe-combined-immunodeficiency-scid"
+        }
+      ]
     },
     {
       "id": "iga_deficiency",
@@ -2617,7 +2709,13 @@
         "mucosal-immunity"
       ],
       "imagePath": "assets/illustrations/iga_deficiency.svg",
-      "overview": "Primary Selective Humoral Immunodeficiency"
+      "overview": "Primary Selective Humoral Immunodeficiency",
+      "sources": [
+        {
+          "label": "Immune Deficiency Foundation — Selective IgA deficiency",
+          "url": "https://primaryimmune.org/understanding-primary-immunodeficiency/types-of-pi/selective-iga-deficiency"
+        }
+      ]
     },
     {
       "id": "measles",
@@ -2656,7 +2754,21 @@
         "vitamin-a"
       ],
       "imagePath": "assets/illustrations/measles.svg",
-      "overview": "Highly Contagious Paramyxoviral Exanthematous Disease"
+      "overview": "Highly Contagious Paramyxoviral Exanthematous Disease",
+      "sources": [
+        {
+          "label": "Nemours KidsHealth — Measles",
+          "url": "https://kidshealth.org/en/parents/measles.html"
+        },
+        {
+          "label": "CDC — Measles",
+          "url": "https://www.cdc.gov/measles/about/index.html"
+        },
+        {
+          "label": "NHS — Measles",
+          "url": "https://www.nhs.uk/conditions/measles/"
+        }
+      ]
     },
     {
       "id": "chickenpox",
@@ -2694,7 +2806,21 @@
         "acyclovir"
       ],
       "imagePath": "assets/illustrations/chickenpox.svg",
-      "overview": "Acute Alphaherpesviral Vesicular Exanthematous Disease"
+      "overview": "Acute Alphaherpesviral Vesicular Exanthematous Disease",
+      "sources": [
+        {
+          "label": "Nemours KidsHealth — Chickenpox",
+          "url": "https://kidshealth.org/en/parents/chicken-pox.html"
+        },
+        {
+          "label": "CDC — Chickenpox",
+          "url": "https://www.cdc.gov/chickenpox/about/index.html"
+        },
+        {
+          "label": "NHS — Chickenpox",
+          "url": "https://www.nhs.uk/conditions/chickenpox/"
+        }
+      ]
     },
     {
       "id": "pertussis",
@@ -2733,7 +2859,21 @@
         "post-tussive-vomiting"
       ],
       "imagePath": "assets/illustrations/pertussis.svg",
-      "overview": "Acute Bacterial Toxin-Mediated Airway Infection"
+      "overview": "Acute Bacterial Toxin-Mediated Airway Infection",
+      "sources": [
+        {
+          "label": "Nemours KidsHealth — Whooping cough (pertussis)",
+          "url": "https://kidshealth.org/en/parents/whooping-cough.html"
+        },
+        {
+          "label": "CDC — Whooping cough (pertussis)",
+          "url": "https://www.cdc.gov/pertussis/about/index.html"
+        },
+        {
+          "label": "NHS — Whooping cough",
+          "url": "https://www.nhs.uk/conditions/whooping-cough/"
+        }
+      ]
     },
     {
       "id": "toxoplasmosis",
@@ -2771,7 +2911,21 @@
         "pyrimethamine"
       ],
       "imagePath": "assets/illustrations/toxoplasmosis.svg",
-      "overview": "Perinatal Protozoan Opportunistic Infection"
+      "overview": "Perinatal Protozoan Opportunistic Infection",
+      "sources": [
+        {
+          "label": "Nemours KidsHealth — Toxoplasmosis",
+          "url": "https://kidshealth.org/en/parents/toxoplasmosis.html"
+        },
+        {
+          "label": "CDC — Toxoplasmosis",
+          "url": "https://www.cdc.gov/toxoplasmosis/about/index.html"
+        },
+        {
+          "label": "NHS — Toxoplasmosis",
+          "url": "https://www.nhs.uk/conditions/toxoplasmosis/"
+        }
+      ]
     },
     {
       "id": "down_syndrome",
@@ -4184,7 +4338,17 @@
         "rash"
       ],
       "imagePath": "assets/illustrations/roseola.svg",
-      "overview": "Viral Exanthema Subitum"
+      "overview": "Viral Exanthema Subitum",
+      "sources": [
+        {
+          "label": "Nemours KidsHealth — Roseola",
+          "url": "https://kidshealth.org/en/parents/roseola.html"
+        },
+        {
+          "label": "NHS — Roseola",
+          "url": "https://www.nhs.uk/conditions/roseola/"
+        }
+      ]
     },
     {
       "id": "fifth_disease",
@@ -4222,7 +4386,21 @@
         "rash"
       ],
       "imagePath": "assets/illustrations/fifth_disease.svg",
-      "overview": "Parvovirus-Induced Exanthem"
+      "overview": "Parvovirus-Induced Exanthem",
+      "sources": [
+        {
+          "label": "Nemours KidsHealth — Fifth disease",
+          "url": "https://kidshealth.org/en/parents/fifth.html"
+        },
+        {
+          "label": "CDC — Parvovirus B19 (fifth disease)",
+          "url": "https://www.cdc.gov/parvovirus-b19/about/index.html"
+        },
+        {
+          "label": "NHS — Slapped cheek syndrome",
+          "url": "https://www.nhs.uk/conditions/slapped-cheek-syndrome/"
+        }
+      ]
     },
     {
       "id": "intussusception",
@@ -4349,7 +4527,21 @@
         "penicillin"
       ],
       "imagePath": "assets/illustrations/scarlet_fever.svg",
-      "overview": "Toxin-Mediated Streptococcal Exanthem"
+      "overview": "Toxin-Mediated Streptococcal Exanthem",
+      "sources": [
+        {
+          "label": "Nemours KidsHealth — Scarlet fever",
+          "url": "https://kidshealth.org/en/parents/scarlet-fever.html"
+        },
+        {
+          "label": "CDC — Scarlet fever",
+          "url": "https://www.cdc.gov/group-a-strep/about/scarlet-fever.html"
+        },
+        {
+          "label": "NHS — Scarlet fever",
+          "url": "https://www.nhs.uk/conditions/scarlet-fever/"
+        }
+      ]
     },
     {
       "id": "inguinal_hernia",
@@ -4838,7 +5030,17 @@
         "fecal-oral",
         "daycare-outbreak"
       ],
-      "imagePath": "assets/illustrations/shigellosis.svg"
+      "imagePath": "assets/illustrations/shigellosis.svg",
+      "sources": [
+        {
+          "label": "Nemours KidsHealth — Shigella infections",
+          "url": "https://kidshealth.org/en/parents/shigella.html"
+        },
+        {
+          "label": "CDC — Shigella (shigellosis)",
+          "url": "https://www.cdc.gov/shigella/about/index.html"
+        }
+      ]
     },
     {
       "id": "pinworm",
@@ -4875,7 +5077,17 @@
         "pyrantel",
         "parasitic-worm"
       ],
-      "imagePath": "assets/illustrations/pinworm.svg"
+      "imagePath": "assets/illustrations/pinworm.svg",
+      "sources": [
+        {
+          "label": "Nemours KidsHealth — Pinworm",
+          "url": "https://kidshealth.org/en/parents/pinworm.html"
+        },
+        {
+          "label": "NHS — Threadworms",
+          "url": "https://www.nhs.uk/conditions/threadworms/"
+        }
+      ]
     },
     {
       "id": "mastoiditis",
@@ -4913,7 +5125,17 @@
         "ct-scan",
         "intravenous-antibiotics"
       ],
-      "imagePath": "assets/illustrations/mastoiditis.svg"
+      "imagePath": "assets/illustrations/mastoiditis.svg",
+      "sources": [
+        {
+          "label": "NHS — Mastoiditis",
+          "url": "https://www.nhs.uk/conditions/mastoiditis/"
+        },
+        {
+          "label": "Stanford Medicine Children's Health — Mastoiditis in children",
+          "url": "https://www.stanfordchildrens.org/en/topic/default?id=mastoiditis-in-children-90-P02048"
+        }
+      ]
     },
     {
       "id": "dehydration",
@@ -5143,7 +5365,17 @@
         "drops"
       ],
       "imagePath": "assets/illustrations/ear_pain.svg",
-      "overview": "Acute Bacterial Infection of the External Auditory Canal"
+      "overview": "Acute Bacterial Infection of the External Auditory Canal",
+      "sources": [
+        {
+          "label": "NHS — Otitis externa",
+          "url": "https://www.nhs.uk/conditions/otitis-externa/"
+        },
+        {
+          "label": "Nemours KidsHealth — Swimmer's ear (otitis externa)",
+          "url": "https://kidshealth.org/en/parents/swimmer-ear.html"
+        }
+      ]
     },
     {
       "id": "pink_eye",
@@ -5181,7 +5413,21 @@
         "adenovirus"
       ],
       "imagePath": "assets/illustrations/eye_red.svg",
-      "overview": "Acute Infectious Conjunctival Inflammation"
+      "overview": "Acute Infectious Conjunctival Inflammation",
+      "sources": [
+        {
+          "label": "Nemours KidsHealth — Pink eye (conjunctivitis)",
+          "url": "https://kidshealth.org/en/parents/conjunctivitis.html"
+        },
+        {
+          "label": "CDC — Conjunctivitis (pink eye)",
+          "url": "https://www.cdc.gov/conjunctivitis/about/index.html"
+        },
+        {
+          "label": "NHS — Conjunctivitis",
+          "url": "https://www.nhs.uk/conditions/conjunctivitis/"
+        }
+      ]
     },
     {
       "id": "prematurity",
@@ -5258,7 +5504,17 @@
         "colic"
       ],
       "imagePath": "assets/illustrations/allergy.svg",
-      "overview": "IgE or Non-IgE Mediated Pediatric Food Hypersensitivity"
+      "overview": "IgE or Non-IgE Mediated Pediatric Food Hypersensitivity",
+      "sources": [
+        {
+          "label": "Nemours KidsHealth — Milk allergy",
+          "url": "https://kidshealth.org/en/parents/milk-allergy.html"
+        },
+        {
+          "label": "NHS — Food allergy",
+          "url": "https://www.nhs.uk/conditions/food-allergy/"
+        }
+      ]
     },
     {
       "id": "acute_bronchitis",
@@ -5344,7 +5600,17 @@
         "antipyretic"
       ],
       "imagePath": "assets/illustrations/fever.svg",
-      "overview": "Prolonged Unexplained Febrile State"
+      "overview": "Prolonged Unexplained Febrile State",
+      "sources": [
+        {
+          "label": "Nemours KidsHealth — Fevers in children",
+          "url": "https://kidshealth.org/en/parents/fever.html"
+        },
+        {
+          "label": "American Academy of Pediatrics (HealthyChildren.org) — Fever",
+          "url": "https://www.healthychildren.org/English/health-issues/conditions/fever/Pages/default.aspx"
+        }
+      ]
     },
     {
       "id": "common_cold",
@@ -5553,7 +5819,17 @@
         "facial pressure"
       ],
       "imagePath": "assets/illustrations/throat.svg",
-      "overview": "Inflammation or infection of the paranasal sinuses, usually following a cold."
+      "overview": "Inflammation or infection of the paranasal sinuses, usually following a cold.",
+      "sources": [
+        {
+          "label": "Nemours KidsHealth — Sinusitis",
+          "url": "https://kidshealth.org/en/parents/sinusitis.html"
+        },
+        {
+          "label": "NHS — Sinusitis (sinus infection)",
+          "url": "https://www.nhs.uk/conditions/sinusitis-sinus-infection/"
+        }
+      ]
     },
     {
       "id": "constipation",
@@ -5830,7 +6106,21 @@
         "parasite"
       ],
       "imagePath": "assets/illustrations/parasite.svg",
-      "overview": "Infestation of the scalp by human head lice; a nuisance, not a disease, and not a sign of poor hygiene."
+      "overview": "Infestation of the scalp by human head lice; a nuisance, not a disease, and not a sign of poor hygiene.",
+      "sources": [
+        {
+          "label": "Nemours KidsHealth — Head lice",
+          "url": "https://kidshealth.org/en/parents/head-lice.html"
+        },
+        {
+          "label": "CDC — Head lice",
+          "url": "https://www.cdc.gov/lice/about/head-lice.html"
+        },
+        {
+          "label": "NHS — Head lice and nits",
+          "url": "https://www.nhs.uk/conditions/head-lice-and-nits/"
+        }
+      ]
     },
     {
       "id": "scabies",
@@ -5972,7 +6262,17 @@
         "welts"
       ],
       "imagePath": "assets/illustrations/rash.svg",
-      "overview": "Raised, itchy welts from temporary leakage of fluid from small skin blood vessels."
+      "overview": "Raised, itchy welts from temporary leakage of fluid from small skin blood vessels.",
+      "sources": [
+        {
+          "label": "Nemours KidsHealth — Hives (urticaria)",
+          "url": "https://kidshealth.org/en/parents/hives.html"
+        },
+        {
+          "label": "NHS — Hives",
+          "url": "https://www.nhs.uk/conditions/hives/"
+        }
+      ]
     },
     {
       "id": "oral_thrush",
@@ -6007,7 +6307,17 @@
         "infant feeding"
       ],
       "imagePath": "assets/illustrations/microbe.svg",
-      "overview": "Common yeast infection of the mouth in infants."
+      "overview": "Common yeast infection of the mouth in infants.",
+      "sources": [
+        {
+          "label": "Nemours KidsHealth — Oral thrush",
+          "url": "https://kidshealth.org/en/parents/thrush.html"
+        },
+        {
+          "label": "NHS — Oral thrush in babies",
+          "url": "https://www.nhs.uk/conditions/oral-thrush-in-babies/"
+        }
+      ]
     },
     {
       "id": "enuresis",
@@ -6421,7 +6731,21 @@
         "viral"
       ],
       "imagePath": "assets/illustrations/throat.svg",
-      "overview": "Contagious viral infection best known for swelling of the salivary glands."
+      "overview": "Contagious viral infection best known for swelling of the salivary glands.",
+      "sources": [
+        {
+          "label": "Nemours KidsHealth — Mumps",
+          "url": "https://kidshealth.org/en/parents/mumps.html"
+        },
+        {
+          "label": "CDC — Mumps",
+          "url": "https://www.cdc.gov/mumps/about/index.html"
+        },
+        {
+          "label": "NHS — Mumps",
+          "url": "https://www.nhs.uk/conditions/mumps/"
+        }
+      ]
     },
     {
       "id": "rubella",
@@ -6460,7 +6784,21 @@
         "pregnancy risk"
       ],
       "imagePath": "assets/illustrations/rash.svg",
-      "overview": "Usually mild contagious viral infection that is dangerous in pregnancy."
+      "overview": "Usually mild contagious viral infection that is dangerous in pregnancy.",
+      "sources": [
+        {
+          "label": "Nemours KidsHealth — Rubella (German measles)",
+          "url": "https://kidshealth.org/en/parents/german-measles.html"
+        },
+        {
+          "label": "CDC — Rubella (German measles)",
+          "url": "https://www.cdc.gov/rubella/about/index.html"
+        },
+        {
+          "label": "NHS — Rubella",
+          "url": "https://www.nhs.uk/conditions/rubella/"
+        }
+      ]
     },
     {
       "id": "retinoblastoma",
