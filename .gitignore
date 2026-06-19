@@ -11,8 +11,10 @@ legacy/
 # Generated knowledge graph
 graphify-out/
 
-# Local tool settings
+# Agent tooling (Claude Code skills + local settings) — local "project brain", not site code
+.claude/skills/
 .claude/settings.local.json
+.agent/
 
 # OS / editor noise
 .DS_Store
