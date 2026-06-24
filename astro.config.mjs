@@ -20,8 +20,9 @@ export default defineConfig({
             algorithm: 'SHA-256',
             directives: [
                 "default-src 'none'",
-                // Google Analytics serves beacons/pixels from *.google-analytics.com.
-                "img-src 'self' data: https://*.google-analytics.com https://*.googletagmanager.com",
+                // Google Analytics serves beacons/pixels from *.google-analytics.com;
+                // api.producthunt.com serves the "Featured on Product Hunt" footer badge.
+                "img-src 'self' data: https://*.google-analytics.com https://*.googletagmanager.com https://api.producthunt.com",
                 "font-src https://fonts.gstatic.com https://cdnjs.cloudflare.com",
                 // GA4 sends collected events to these Google endpoints.
                 "connect-src 'self' https://*.google-analytics.com https://*.analytics.google.com https://www.googletagmanager.com",

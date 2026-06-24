@@ -29,6 +29,16 @@ const legal = [
     { href: '/terms/', label: 'Terms & Conditions', icon: 'fa-gavel' },
     { href: '/privacy/', label: 'Privacy Policy', icon: 'fa-shield-halved' }
 ];
+
+// "Featured on Product Hunt" badge. Light/dark variants keep it crisp in both
+// themes; the badge image is served from api.producthunt.com (allowlisted in
+// the CSP img-src). The link opens our Product Hunt listing.
+const productHunt = {
+    href: 'https://www.producthunt.com/products/kids-disease?embed=true&utm_source=badge-featured&utm_medium=badge&utm_campaign=badge-kids-disease',
+    light: 'https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=1179698&theme=light&t=1782283888997',
+    dark: 'https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=1179698&theme=dark&t=1782283888997',
+    alt: 'Kids Disease - Structured pediatric illness index & symptom triage matrix | Product Hunt'
+};
 ---
 
 <footer
@@ -104,7 +114,7 @@ const legal = [
             emergency provider if your child is sick. In an emergency, call your local emergency
             number immediately.
         </p>
-        <div class="flex flex-wrap items-center gap-x-4 gap-y-1">
+        <div class="flex flex-wrap items-center gap-x-4 gap-y-3">
             <p class="text-xs font-black text-slate-700 dark:text-[#F1EDFF]">
                 Kids Disease © {year}. All Rights Reserved.
             </p>
@@ -119,6 +129,30 @@ const legal = [
                     </button>
                 )
             }
+            <a
+                href={productHunt.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                class="sm:ml-auto shrink-0 rounded-xl"
+                aria-label="Kids Disease on Product Hunt"
+            >
+                <img
+                    src={productHunt.light}
+                    alt={productHunt.alt}
+                    width="250"
+                    height="54"
+                    loading="lazy"
+                    class="block dark:hidden h-[46px] w-auto"
+                />
+                <img
+                    src={productHunt.dark}
+                    alt={productHunt.alt}
+                    width="250"
+                    height="54"
+                    loading="lazy"
+                    class="hidden dark:block h-[46px] w-auto"
+                />
+            </a>
         </div>
     </div>
 </footer>
